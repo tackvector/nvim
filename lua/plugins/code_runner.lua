@@ -12,8 +12,8 @@ return {
 				python = "python $fileName",
 				typescript = "tsc $fileName",
 				lua = "lua $fileName",
-				c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && cd $dir$fileName",
-				cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && cd $dir$fileName",
+				c = "cd . && gcc $fileName -o $fileNameWithoutExt && $dir\\$fileNameWithoutExt",
+				cpp = "cd . && g++ $fileName -o $fileNameWithoutExt && $dir\\$fileNameWithoutExt",
 			},
 		term = {
 				position = "bot",
