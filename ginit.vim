@@ -2,7 +2,7 @@
 set title
 
 if exists(":GuiFont")
-	GuiFont Iosevka:h16
+	GuiFont IosevkaTerm NF:h16
 endif
 
 if exists(":GuiWindowOpacity")

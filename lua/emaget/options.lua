@@ -35,6 +35,8 @@ local options = {
 	guifont = "Iosevka:h14",
 	shell = "cmd.exe",
 	shellxquote = "",
+	autoindent = true,
+	smartindent = true,
 }
 
 for k, v in pairs(options) do

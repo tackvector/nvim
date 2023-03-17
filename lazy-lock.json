@@ -12,6 +12,7 @@
   "mason.nvim": { "branch": "main", "commit": "10ff879fc56160e10437da5c1ca558371ddb6989" },
   "mini.starter": { "branch": "main", "commit": "91e30f0a5264040c408ca1369e8585e30bf5fefc" },
   "moonfly": { "branch": "master", "commit": "b2000bf399f9de69d55ce9aafbcbd598142dd141" },
+  "null-ls.nvim": { "branch": "main", "commit": "2fcc10637b325e656d45a760901e1e05170e36c9" },
   "nvim-autopairs": { "branch": "master", "commit": "e755f366721bc9e189ddecd39554559045ac0a18" },
   "nvim-cmp": { "branch": "main", "commit": "feed47fd1da7a1bad2c7dca456ea19c8a5a9823a" },
   "nvim-linefly": { "branch": "master", "commit": "1e7077488466753a9aa330a6bf3aebceeabd5b10" },
