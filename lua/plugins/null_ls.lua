@@ -23,10 +23,14 @@ return {
 		-- completion sources
 		local completion = null_ls.builtins.completion
 
-		local sources = {
-			null_ls.builtins.code_actions.eslint_d,
-			null_ls.builtins.formatting.black.with({ extra_args = { "--fast" } })
+		-- spelling sources
+		local spell = null_ls.builtins.completion.spell
 
+		local sources = {
+			code_actions.eslint_d,
+			formatting.black.with({ extra_args = { "--fast" } }),
+			diagnostics.cpplint,
+			diagnostics.eslint_d,
 		}
 
 		null_ls.setup({ sources = sources })
