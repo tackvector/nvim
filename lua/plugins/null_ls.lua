@@ -18,8 +18,9 @@ return {
 		local sources = {
 			code_actions.eslint_d,
 			formatting.black.with({ extra_args = { "--fast" } }),
-			diagnostics.cpplint,
+			formatting.cpplint,
 			diagnostics.eslint_d,
+			diagnostics.pyright,
 		}
 
 		null_ls.setup({ sources = sources })
