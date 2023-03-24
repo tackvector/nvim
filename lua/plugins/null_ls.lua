@@ -18,7 +18,7 @@ return {
 		local sources = {
 			code_actions.eslint_d,
 			formatting.black.with({ extra_args = { "--fast" } }),
-			diagnostics.cpplint,
+			diagnostics.black,
 			diagnostics.eslint_d,
 		}
 
