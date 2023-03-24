@@ -14,6 +14,7 @@ return {
 				lua = "lua $fileName",
 				c = "cd . && gcc $fileName -o $fileNameWithoutExt && $dir\\$fileNameWithoutExt",
 				cpp = "cd . && g++ $fileName -o $fileNameWithoutExt && $dir\\$fileNameWithoutExt",
+				cs = " cd . && scriptcs $fileName"
 			},
 		term = {
 				position = "bot",
