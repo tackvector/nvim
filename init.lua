@@ -47,12 +47,12 @@ require("lazy").setup('plugins', opts)
 -- COLOR SCHEME
 ---------------------------
 
--- vim.cmd [[ colorscheme catppuccin ]]
-vim.cmd [[ colorscheme moonfly ]]
+vim.cmd [[ colorscheme catppuccin ]]
+-- vim.cmd [[ colorscheme moonfly ]]
 
-vim.g.linefly_options = {
-	progress_symbol = "",
-}
+-- vim.g.linefly_options = {
+-- 	  progress_symbol = "",
+-- }
 --------------------------
 -- AUTOCOMMANDS
 --------------------------

@@ -5,7 +5,7 @@
   "code_runner.nvim": { "branch": "main", "commit": "a010649236fe245eaab2641a13228cd601499715" },
   "gitsigns.nvim": { "branch": "main", "commit": "b1f9cf7c5c5639c006c937fc1819e09f358210fc" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
-  "lazy.nvim": { "branch": "main", "commit": "623e00cabbc908f635150e73d4250cf4f241d919" },
+  "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
   "lsp-zero.nvim": { "branch": "v1.x", "commit": "63951c8f9701871abd6858d26f3bcc6b99ce5c74" },
   "markdown-preview.nvim": { "branch": "master", "commit": "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a81503f0019942111fe464209237f8b4e85f4687" },
