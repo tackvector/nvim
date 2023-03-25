@@ -18,6 +18,7 @@
 --------------------------
 require 'emaget.keymaps'
 require 'emaget.options'
+require 'emaget.neovide'
 
 --------------------------
 -- LAZY SETUP

@@ -20,7 +20,7 @@ return {
 						CmpBorder = { fg = C.surface2 },
 						Pmenu = { bg = C.none },
 						TelescopeBorder = { link = "FloatBorder" },
-						VertSplit = { bg = "#FFFFFF" },
+						VertSplit = { fg = "#FFFFFF" },
 					}
 				end,
 			},
