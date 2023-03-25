@@ -16,10 +16,7 @@ return {
 		local spell = null_ls.builtins.completion.spell -- spelling sources
 
 		local sources = {
-			code_actions.eslint_d,
-			formatting.black.with({ extra_args = { "--fast" } }),
-			diagnostics.black,
-			diagnostics.eslint_d,
+
 		}
 
 		null_ls.setup({ sources = sources })
