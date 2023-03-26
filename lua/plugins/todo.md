@@ -14,5 +14,7 @@
     - [ ] Check VertSplit color and test all keybindings
     - [ ] Check LSP
     - [ ] Set up nvm
+    - [ ] :intro redraw issue has reared its ugly head again. need to investigate
+    - [ ] research broken keymaps
 
     Completed on 3/11/2023
