@@ -6,4 +6,4 @@
 - https://github.com/neovim/nvim-lspconfig/wiki/Installing-language-servers#automatically
 - https://neovim.io/doc/user/lsp.html
 - https://github.com/VonHeikemen/lsp-zero.nvim/blob/v1.x/advance-usage.md#configuring-language-servers
-- 
+-  
