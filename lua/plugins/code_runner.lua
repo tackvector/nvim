@@ -10,7 +10,7 @@ return {
 		filetype = {
 				javascript = "node $fileName",
 				python = "python $fileName",
-				typescript = "tsc $fileName",
+				typescript = "tsc $fileName && node $fileNameWithoutExt.js",
 				lua = "lua $fileName",
 				c = "cd . && gcc $fileName -o $fileNameWithoutExt && $dir\\$fileNameWithoutExt",
 				cpp = "cd . && g++ $fileName -o $fileNameWithoutExt && $dir\\$fileNameWithoutExt",

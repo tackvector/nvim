@@ -12,11 +12,11 @@ return {
 		{ 'williamboman/mason.nvim' },
 		{ 'williamboman/mason-lspconfig.nvim' },
 
-		-- autocompleting all the things
+		-- for autocompletion
 		{ 'hrsh7th/nvim-cmp' },
 		{ 'hrsh7th/cmp-nvim-lsp' },
 
-		-- getting snippy with neovim
+		-- for snippets
 		{ 'L3MON4D3/LuaSnip' },
 	},
 	config = function()
@@ -29,6 +29,13 @@ return {
 
 		local cmp = require('cmp')
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+		lsp.ensure_installed({
+			"tsserver",
+			"html",
+			"pyright",
+			"lua_ls",
+		})
 
 		lsp.setup_nvim_cmp({
 			mapping = lsp.defaults.cmp_mappings({
