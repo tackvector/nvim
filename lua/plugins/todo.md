@@ -10,11 +10,13 @@
     - [x] Add markdown-preview for writing and lesson planning
     - [x] Add LSP-related keymaps
     - [x] Add luadoc plugin thing...don't remember the name
-    - [ ] Investigate tree-sitter errors and do an update
-    - [ ] Check VertSplit color and test all keybindings
-    - [ ] Check LSP
-    - [ ] Set up nvm
-    - [ ] :intro redraw issue has reared its ugly head again. need to investigate
+    - [x] Investigate tree-sitter errors and do an update
+    - [x] Check VertSplit color and test all keybindings
+    - [x] Check LSP
+    - [x] Set up nvm
+    - [x] :intro redraw issue has reared its ugly head again. need to investigate
     - [ ] research broken keymaps
+    - [ ] Figure out why emmet isn't working. May need a new plugin.
 
     Completed on 3/11/2023
+    Updated on 3/27/2023
