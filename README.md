@@ -1,6 +1,6 @@
 # My Personal Neovim Configuration
 
-![The Mini.Starter greeter](./welcomeScreen.png)
+![The Mini.Starter greeter](./welcomeScreenUpdated.png)
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
