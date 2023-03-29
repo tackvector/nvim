@@ -2,6 +2,11 @@
 
 ![The Mini.Starter greeter](./welcomeScreenUpdated.png)
 
+## NOTICE
+
+Please note that I am still working on this! I don't have as much free time on my hands as I used to and there are some broken bits right now.
+I will update this README when everything is functioning properly! For now, you can use it as an example of how you can structure plugins with Lazy.nvim! Thanks.
+
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
 

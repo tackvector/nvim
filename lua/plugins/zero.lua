@@ -25,6 +25,12 @@ return {
 			set_lsp_keymaps = true,
 			manage_nvim_cmp = true,
 			suggest_lsp_servers = false,
+			sign_icons = {
+				error = "E",
+				warn = "W",
+				hint = "H",
+				info = "I",
+			}
 		})
 
 		local cmp = require('cmp')
