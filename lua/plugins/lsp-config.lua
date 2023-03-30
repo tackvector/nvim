@@ -12,10 +12,35 @@ return {
 
 		local lspconfig = require('lspconfig')
 
-		lspconfig.pyright.setup{}
-		lspconfig.tsserver.setup{}
-		lspconfig.lua_ls.setup{}
+		-- got this from: https://web.archive.org/web/20211207190156/https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
+		USER = vim.fn.expand('$USER')
+		local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
+		local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
+		USER = vim.fn.expand('$USER')
+		lspconfig.pyright.setup{}
+
+		lspconfig.tsserver.setup{}
+
+		lspconfig.lua_ls.setup{
+			cmd = { luals_path, '-E', root_luals_path .. '/main.lua'},
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+						path = vim.split(package.path, ';')
+					},
+					diagnostics = {
+						globals = {'vim'}
+					},
+					workspace = {
+						library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
+					},
+				}
+			}
+		}
+
+		-- this came from the lsp-config github page
 		vim.api.nvim_create_autocmd('LspAttach', {
 		  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 		  callback = function(ev)
