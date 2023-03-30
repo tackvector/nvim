@@ -17,6 +17,9 @@
     - [x] :intro redraw issue has reared its ugly head again. need to investigate
     - [ ] research broken keymaps
     - [ ] Figure out why emmet isn't working. May need a new plugin.
+    - [ ] Remove lsp-zero and set up LSP the long way
+    - [ ] See if I can change statusline background color
+    - [ ] See if express_line works here since I'm using Neovim Nightly
 
     Completed on 3/11/2023
     Updated on 3/27/2023
