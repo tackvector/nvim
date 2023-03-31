@@ -36,8 +36,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: This is in the wrong place but I don't want to keep fighting with it, tbh (lowercase global error).
-opts = {
+local opts = {
 	ui = {
 		border = "rounded"
 	}

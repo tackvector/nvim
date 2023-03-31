@@ -13,14 +13,25 @@ return {
 		local lspconfig = require('lspconfig')
 
 		-- got this from: https://web.archive.org/web/20211207190156/https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
+		-- similar info can be found in this thread: https://www.reddit.com/r/neovim/comments/m2x8s8/how_to_properly_setup_lua_language_server/
 		USER = vim.fn.expand('$USER')
 		local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
 		local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
 		USER = vim.fn.expand('$USER')
+
 		lspconfig.pyright.setup {}
 
-		lspconfig.tsserver.setup {}
+		lspconfig.tsserver.setup {
+			filetypes = {
+				"css",
+				"scss",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact"
+			},
+		}
 
 		lspconfig.lua_ls.setup {
 			cmd = { luals_path, '-E', root_luals_path .. '/main.lua' },
