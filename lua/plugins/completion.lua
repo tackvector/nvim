@@ -33,6 +33,9 @@ return {
 				},
 				["<C-space>"] = cmp.mapping.complete(),
 			},
+			sources = cmp.config.source({
+				{ name = "luasnip" }
+			})
 		}
 	end
 }

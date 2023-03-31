@@ -4,12 +4,17 @@
 
 return {
 	'neovim/nvim-lspconfig',
+	dependencies = {
+		{ 'hrsh7th/cmp-nvim-lsp' },
+	},
 	config = function()
 		vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 		vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 		vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
+		local cmp_lsp = require('cmp_nvim_lsp')
+		local capabilities = cmp_lsp.default_capabilities()
 		local lspconfig = require('lspconfig')
 
 		-- got this from: https://web.archive.org/web/20211207190156/https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
@@ -18,7 +23,9 @@ return {
 		local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
 		local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
-		lspconfig.pyright.setup {}
+		lspconfig.pyright.setup {
+			capabilities = capabilities,
+		}
 
 		lspconfig.tsserver.setup {
 			filetypes = {
@@ -29,6 +36,7 @@ return {
 				"typescript",
 				"typescriptreact"
 			},
+			capabilities = capabilities
 		}
 
 		lspconfig.lua_ls.setup {
@@ -50,6 +58,7 @@ return {
 					},
 				}
 			},
+			capabilities = capabilities,
 		}
 
 		-- this came from the lsp-config github page
