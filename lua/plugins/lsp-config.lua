@@ -8,14 +8,14 @@ return {
 		{ 'hrsh7th/cmp-nvim-lsp' },
 	},
 	config = function()
+		local cmp_lsp = require('cmp_nvim_lsp')
+		local capabilities = cmp_lsp.default_capabilities()
+		local lspconfig = require('lspconfig')
+
 		vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 		vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 		vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
-
-		local cmp_lsp = require('cmp_nvim_lsp')
-		local capabilities = cmp_lsp.default_capabilities()
-		local lspconfig = require('lspconfig')
 
 		-- got this from: https://web.archive.org/web/20211207190156/https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
 		-- similar info can be found in this thread: https://www.reddit.com/r/neovim/comments/m2x8s8/how_to_properly_setup_lua_language_server/

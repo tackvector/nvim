@@ -11,9 +11,10 @@ return {
 	{ 'hrsh7th/nvim-cmp' },
 	-- snippets with LuaSnip
 	{ 'L3MON4D3/LuaSnip' },
+	{ 'saadparwaiz1/cmp_luasnip' },
 	config = function()
-		local luasnip = require('luasnip')
 		local cmp = require('cmp')
+		local luasnip = require('luasnip')
 		cmp.setup {
 			snippet = {
 				expand = function(args)
@@ -33,9 +34,11 @@ return {
 				},
 				["<C-space>"] = cmp.mapping.complete(),
 			},
-			sources = cmp.config.source({
-				{ name = "luasnip" }
-			})
+			sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "luasnip" }
+				},
+				{ name = "buffer" })
 		}
 	end
 }
