@@ -18,8 +18,6 @@ return {
 		local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
 		local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
-		USER = vim.fn.expand('$USER')
-
 		lspconfig.pyright.setup {}
 
 		lspconfig.tsserver.setup {
@@ -51,7 +49,7 @@ return {
 						}
 					},
 				}
-			}
+			},
 		}
 
 		-- this came from the lsp-config github page
