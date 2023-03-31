@@ -53,4 +53,12 @@ keymap("n", "<leader>y", "\"+y", opts)
 keymap("v", "<leader>y", "\"+y", opts)
 keymap("n", "<leader>Y", "\"+Y", opts)
 
+vim.g.tmux_navigator_no_mappings = 1
+
+
+keymap('n', '<C-h>', ':<C-U>TmuxNavigateLeft<cr>', opts)
+keymap('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>', opts)
+keymap('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>', opts)
+keymap('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>', opts)
+
 return M

@@ -29,6 +29,7 @@
   "vim-dadbod": { "branch": "master", "commit": "389a2b0120f82b13d51ff7c07f5c13f9bc9f412f" },
   "vim-dadbod-ui": { "branch": "master", "commit": "986324fa6372170ec47b28a5558ae7f7185e1d71" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "cdd66d6a37d991bba7997d593586fc51a5b37aa8" },
   "web-tools.nvim": { "branch": "master", "commit": "16730bd5867cec5ec681b250214ba0b41b7b63a7" },
   "which-key.nvim": { "branch": "main", "commit": "4b73390eec680b4c061ea175eb32c0ff3412271d" }
 }
