@@ -21,6 +21,7 @@
     - [ ] See if I can change statusline background color
     - [ ] See if express_line works here since I'm using Neovim Nightly
     - [ ] Learn more about nvim-cmp and null-ls and consider readding them
+    - [ ] Find out how to give cmp hover a border
 
     Completed on 3/11/2023
     Updated on 3/27/2023

@@ -1,10 +1,10 @@
 --------------------------
--- GITSIGNS
+-- LUASNIP
 --------------------------
 
 return {
-	'lewis6991/gitsigns.nvim',
+	'L3MON4D3/LuaSnip',
 	config = function()
-		require('gitsigns').setup()
+		require("luasnip.loaders.from_vscode").lazy_load()
 	end
 }

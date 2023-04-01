@@ -9,7 +9,7 @@ return {
 	},
 	config = function()
 		local cmp_lsp = require('cmp_nvim_lsp')
-		local capabilities = cmp_lsp.default_capabilities()
+		local capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 		local lspconfig = require('lspconfig')
 
 		vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
