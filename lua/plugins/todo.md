@@ -16,12 +16,13 @@
     - [x] Set up nvm
     - [x] :intro redraw issue has reared its ugly head again. need to investigate
     - [ ] research broken keymaps
-    - [ ] Figure out why emmet isn't working. May need a new plugin.
+    - [x] Figure out why emmet isn't working. May need a new plugin.
     - [x] Remove lsp-zero and set up LSP the long way
-    - [ ] See if I can change statusline background color
-    - [ ] See if express_line works here since I'm using Neovim Nightly
+    - [x] See if I can change statusline background color
+    - [x] See if express_line works here since I'm using Neovim Nightly
     - [ ] Learn more about nvim-cmp and null-ls and consider readding them
-    - [ ] Find out how to give cmp hover a border
+    - [x] Find out how to give cmp hover a border
+    - [ ] Figure out how to give textDocument hover a border
 
     Completed on 3/11/2023
     Updated on 3/27/2023
