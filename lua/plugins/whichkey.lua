@@ -54,6 +54,7 @@ return {
 				h = { "<cmd>ToggleTerm size=20 direction=horizontal<cr>", "Horizontal" },
 				l = { "<cmd>lua _LUA_TOGGLE()<cr>", "Lua" },
 				p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+				r = { "<cmd>lua _RUBY_TOGGLE()<cr>", "IRB" },
 			},
 		}
 

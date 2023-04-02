@@ -34,6 +34,10 @@ return {
 			capabilities = capabilities,
 		}
 
+		lspconfig.ruby_ls.setup {
+			capabilities = capabilities
+		}
+
 		lspconfig.html.setup {
 			capabilities = capabilities,
 		}
