@@ -2,8 +2,9 @@
 -- COMPLETION
 --------------------------
 -- I posted a question in the Neovim subreddit which led me to Kickstart. The thread is here:
-	-- https://www.reddit.com/r/neovim/comments/127xvd1/what_am_i_missing/
+-- https://www.reddit.com/r/neovim/comments/127xvd1/what_am_i_missing/
 -- the Kickstart.nvim init.lua file helped me figure out how to get this working, somewhat.
+
 return {
 	-- completion stuff
 	'hrsh7th/nvim-cmp',
@@ -13,6 +14,8 @@ return {
 		'hrsh7th/cmp-path',
 		'hrsh7th/cmp-cmdline',
 		'mtoohey31/cmp-fish',
+		'hrsh7th/cmp-nvim-lua',
+		'pontusk/cmp-sass-variables',
 		-- snippets with LuaSnip
 		'L3MON4D3/LuaSnip',
 		'saadparwaiz1/cmp_luasnip',
@@ -41,13 +44,22 @@ return {
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
+				{ name = "luasnip", keyword_length = 3 },
+				{ name = "nvim_lua" },
 				{ name = 'nvim_lsp_document_symbol' },
 				{ name = 'nvim_lsp_signature_help' },
 				{ name = "path" },
-				{ name = "buffer", keyword_length = 5 },
+				{ name = "sass-variables" },
+				{ name = "buffer", keyword_length = 7 },
 				{ name = "fish" },
 			}),
+			window = {
+				completion = { border = 'single' },
+				documentation = { border = 'single' }
+			},
+			completion = {
+				completeopt = 'menu, menuone, noinsert',
+			}
 		}
 	end
 }

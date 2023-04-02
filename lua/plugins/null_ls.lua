@@ -16,7 +16,7 @@ return {
 		local spell = null_ls.builtins.completion.spell -- spelling sources
 
 		local sources = {
-
+			formatting.black,
 		}
 
 		null_ls.setup({ sources = sources })

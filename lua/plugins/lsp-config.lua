@@ -23,7 +23,18 @@ return {
 		local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
 		local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+			vim.lsp.handlers.hover, {
+				border = "single",
+				title = "hover",
+			}
+		)
+
 		lspconfig.pyright.setup {
+			capabilities = capabilities,
+		}
+
+		lspconfig.html.setup {
 			capabilities = capabilities,
 		}
 
@@ -48,7 +59,16 @@ return {
 						path = vim.split(package.path, ';')
 					},
 					diagnostics = {
-						globals = { 'vim' }
+						globals = {
+							'vim',
+							'describe',
+							'it',
+							'before_each',
+							'after_each',
+							'teardown',
+							'pending',
+							'clear',
+						}
 					},
 					workspace = {
 						library = {
