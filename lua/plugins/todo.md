@@ -22,7 +22,7 @@
     - [x] See if express_line works here since I'm using Neovim Nightly
     - [ ] Learn more about nvim-cmp and null-ls and consider readding them
     - [x] Find out how to give cmp hover a border
-    - [ ] Figure out how to give textDocument hover a border
-
-    Completed on 3/11/2023
-    Updated on 3/27/2023
+    - [x] Figure out how to give textDocument hover a border
+    - [ ] Set up java stuff
+    - [ ] Set up Ruby stuff
+    - [ ] Start creating and testing snippets to use.

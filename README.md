@@ -4,8 +4,8 @@
 
 ## NOTICE
 
-Please note that I am still working on this! I don't have as much free time on my hands as I used to and there are some broken bits right now.
-I will update this README when everything is functioning properly! For now, you can use it as an example of how you can structure plugins with Lazy.nvim! Thanks.
+This config is half-baked. There's always something in here that I want to improve upon. If you use it or any of its parts, please be aware of that first.
+If you have any questions, comments, concerns, or suggestions for me, I would love if you shared them with me! Any help with this process is greatly appreciated!
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
