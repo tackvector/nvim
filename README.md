@@ -44,61 +44,61 @@ including myself!
 
 - [Catppuccin](https://github.com/catppuccin/nvim)
 
-This is probably my favorite theme, like, *ever*. I prefer the Mocha color, and I use color overrides to customize it. I will say,
-in Neovim-QT, it seems to cause slower performance.
+This is probably my favorite theme, like, *ever*. I prefer the Mocha variant, and I use color overrides to customize it (see [here](https://github.com/catppuccin/nvim#overwriting-colors). I will say,
+in Neovim-QT, it seems to cause slower performance. On Linux, it works well. I've tried it in both ```gnome-terminal``` and [kitty](https://sw.kovidgoyal.net/kitty/)
+without issue.
 
 - [Moonfly](https://github.com/bluz71/vim-moonfly-colors)
 
-This theme is a bit faster for me in Neovim-QT (I'm on Windows for now), so I use it. 
+This theme is a bit faster for me in Neovim-QT (I'm on Windows for now), so I would suggest using it if you're on Windows
 
 #### *Statusline*
 
 - [Linefly](https://github.com/bluz71/nvim-linefly)
 
 I was actually looking for something like [express_line.nvim](https://github.com/tjdevries/express_line.nvim), or to create my own, but since the developer of the theme I'm using also created this,
-I thought I'd give it a try. It's really good! It's fast and simple and useful. I really like it.
-
-- [Airline](https://github.com/vim-airline/vim-airline)
-
-You won't actually find this in the config, but it's a nice plugin to use when you've enable the Catppuccin theme.
+I thought I'd give it a try. It also comew with out-of-the-box support for Catppuccin. It's fast and simple and useful. I have yet to experiment with customization options. The purpose of this config
+is simplicity. That being said, I didn't want to spend a bunch of time configuring the statusline. Eventually, I think the best thing would be to write my own either as a plugin or directly in the config,
+but linefly works well enough for me for the time being.
 
 #### *Greeter*
 
 - [Mini.starter](https://github.com/echasnovski/mini.starter)
 
-In Neovim-QT, the default splash screen doesn't show up on start. So, I grabbed a greeter to fill that space until I move back to Linux.
+In Neovim-QT, the default splash screen doesn't show up on start. As far as I've researched, this is a common issue. I've only ever experienced it when using a statusline plugin, hence my desire to write my own.
+So, I grabbed a greeter to fill that space until I can figure out what is causing it for certain.
 
 #### *Help and file navigation*
 
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 
-I love this plugin! It's extremely useful.
+The most helpful place to learn about Telescope is its documentation. TJ DeVries does an excellent job of explaining its uses in the Bash 2 Basics series on YouTube.
 
 - [Telescope File Browser](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 
 Another very useful plugin. Telescope has completely eliminated my need for a file tree viewer at this point (I mean, this provides
-one, but I'm just saying I don't need *another* plugin just for viewing project structure).
+one, but I'm just saying I don't need *another* plugin just for viewing project structure). Having this as an extension of a plugin I already love is just...incredible.
 
 - [Harpoon](https://github.com/ThePrimeagen/harpoon)
 
 This is just freaking cool. Harpoon allows my brain to focus on the files I need and access them with a set of keybindings that make
-sense to me.
+sense to me. It's easy to set up and easy to use and incredibly powerful. 
 
 - [Luaref](https://github.com/milisims/nvim-luaref)
 
-This is great for referencing Lua without leaving my editor
+This is great for referencing Lua without leaving my editor. Again, please check the documentation to learn how it works.
 
 #### *Editing text*
 
 - [vim-surround](https://github.com/tpope/vim-surround)
 
-In every config I have used, I have added this plugin.
+In every config I have used, I have added this plugin. It's one of the main reasons I stick to using Neovim.
 
 - [Undo Tree](https://github.com/mbbill/undotree)
 
-I have been looking for something like this for a long time. I love this plugin!
+I have been looking for something like this for a long time. I love this plugin! I learned how to set it up from The Primeagen's 0 to LSP video.
 
-- [Which Key](https://github.com/mbbill/undotree)
+- [Which Key](https://github.com/folke/which-key.nvim)
 
 This is something I got used to using while learning Doom Emacs. This Neovim plugin works just as well.
 
@@ -106,19 +106,15 @@ This is something I got used to using while learning Doom Emacs. This Neovim plu
 
 - [Plenary](https://github.com/nvim-lua/plenary.nvim)
 
-This one is required by a few plugins used in this config
+This one is required by a few plugins used in this config, so I want to make sure I mention it here.
 
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-I think this is self-explanatory. If not, the docs are pretty helpful.
+I think this is self-explanatory. If not, the docs are pretty helpful. There are also several YouTube videos on it.
 
-- [LSP Zero](https://github.com/VonHeikemen/lsp-zero.nvim)
-
-This ended up being a really nice way to set up LSP and its related plugins.
-
-- [Mason](https://github.com/williamboman/mason.nvim)
-
-I love Mason!
+- [Lsp-Config]()
+LSP Zero is great if you already know what you're doing and want to reduce the amount of config code you're writing. I wanted to try to set up LSP
+the long way, so I swapped it out for ```lsp-ocnfig```. Part of this requires setting up ```nvim-cmp``` which I still have a lot to learn about.
 
 - [Web Tools](https://github.com/ray-x/web-tools.nvim)
 
