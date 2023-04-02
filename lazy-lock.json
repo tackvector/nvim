@@ -22,6 +22,7 @@
   "nvim-linefly": { "branch": "master", "commit": "a389dc564cac582ceb1302acf161faffa7eaadde" },
   "nvim-lspconfig": { "branch": "master", "commit": "94291c924f0efdbc16ac625cf77ae7d3a7fa5821" },
   "nvim-luaref": { "branch": "main", "commit": "9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127" },
+  "nvim-markdown": { "branch": "master", "commit": "9712d36a2e7a1a55e25bc823417100800fef0ff0" },
   "nvim-treesitter": { "branch": "master", "commit": "2f3113ff6d554e3fe4da3610135c2f404f7aa270" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "b55fe6175f0001347a433c9df358c8cbf8a4e90f" },
   "papyrus": { "branch": "main", "commit": "e4abf25a0a346ed957805a594d458118a4aa0c73" },

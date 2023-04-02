@@ -28,7 +28,7 @@ keymap("i", "kj", "<ESC>", opts)
 
 -- Terminal mode
 function _G.set_terminal_keymaps()
-  local opts = {noremap = true}
+  opts = term_opts
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
@@ -60,5 +60,6 @@ keymap('n', '<C-h>', ':<C-U>TmuxNavigateLeft<cr>', opts)
 keymap('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>', opts)
 keymap('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>', opts)
 keymap('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>', opts)
+
 
 return M
