@@ -26,3 +26,4 @@
     - [ ] Set up java stuff
     - [ ] Set up Ruby stuff
     - [ ] Start creating and testing snippets to use.
+    - [ ] Learn more about null-ls
