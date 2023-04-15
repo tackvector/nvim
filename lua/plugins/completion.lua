@@ -5,6 +5,7 @@
 -- https://www.reddit.com/r/neovim/comments/127xvd1/what_am_i_missing/
 -- the Kickstart.nvim init.lua file helped me figure out how to get this working, somewhat.
 
+-- TODO: find out if I can add friendly snippets as a dependency, but it sometimes just doesn't work right now. I may not even keep trying to get it to work.
 return {
 	-- completion stuff
 	'hrsh7th/nvim-cmp',
