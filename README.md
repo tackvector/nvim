@@ -9,7 +9,7 @@ If you have any questions, comments, concerns, or suggestions for me, I would lo
 
 That being said, here's a list of things that need improvement:
 
-# TODO:
+## TODO:
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Learn more about and null-ls and consider re-adding it
     - [ ] Set up Java stuff
