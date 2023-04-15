@@ -22,6 +22,7 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] MarkdownPreview is not opening files....investigation needed!
     - [ ] Check recent Toggleterm changes
     - [ ] See if web-view is working again...
+    - [ ] Fix typos (sorry, y'all...)
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
