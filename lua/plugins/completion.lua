@@ -5,7 +5,7 @@
 -- https://www.reddit.com/r/neovim/comments/127xvd1/what_am_i_missing/
 -- the Kickstart.nvim init.lua file helped me figure out how to get this working, somewhat.
 
--- TODO: find out if I can add friendly snippets as a dependency, but it sometimes just doesn't work right now. I may not even keep trying to get it to work.
+-- TODO: find out why friendly-snippets doesn't move the cursor from point to point. 
 return {
 	-- completion stuff
 	'hrsh7th/nvim-cmp',
@@ -18,10 +18,16 @@ return {
 		'hrsh7th/cmp-nvim-lua',
 		'pontusk/cmp-sass-variables',
 		-- snippets with LuaSnip
+		'rafamadriz/friendly-snippets',
 		'L3MON4D3/LuaSnip',
 		'saadparwaiz1/cmp_luasnip',
 	},
 	config = function()
+		local has_words_before = function()
+			unpack = unpack or table.unpack
+			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+		end
 		local cmp = require('cmp')
 		local luasnip = require('luasnip')
 		cmp.setup {
@@ -42,6 +48,30 @@ return {
 					select = true,
 				},
 				["<C-space>"] = cmp.mapping.complete(),
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+							-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+							-- they way you will only jump inside the snippet region
+					elseif luasnip.expand_or_jumpable() then
+						luasnip.expand_or_jump()
+					elseif has_words_before() then
+						cmp.complete()
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif luasnip.jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },

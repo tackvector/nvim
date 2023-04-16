@@ -15,13 +15,14 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] Set up Java stuff
     - [ ] Start creating and testing snippets to use.
     - [ ] Learn more about null-ls
-    - [ ] HTML tag snippets are needed
+    - [x] HTML tag snippets are needed
     - [ ] I think I figured this out but I got some weird errors in a CSS file...need to investigate
-    - [ ] I need to move this file to the README
+    - [x] I need to move this file to the README
     - [ ] Add arrow function snippets.
     - [ ] MarkdownPreview is not opening files....investigation needed!
+    - [ ] I think the MarkdownPreview issue is related to a tmux issue I'm having...? Need to take a look at my .tmux.config
     - [ ] Check recent Toggleterm changes
-    - [ ] See if web-view is working again...
+    - [ ] See if web-view is working again...this may also have something to do with the tmux issue
     - [ ] Fix typos (sorry, y'all...)
 
 ## *The short and sweet*

@@ -4,6 +4,8 @@
 
 return {
 	'L3MON4D3/LuaSnip',
+	version = "1.2.*",
+	build = "make install_jsregexp",
 	config = function()
 		local luasnip = require("luasnip")
 		luasnip.filetype_extend("typescriptreact", { "html", "typescript" })
