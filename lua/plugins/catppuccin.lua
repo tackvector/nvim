@@ -1,4 +1,4 @@
---------------------------
+-------------------------
 -- CATPPUCCIN
 --------------------------
 
@@ -20,7 +20,7 @@ return {
 						CmpBorder = { fg = C.surface2 },
 						Pmenu = { bg = C.none },
 						TelescopeBorder = { link = "FloatBorder" },
-						VertSplit = { fg = "#FFFFFF" },
+						VertSplit = { fg = "#1e1e2e" },
 					}
 				end,
 			},
