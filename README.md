@@ -12,12 +12,10 @@ That being said, here's a list of things that need improvement, followed by more
 ## TODO:
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Learn more about and null-ls and consider re-adding it
-    - [ ] Set up Java stuff
     - [ ] Start creating and testing snippets to use.
     - [ ] Learn more about null-ls
-    - [x] HTML tag snippets are needed
+    - [ ] HTML tag snippets are needed
     - [ ] I think I figured this out but I got some weird errors in a CSS file...need to investigate
-    - [x] I need to move this file to the README
     - [ ] Add arrow function snippets.
     - [ ] MarkdownPreview is not opening files....investigation needed!
     - [ ] I think the MarkdownPreview issue is related to a tmux issue I'm having...? Need to take a look at my .tmux.config

@@ -44,8 +44,6 @@ return {
 
 		lspconfig.tsserver.setup {
 			filetypes = {
-				"css",
-				"scss",
 				"javascript",
 				"javascriptreact",
 				"typescript",
