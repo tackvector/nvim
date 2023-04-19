@@ -42,10 +42,16 @@ return {
 			capabilities = capabilities,
 		}
 
+		lspconfig.cssls.setup {
+			capabilities = capabilities,
+		}
+
 		lspconfig.tsserver.setup {
 			filetypes = {
 				"javascript",
 				"javascriptreact",
+				"javascript.jsx",
+				"typescript.tsx",
 				"typescript",
 				"typescriptreact"
 			},

@@ -21,6 +21,7 @@ return {
 						Pmenu = { bg = C.none },
 						TelescopeBorder = { link = "FloatBorder" },
 						VertSplit = { fg = "#1e1e2e" },
+						LineNr = { fg = "#6c7086" }
 					}
 				end,
 			},

@@ -80,7 +80,6 @@ return {
 				{ name = 'nvim_lsp_document_symbol' },
 				{ name = 'nvim_lsp_signature_help' },
 				{ name = "path" },
-				{ name = "sass-variables" },
 				{ name = "buffer", keyword_length = 7 },
 				{ name = "fish" },
 			}),
