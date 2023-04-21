@@ -14,8 +14,8 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] Learn more about and null-ls and consider re-adding it
     - [ ] Start creating and testing snippets to use.
     - [ ] Learn more about null-ls
-    - [ ] HTML tag snippets are needed
-    - [ ] I think I figured this out but I got some weird errors in a CSS file...need to investigate
+    - [x] HTML tag snippets are needed
+    - [x] I think I figured this out but I got some weird errors in a CSS file...need to investigate
     - [ ] Add arrow function snippets.
     - [ ] MarkdownPreview is not opening files....investigation needed!
     - [ ] I think the MarkdownPreview issue is related to a tmux issue I'm having...? Need to take a look at my .tmux.config
