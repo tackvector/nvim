@@ -1,4 +1,4 @@
---------------------------
+-------------------------
 -- GENERAL OPTIONS
 --------------------------
 
@@ -36,6 +36,8 @@ local options = {
 	shellxquote = "",
 	autoindent = true,
 	smartindent = true,
+	scrolloff = 10,
+	equalalways = false,
 }
 
 for k, v in pairs(options) do
