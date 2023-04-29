@@ -10,6 +10,7 @@ If you have any questions, comments, concerns, or suggestions for me, I would lo
 That being said, here's a list of things that need improvement, followed by more information about the config:
 
 ## TODO:
+    - [ ] add vim-dadbod and dadbod-ui
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Learn more about and null-ls and consider re-adding it
     - [ ] Start creating and testing snippets to use.

@@ -23,6 +23,7 @@ local options = {
 	writebackup = false,
 	number = true,
 	relativenumber = true,
+	cindent = true,
 	numberwidth = 4,
 	signcolumn = 'yes',
 	wrap = false,
