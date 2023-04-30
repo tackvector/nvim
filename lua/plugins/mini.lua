@@ -7,7 +7,7 @@ return {
 	config = function ()
 		require('mini.starter').setup({
 			header = 'Welcome to Neovim',
-			footer = 'Configured by @emaget_',
+			footer = 'Configured by @dorrajmachai',
 		})
 	end
 }
