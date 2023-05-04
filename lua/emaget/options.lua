@@ -32,6 +32,7 @@ local options = {
 	laststatus = 3,
 	tabstop = 4,
 	shiftwidth = 4,
+	shiftround = true,
 	guicursor = "n-v-c-i:block",
 	guifont = "Iosevka Nerd Font Medium:h14",
 	shellxquote = "",

@@ -34,8 +34,9 @@ return {
 			capabilities = capabilities,
 		}
 
-		lspconfig.ruby_ls.setup {
-			capabilities = capabilities
+		lspconfig.emmet_ls.setup {
+			capabilities = capabilities,
+			filetypes = { "html" }
 		}
 
 		lspconfig.html.setup {

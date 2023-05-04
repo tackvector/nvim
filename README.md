@@ -1,6 +1,6 @@
 # My Personal Neovim Configuration
 
-![The Mini.Starter greeter](./welcomeScreenUpdated.png)
+![The Mini.Starter greeter](./welcomeScreen2.png)
 
 ## NOTICE
 
@@ -10,19 +10,8 @@ If you have any questions, comments, concerns, or suggestions for me, I would lo
 That being said, here's a list of things that need improvement, followed by more information about the config:
 
 ## TODO:
-    - [ ] add vim-dadbod and dadbod-ui
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
-    - [ ] Learn more about and null-ls and consider re-adding it
     - [ ] Start creating and testing snippets to use.
-    - [ ] Learn more about null-ls
-    - [x] HTML tag snippets are needed
-    - [x] I think I figured this out but I got some weird errors in a CSS file...need to investigate
-    - [ ] Add arrow function snippets.
-    - [ ] MarkdownPreview is not opening files....investigation needed!
-    - [ ] I think the MarkdownPreview issue is related to a tmux issue I'm having...? Need to take a look at my .tmux.config
-    - [ ] Check recent Toggleterm changes
-    - [ ] See if web-view is working again...this may also have something to do with the tmux issue
-    - [ ] Fix typos (sorry, y'all...)
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
@@ -33,7 +22,7 @@ My goals for this config were pretty straightforward:
 - I want it to be simple.
 - I want it to spark joy.
 
-I think I've accomplished those things here! If you decide to try it, I'd love to know what you think and what changes and 
+I think I've accomplished (some of) those things here! If you decide to try it, I'd love to know what you think and what changes and 
 recommendations you have for me to improve it!
 
 ## *The long and tangential*
@@ -131,7 +120,7 @@ I think this is self-explanatory. If not, the docs are pretty helpful. There are
 
 - [Lsp-Config]()
 LSP Zero is great if you already know what you're doing and want to reduce the amount of config code you're writing. I wanted to try to set up LSP
-the long way, so I swapped it out for ```lsp-ocnfig```. Part of this requires setting up ```nvim-cmp``` which I still have a lot to learn about.
+the long way, so I swapped it out for ```lsp-config```. Part of this requires setting up ```nvim-cmp``` which I still have a lot to learn about.
 
 - [Web Tools](https://github.com/ray-x/web-tools.nvim)
 
