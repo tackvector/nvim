@@ -14,6 +14,11 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] Start creating and testing snippets to use.
     - [x] Set up Zathura and vimtex
     - [ ] Document config better. This thing is still kind of a mess.
+    - [ ] document options
+    - [ ] document keybindings
+    - [ ] redo main readme
+    - [ ] change image file names and remove outdated images
+
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
