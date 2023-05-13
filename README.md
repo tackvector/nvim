@@ -13,6 +13,7 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Start creating and testing snippets to use.
     - [x] Set up Zathura and vimtex
+    - [ ] Document config better. This thing is still kind of a mess.
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
