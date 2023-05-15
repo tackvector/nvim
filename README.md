@@ -1,6 +1,6 @@
 # My Personal Neovim Configuration
 
-![The Mini.Starter greeter](./welcomeScreen2.png)
+![Neovim v0.10.0](./welcomeScreen3.png)
 
 ## NOTICE
 
@@ -12,7 +12,6 @@ That being said, here's a list of things that need improvement, followed by more
 ## TODO:
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Start creating and testing snippets to use.
-    - [ ] change image file names and remove outdated images
     - [ ] find out how to delete marks in harpoon
 
 ## *The short and sweet*
