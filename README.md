@@ -16,7 +16,6 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] redo main readme
     - [ ] change image file names and remove outdated images
 
-
 ## *The short and sweet*
 My goals for this config were pretty straightforward:
 
@@ -70,13 +69,6 @@ I was actually looking for something like [express_line.nvim](https://github.com
 I thought I'd give it a try. It also comew with out-of-the-box support for Catppuccin. It's fast and simple and useful. I have yet to experiment with customization options. The purpose of this config
 is simplicity. That being said, I didn't want to spend a bunch of time configuring the statusline. Eventually, I think the best thing would be to write my own either as a plugin or directly in the config,
 but linefly works well enough for me for the time being.
-
-#### *Greeter*
-
-- [Mini.starter](https://github.com/echasnovski/mini.starter)
-
-In Neovim-QT, the default splash screen doesn't show up on start. As far as I've researched, this is a common issue. I've only ever experienced it when using a statusline plugin, hence my desire to write my own.
-So, I grabbed a greeter to fill that space until I can figure out what is causing it for certain. UPDATE: removing the 'updatetime' option from my config fixes the :start issue I've had.
 
 #### *Help and file navigation*
 
