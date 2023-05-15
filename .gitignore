@@ -1,4 +1,4 @@
+./.gitignore
 .git/**/*
 /lua-language-server/
 /phpactor/
-.gitignore
