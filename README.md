@@ -12,7 +12,6 @@ That being said, here's a list of things that need improvement, followed by more
 ## TODO:
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Start creating and testing snippets to use.
-    - [ ] find out how to delete marks in harpoon
 
 ## *The short and sweet*
 My goals for this config were pretty straightforward:

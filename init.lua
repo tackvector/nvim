@@ -59,6 +59,6 @@ vim.cmd [[ colorscheme catppuccin ]]
 vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L' })
 
 -- [[ 
--- it should be noted that the above only opens the help file in the vertical split once. though unlikely, closing the file accidentally 
+-- it should be noted that the above only opens the help file in the vertical split once. albeit an unlikely occurrence, closing the file accidentally 
 -- will result in the user needing to close and reopen Neovim to get it to work again.
 -- ]]
