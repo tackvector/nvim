@@ -13,7 +13,6 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Start creating and testing snippets to use.
     - [ ] Document config better. This thing is still kind of a mess.
-    - [ ] document keybindings
     - [ ] redo main readme
     - [ ] change image file names and remove outdated images
 
