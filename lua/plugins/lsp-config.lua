@@ -59,6 +59,15 @@ return {
 			capabilities = capabilities
 		}
 
+--		lspconfig.intelephense.setup {
+--			capabilities = capabilities,
+--		}
+--
+
+		lspconfig.phpactor.setup {
+			capabilities = capabilities
+		}
+
 		lspconfig.lua_ls.setup {
 			cmd = { luals_path, '-E', root_luals_path .. '/main.lua' },
 			settings = {

@@ -12,7 +12,6 @@ That being said, here's a list of things that need improvement, followed by more
 ## TODO:
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Start creating and testing snippets to use.
-    - [x] Set up Zathura and vimtex
     - [ ] Document config better. This thing is still kind of a mess.
     - [ ] document options
     - [ ] document keybindings
@@ -79,7 +78,7 @@ but linefly works well enough for me for the time being.
 - [Mini.starter](https://github.com/echasnovski/mini.starter)
 
 In Neovim-QT, the default splash screen doesn't show up on start. As far as I've researched, this is a common issue. I've only ever experienced it when using a statusline plugin, hence my desire to write my own.
-So, I grabbed a greeter to fill that space until I can figure out what is causing it for certain.
+So, I grabbed a greeter to fill that space until I can figure out what is causing it for certain. UPDATE: removing the 'updatetime' option from my config fixes the :start issue I've had.
 
 #### *Help and file navigation*
 

@@ -16,7 +16,7 @@ return {
 			highlight_overrides = {
 				mocha = function(C)
 					return {
-						TabLineSel = { bg = C.pink },
+						TabLineSel = { bg = C.mantle },
 						CmpBorder = { fg = C.surface2 },
 						Pmenu = { bg = C.none },
 						TelescopeBorder = { link = "FloatBorder" },
