@@ -2,9 +2,6 @@
 -- TELESCOPE
 --------------------------
 
--- Sources for this file:
---
-
 return {
 	'nvim-telescope/telescope.nvim',
 	config = function()
