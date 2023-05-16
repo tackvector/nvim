@@ -13,22 +13,6 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] research broken keymaps (can be found and tested in ../emaget/keymaps.lua)
     - [ ] Start creating and testing snippets to use.
 
-## *The short and sweet*
-My goals for this config are pretty straightforward; I want it to be:
-
-1. Useful
-2. Fast
-3. Light
-
-## *The long and tangential*
-I've tried a few different Neovim configurations, the first of which was my own copy-pasted, overcomplicated mess of a config.
-Then, I tried to set up and work with several prebuilt configurations. My favorite of all of the available prebuilt configs is
-[the Neovim from Scratch config](https://github.com/LunarVim/Neovim-from-scratch/tree/master/lua/user) created by [chris@machine](https://github.com/ChristianChiarulli). I used this for a while, but still found myself struggling with making
-changes and updates to the config without slowing it down or breaking it completely. Sometimes, out of frustration, I would either
-go back to VS C*de or spend hours to days working on an Emacs config (which I'm still working on). Eventually, I would go back to
-that particular config and read about Lua and watch the Neovim from Scratch series on Youtube, and I learned quite a lot. One day,
-I decided to try and write my own config. This is the result of that effort.
-
 ## *The config*
 
 ### Plugin Manager
