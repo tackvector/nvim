@@ -14,16 +14,11 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] Start creating and testing snippets to use.
 
 ## *The short and sweet*
-My goals for this config were pretty straightforward:
+My goals for this config are pretty straightforward; I want it to be:
 
-- I want it to be easy on my eyes. 
-- I want it to be...ahem, "blazingly fast!"
-- I want it to be sensible and understandable.
-- I want it to be simple.
-- I want it to spark joy.
-
-I think I've accomplished (some of) those things here! If you decide to try it, I'd love to know what you think and what changes and 
-recommendations you have for me to improve it!
+1. Useful
+2. Fast
+3. Light
 
 ## *The long and tangential*
 I've tried a few different Neovim configurations, the first of which was my own copy-pasted, overcomplicated mess of a config.
