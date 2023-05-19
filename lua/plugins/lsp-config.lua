@@ -59,11 +59,6 @@ return {
 			capabilities = capabilities
 		}
 
---		lspconfig.intelephense.setup {
---			capabilities = capabilities,
---		}
---
-
 		lspconfig.phpactor.setup {
 			capabilities = capabilities
 		}
