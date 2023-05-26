@@ -63,6 +63,10 @@ return {
 			capabilities = capabilities
 		}
 
+		lspconfig.ccls.setup{
+			capabilities = capabilities
+		}
+
 		lspconfig.lua_ls.setup {
 			cmd = { luals_path, '-E', root_luals_path .. '/main.lua' },
 			settings = {
