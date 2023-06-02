@@ -43,8 +43,8 @@ require("lazy").setup('plugins', opts)
 -- COLOR SCHEME
 ---------------------------
 
--- vim.cmd [[ colorscheme catppuccin ]]
-vim.cmd [[ colorscheme moonfly ]]
+vim.cmd [[ colorscheme catppuccin ]]
+-- vim.cmd [[ colorscheme moonfly ]]
 
 --------------------------
 -- AUTOCOMMANDS
