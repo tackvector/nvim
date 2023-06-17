@@ -7,11 +7,12 @@ return {
 	config = function()
 		require('catppuccin').setup {
 			color_overrides = {
-				mocha = {
-					base = "#000000",
-					mantle = "#000000",
-					crust = "#000000",
-				},
+				-- voidppuccin overrides
+--				mocha = {
+--					base = "#000000",
+--					mantle = "#000000",
+--					crust = "#000000",
+--				},
 			},
 			highlight_overrides = {
 				mocha = function(C)

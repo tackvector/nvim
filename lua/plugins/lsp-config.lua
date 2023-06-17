@@ -63,7 +63,7 @@ return {
 			capabilities = capabilities
 		}
 
-		lspconfig.ccls.setup{
+		lspconfig.clangd.setup{
 			capabilities = capabilities
 		}
 
