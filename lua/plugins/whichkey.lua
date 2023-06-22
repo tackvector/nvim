@@ -26,19 +26,11 @@ return {
 				'<cmd>Telescope find_files<cr>',
 				'Find Files',
 			},
-			h = {
-				name = "Harpoon",
-				a = {'<cmd>harpoon.mark.add_file<cr>', 'Add File'},
-			},
 			L = { '<cmd>Lazy<cr>', 'Lazy' },
-			r = {
-				name = "Code Runner",
-				c = { '<cmd>:RunCode<cr>', 'Run Code' },
-				p = { '<cmd>:RunProject<cr>', 'Run Project'},
-			},
 			s = {
 				name = 'Search',
 				b = { '<cmd>Telescope git_branches<cr>', 'Checkout Branch' },
+				B = { '<cmd> Telescope buffers<cr>', 'Buffers' },
 				c = { '<cmd>Telescope colorscheme<cr>', 'Colorscheme' },
 				C = { '<cmd>Telescope commands<cr>', 'Commands' },
 				h = { '<cmd>Telescope help_tags<cr>', 'Find Help' },
@@ -50,6 +42,7 @@ return {
 			},
 			t = {
 				name = 'Terminal',
+				c = {"<cmd>lua _CALC_TOGGLE()<cr>", "Calculator" },
 				f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 				h = { "<cmd>ToggleTerm size=20 direction=horizontal<cr>", "Horizontal" },
 				l = { "<cmd>lua _LUA_TOGGLE()<cr>", "Lua" },
@@ -116,6 +109,5 @@ return {
 		})
 		whichkey.register(mappings, opts)
 	end
-	
 }
 

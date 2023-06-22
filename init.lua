@@ -43,7 +43,7 @@ require("lazy").setup('plugins', opts)
 -- COLOR SCHEME
 ---------------------------
 
-vim.cmd [[ colorscheme catppuccin-latte ]]
+vim.cmd [[ colorscheme catppuccin-mocha ]]
 -- vim.cmd [[ colorscheme moonfly ]]
 
 --------------------------
@@ -59,3 +59,4 @@ vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L
 
 -- it should be noted that the above only opens the help file in the vertical split once. albeit an unlikely occurrence, closing the file accidentally 
 -- will result in the user needing to close and reopen Neovim to get it to work again.
+
