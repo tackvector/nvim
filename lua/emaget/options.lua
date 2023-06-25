@@ -13,14 +13,13 @@ local options = {
 	mouse = 'a', -- enable mouse for 'all previous modes'
 	pumheight = 10, -- set the popup menu height to 10
 	termguicolors = true, -- enables 24-bit color in tui
-	showtabline = 0, -- show line with tab page labels 
 	splitbelow = true, -- open new horizontal splits below current buffer
 	splitright = true, -- open new vertical splits to the right of current buffer
 	swapfile = false, -- don't create a swapfile
 	timeoutlen = 1000, -- length of timeout for commands like 'jk' for exit
 	undofile = true, -- i actually don't understand this option yet; will need to dig further.
 	writebackup = false,  -- don't make backup before overwriting files
-	number = true, -- set line numbers
+	number = true, -- set line numbers, this setting shows the line number you're currently on
 	relativenumber = true, -- make the line numbers relatives..."what are you doing, stepnumber?"
 	cindent = true, -- for C files, which I do not write right now.
 	numberwidth = 4, -- the width of the number column, setting it to 4 keeps it from pushing the editor over as numbers get larger
@@ -38,7 +37,25 @@ local options = {
 	smartindent = true, -- so should this.
 	scrolloff = 10, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
+	cursorline = true,
 }
+
+-- this is from https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
+-- it works and i didn't have to write it myself
+local group = vim.api.nvim_create_augroup("CursorLineControl", {clear = true})
+local set_cursorline = function (event, value, pattern)
+	vim.api.nvim_create_autocmd(event, {
+		group = group,
+		pattern = pattern,
+		callback = function ()
+			vim.opt_local.cursorline = value
+		end,
+	})
+end
+
+set_cursorline("WinLeave", false)
+set_cursorline("WinEnter", true)
+set_cursorline("FileType", false, "TelescopePrompt")
 
 -- for options and values in the options table, set them using vim.opt.option = value
 for k, v in pairs(options) do
