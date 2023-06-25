@@ -18,8 +18,12 @@ return {
 				mocha = function(C)
 					return {
 						MiniTabLineFill = { bg = C.mantle },
+						MiniTabLineVisible = { bg = C.mantle, fg = C.overlay1 },
+						MiniTabLineHidden = { bg = C.mantle, fg = C.overlay1 },
 						MiniTabLineCurrent = { bg = C.surface0, fg = C.green },
 						MiniTabLineModifiedCurrent = { bg = C.surface0, fg = C.yellow },
+						MiniTabLineModifiedHidden = { fg = C.red },
+						MiniTabLineModifiedVisible = { fg = C.yellow },
 						CmpBorder = { fg = C.surface2 },
 						Pmenu = { bg = C.none },
 						TelescopeBorder = { link = "FloatBorder" },

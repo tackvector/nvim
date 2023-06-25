@@ -1,4 +1,4 @@
-------------------------
+--------------------------
 -- GENERAL OPTIONS
 --------------------------
 
@@ -37,25 +37,7 @@ local options = {
 	smartindent = true, -- so should this.
 	scrolloff = 10, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
-	cursorline = true,
 }
-
--- this is from https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
--- it works and i didn't have to write it myself
-local group = vim.api.nvim_create_augroup("CursorLineControl", {clear = true})
-local set_cursorline = function (event, value, pattern)
-	vim.api.nvim_create_autocmd(event, {
-		group = group,
-		pattern = pattern,
-		callback = function ()
-			vim.opt_local.cursorline = value
-		end,
-	})
-end
-
-set_cursorline("WinLeave", false)
-set_cursorline("WinEnter", true)
-set_cursorline("FileType", false, "TelescopePrompt")
 
 -- for options and values in the options table, set them using vim.opt.option = value
 for k, v in pairs(options) do
