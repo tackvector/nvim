@@ -48,7 +48,7 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- this first one doesn't work for some reason so i commented it out
--- keymap("n", "J", "mzj`z", opts)
+-- keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts) -- keep cursor in middle of screen when i move down
 keymap("n", "<C-u>", "<C-u>zz", opts) -- keep cursor in middle of screen when i move up
 keymap("n", "n", "nzzzv", opts) -- I need to watch the video again to remember what this does

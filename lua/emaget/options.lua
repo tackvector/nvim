@@ -28,18 +28,21 @@ local options = {
 	sidescrolloff = 30, -- numbers of columns to keep on sides of screen, may not be good for error messages on certain lines...don't know yet.
 	laststatus = 3, -- global statusline, thanks Neovim team :-)
 	tabstop = 4, -- 4 spaces. 4 is the way. Don't fuck with the 4-ce.
-	shiftwidth = 4, -- i actually don't know if i need this one either. Haven't done any testing without it yet.
+	softtabstop = 0,
+	shiftwidth = 0, -- i actually don't know if i need this one either. Haven't done any testing without it yet.
 	shiftround = true, -- found out about this from VimTricks, you should check it out if you haven't already! https://vim.town/@vimtricks
 	guicursor = "n-v-c-i:block", -- be a man. use a block cursor.
-	guifont = "Iosevka Nerd Font Medium:h16", -- the font the bible is written in.
+	guifont = "Iosevka Nerd Font Medium:h18", -- the font the bible is written in.
 	shellxquote = "", -- i can use this to do cool things
 	autoindent = true, -- this should absolutely always be on
 	smartindent = true, -- so should this.
 	scrolloff = 10, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
+	list = true,
+	listchars = { eol = '', tab = ' ' },
 }
 
--- for options and values in the options table, set them using vim.opt.option = value
+-- for options and values in the options table, set them using vim.opt.<option> = <value>
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
