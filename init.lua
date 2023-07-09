@@ -13,8 +13,8 @@
 --------------------------
 -- IMPORTS
 --------------------------
-require 'emaget.keymaps'
-require 'emaget.options'
+require 'dorraj.keymaps'
+require 'dorraj.options'
 
 --------------------------
 -- LAZY SETUP
@@ -34,7 +34,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
 	ui = {
-		border = "rounded"
+		border = "single"
 	}
 }
 

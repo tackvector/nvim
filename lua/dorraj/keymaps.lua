@@ -47,8 +47,8 @@ vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
--- this first one doesn't work for some reason so i commented it out
--- keymap("n", "J", "mzJ`z", opts)
+-- make sure you use a capital 'J' for this first one, or it won't work
+keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts) -- keep cursor in middle of screen when i move down
 keymap("n", "<C-u>", "<C-u>zz", opts) -- keep cursor in middle of screen when i move up
 keymap("n", "n", "nzzzv", opts) -- I need to watch the video again to remember what this does
