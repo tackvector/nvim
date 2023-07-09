@@ -13,5 +13,5 @@ That being said, here's a list of things that need improvement, followed by more
     - [ ] Start creating and testing snippets to use.
     - [ ] Update README with new plugins and maybe a screenshot
 
-If you want to see the plugins, head over to [plugins](./lua/plugins)
-If you want to see the settings, check out [options](./lua/dorraj/options)
+If you want to see the plugins, head over to [plugins](./lua/plugins).\n
+If you want to see the settings, check out [options](./lua/dorraj/options.lua)

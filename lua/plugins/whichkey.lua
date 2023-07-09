@@ -27,8 +27,9 @@ return {
 				'Find Files',
 			},
 			G = {
-				'<cmd>Git<cr>',
-				'Fugitive',
+				name = "Fugitive",
+				Enter = { '<cmd>Git<cr>', 'Open Fugitive' },
+				p = { '<cmd>G push<cr>' },
 			},
 			L = { '<cmd>Lazy<cr>', 'Lazy' },
 			s = {
