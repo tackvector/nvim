@@ -12,7 +12,6 @@ That being said, here's a list of things that need improvement, followed by more
 ## TODO:
     - [ ] Start creating and testing snippets to use.
     - [ ] Update README with new plugins and maybe a screenshot
-    - [ ] Testing fugitive, ignore this todo!
 
 If you want to see the plugins, head over to './lua/plugins'
 If you want to see the settings, check out './lua/dorraj/options'
