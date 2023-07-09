@@ -26,6 +26,10 @@ return {
 				'<cmd>Telescope find_files<cr>',
 				'Find Files',
 			},
+			G = {
+				'<cmd>Git<cr>',
+				'Fugitive',
+			},
 			L = { '<cmd>Lazy<cr>', 'Lazy' },
 			s = {
 				name = 'Search',
