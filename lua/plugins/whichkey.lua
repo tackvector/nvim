@@ -26,10 +26,10 @@ return {
 				'<cmd>Telescope find_files<cr>',
 				'Find Files',
 			},
-			G = {
+			g = {
 				name = "Fugitive",
-				Enter = { '<cmd>Git<cr>', 'Open Fugitive' },
-				p = { '<cmd>G push<cr>' },
+				g = { '<cmd>Git<cr>', 'Open Fugitive' },
+				p = { '<cmd>Git push<cr>', 'Fugitive push' },
 			},
 			L = { '<cmd>Lazy<cr>', 'Lazy' },
 			s = {
@@ -93,7 +93,7 @@ return {
 				border = 'single',
 				position = 'bottom',
 				margin = { 1, 0, 1, 0 },
-				padding = { 2, 2, 2, 2 }, 
+				padding = { 2, 2, 2, 2 },
 				winblend = 0
 			},
 			layout = {
