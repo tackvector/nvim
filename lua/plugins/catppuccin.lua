@@ -27,7 +27,7 @@ return {
 						CmpBorder = { fg = C.surface2 },
 						Pmenu = { bg = C.none },
 						TelescopeBorder = { link = "FloatBorder" },
-						VertSplit = { fg = "#cdd6f4" },
+						VertSplit = { fg = "#313244" },
 						LineNr = { fg = "#6c7086" },
 					}
 				end,
