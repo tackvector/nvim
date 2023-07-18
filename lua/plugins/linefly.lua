@@ -4,7 +4,7 @@
 
 return {
 	"bluz71/nvim-linefly",
-	config = function()
+	config = function ()
 		vim.g.linefly_options = {
 			progress_symbol = "",
 		}
