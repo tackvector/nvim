@@ -11,7 +11,7 @@ Any help with this process is greatly appreciated!
 
 ## TODO:
     - [ ] Start creating and testing snippets to use.
-    - [ ] Update README with new plugins and maybe a screenshot
+    - [ ] Start filling out which-key stuff
 
 If you want to see the plugins, head over to [plugins](./lua/plugins).<br>
 If you want to see the settings, check out [options](./lua/dorraj/options.lua).
