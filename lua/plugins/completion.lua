@@ -5,7 +5,6 @@
 -- https://www.reddit.com/r/neovim/comments/127xvd1/what_am_i_missing/
 -- the Kickstart.nvim init.lua file helped me figure out how to get this working, somewhat.
 
--- TODO: find out why friendly-snippets doesn't move the cursor from point to point. 
 return {
 	-- completion stuff
 	'hrsh7th/nvim-cmp',
