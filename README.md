@@ -13,6 +13,7 @@ Any help with this process is greatly appreciated!
     - [ ] Start creating and testing snippets to use.
     - [ ] Start filling out which-key stuff
     - [ ] Learn more about Telescope builtins and do some more configuration
+    - [x] Change autocomplete exit mapping now that I'm using <C-c> for exiting insert mode
 
 If you want to see the plugins, head over to [plugins](./lua/plugins).<br>
 If you want to see the settings, check out [options](./lua/dorraj/options.lua).

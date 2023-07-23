@@ -47,3 +47,24 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
+-- instead of highlighting the line every time i want to see it
+-- it makes sense to just have to current line hightlighted all the time
+-- i've seen this in many TJ DeVries streams and wanted to know how he did it
+-- i found this in this file in his config: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
+
+-- Thanks, TJ!
+vim.opt.cursorline = true -- Highlight the current line
+local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
+local set_cursorline = function(event, value, pattern)
+  vim.api.nvim_create_autocmd(event, {
+    group = group,
+    pattern = pattern,
+    callback = function()
+      vim.opt_local.cursorline = value
+    end,
+  })
+end
+
+set_cursorline("WinLeave", false)
+set_cursorline("WinEnter", true)
+set_cursorline("FileType", false, "TelescopePrompt")
