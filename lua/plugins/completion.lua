@@ -80,6 +80,7 @@ return {
 				{ name = 'nvim_lsp_signature_help' },
 				{ name = "path" },
 				{ name = "buffer", keyword_length = 7 },
+				{ name = "cmp_nvim_r" },
 				{ name = "fish" },
 			}),
 			window = {
