@@ -15,7 +15,6 @@ return {
 		'hrsh7th/cmp-cmdline',
 		'mtoohey31/cmp-fish',
 		'hrsh7th/cmp-nvim-lua',
-		'pontusk/cmp-sass-variables',
 		-- snippets with LuaSnip
 		'rafamadriz/friendly-snippets',
 		'L3MON4D3/LuaSnip',
