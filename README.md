@@ -11,7 +11,6 @@ Any help with this process is greatly appreciated!
 
 ## TODO:
     - [ ] Start creating and testing snippets to use.
-    - [ ] Start filling out which-key stuff
     - [ ] Learn more about Telescope builtins and do some more configuration
     - [x] Change autocomplete exit mapping now that I'm using <C-c> for exiting insert mode
 
