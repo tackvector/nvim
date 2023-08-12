@@ -35,7 +35,39 @@ return {
 				virtual_text = false,
 				underline = true,
 			}
-		)
+        )
+
+        lspconfig.lua_ls.setup {
+            cmd = { luals_path, '-E', root_luals_path .. '/main.lua' },
+            before_init = require('neodev.lsp').before_init,
+            settings = {
+                Lua = {
+                    runtime = {
+                        version = "LuaJIT",
+                        path = vim.split(package.path, ';')
+                    },
+                    diagnostics = {
+                        globals = {
+                            'vim',
+                            'describe',
+                            'it',
+                            'before_each',
+                            'after_each',
+                            'teardown',
+                            'pending',
+                            'clear',
+                        }
+                    },
+                    workspace = {
+                        library = {
+                            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+                        }
+                    },
+                }
+            },
+            capabilities = capabilities,
+        }
 
 		lspconfig.pyright.setup {
 			capabilities = capabilities,
@@ -74,37 +106,6 @@ return {
 			capabilities = capabilities
 		}
 
-		lspconfig.lua_ls.setup {
-			cmd = { luals_path, '-E', root_luals_path .. '/main.lua' },
-            before_init = require('neodev.lsp').before_init,
-			settings = {
-				Lua = {
-					runtime = {
-						version = "LuaJIT",
-						path = vim.split(package.path, ';')
-					},
-					diagnostics = {
-						globals = {
-							'vim',
-							'describe',
-							'it',
-							'before_each',
-							'after_each',
-							'teardown',
-							'pending',
-							'clear',
-						}
-					},
-					workspace = {
-						library = {
-							[vim.fn.expand('$VIMRUNTIME/lua')] = true,
-							[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
-						}
-					},
-				}
-			},
-			capabilities = capabilities,
-		}
 
 		-- this came from the lsp-config github page
 		vim.api.nvim_create_autocmd('LspAttach', {
