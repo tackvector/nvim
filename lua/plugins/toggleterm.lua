@@ -46,7 +46,7 @@ return {
 			ruby:toggle()
 		end
 
-		-- open bc so i can do difficult math
+		-- open bc so i can do difficult mathematical equationals
 		function _CALC_TOGGLE()
 			calc:toggle()
 		end
