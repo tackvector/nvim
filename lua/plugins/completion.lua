@@ -73,7 +73,7 @@ return {
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = "luasnip", keyword_length = 3 },
+				{ name = "luasnip", keyword_length = 7 },
 				{ name = "nvim_lua" },
 				{ name = 'nvim_lsp_document_symbol' },
 				{ name = 'nvim_lsp_signature_help' },

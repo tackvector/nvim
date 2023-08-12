@@ -59,4 +59,31 @@ keymap("n", "<leader>y", "\"+y", opts)
 keymap("v", "<leader>y", "\"+y", opts)
 keymap("n", "<leader>Y", "\"+Y", opts)
 
+-- Telescope
+keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>sB", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>sC", "<cmd>Telescope commands<cr>", opts)
+keymap("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
+keymap("n", "<leader>sM", "<cmd>Telescope man_pages<cr>", opts)
+keymap("n", "<leader>sR", "<cmd>Telescope registers<cr>", opts)
+keymap("n", "<leader>ss", "<cmd>Telescope file_browser<cr>", opts)
+-- keymap("n", "<leader>sb", "<cmd>Telescope git_branches<cr>", opts)
+-- keymap("n", "<leader>sc", "<cmd>Telescope colorscheme<cr>", opts)
+-- keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", opts)
+
+-- Lazy
+keymap("n", "<leader>L", "<cmd>Lazy<cr>", opts)
+
+-- Fugitive
+keymap("n", "<leader>gg", "<cmd>Git<cr>", opts)
+keymap("n", "<leader>gp", "<cmd>Git push<cr>", opts)
+
+-- Terminal
+keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts) -- open a floating terminal
+keymap("n", "<leader>th", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", opts) -- open a horizontal terminal
+keymap("n", "<leader>tc", "<cmd>lua _CALC_TOGGLE()<cr>", opts) -- open BC
+keymap("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", opts) -- open a Lua repl
+keymap("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts) -- open a Python repl
+-- keymap("n", "<leader>tr", "<cmd>lua _RUBY_TOGGLE()<cr>", opts) -- open IRB
 return M
