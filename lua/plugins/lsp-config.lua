@@ -3,38 +3,38 @@
 --------------------------
 
 return {
-	'neovim/nvim-lspconfig',
-	dependencies = {
-		{ 'hrsh7th/cmp-nvim-lsp' },
-	},
-	config = function()
-		local cmp_lsp = require('cmp_nvim_lsp')
-		local capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
-		local lspconfig = require('lspconfig')
+    'neovim/nvim-lspconfig',
+    dependencies = {
+        { 'hrsh7th/cmp-nvim-lsp' },
+    },
+    config = function()
+        local cmp_lsp = require('cmp_nvim_lsp')
+        local capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+        local lspconfig = require('lspconfig')
 
-		vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-		vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-		vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+        vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+        vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
-		-- got this from: https://web.archive.org/web/20211207190156/https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
-		-- similar info can be found in this thread: https://www.reddit.com/r/neovim/comments/m2x8s8/how_to_properly_setup_lua_language_server/
-		USER = vim.fn.expand('$USER')
-		local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
-		local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
+        -- got this from: https://web.archive.org/web/20211207190156/https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/
+        -- similar info can be found in this thread: https://www.reddit.com/r/neovim/comments/m2x8s8/how_to_properly_setup_lua_language_server/
+        USER = vim.fn.expand('$USER')
+        local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
+        local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-			vim.lsp.handlers.hover, {
-				border = "single",
-				title = "hover",
-			}
-		)
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+            vim.lsp.handlers.hover, {
+                border = "single",
+                title = "hover",
+            }
+        )
 
-		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-			vim.lsp.diagnostic.on_publish_diagnostics, {
-				virtual_text = false,
-				underline = true,
-			}
+        vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+            vim.lsp.diagnostic.on_publish_diagnostics, {
+                virtual_text = false,
+                underline = true,
+            }
         )
 
         lspconfig.lua_ls.setup {
@@ -44,18 +44,6 @@ return {
                     runtime = {
                         version = "LuaJIT",
                         path = vim.split(package.path, ';')
-                    },
-                    diagnostics = {
-                        globals = {
-                            'vim',
-                            'describe',
-                            'it',
-                            'before_each',
-                            'after_each',
-                            'teardown',
-                            'pending',
-                            'clear',
-                        }
                     },
                     workspace = {
                         library = {
@@ -68,71 +56,71 @@ return {
             capabilities = capabilities,
         }
 
-		lspconfig.pyright.setup {
-			capabilities = capabilities,
-		}
+        lspconfig.pyright.setup {
+            capabilities = capabilities,
+        }
 
-		lspconfig.emmet_ls.setup {
-			capabilities = capabilities,
-			filetypes = { "html" }
-		}
+        lspconfig.emmet_ls.setup {
+            capabilities = capabilities,
+            filetypes = { "html" }
+        }
 
-		lspconfig.html.setup {
-			capabilities = capabilities,
-		}
+        lspconfig.html.setup {
+            capabilities = capabilities,
+        }
 
-		lspconfig.cssls.setup {
-			capabilities = capabilities,
-		}
+        lspconfig.cssls.setup {
+            capabilities = capabilities,
+        }
 
-		lspconfig.tsserver.setup {
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript.tsx",
-				"typescript",
-				"typescriptreact"
-			},
-			capabilities = capabilities
-		}
+        lspconfig.tsserver.setup {
+            filetypes = {
+                "javascript",
+                "javascriptreact",
+                "javascript.jsx",
+                "typescript.tsx",
+                "typescript",
+                "typescriptreact"
+            },
+            capabilities = capabilities
+        }
 
-		lspconfig.phpactor.setup {
-			capabilities = capabilities
-		}
+        lspconfig.phpactor.setup {
+            capabilities = capabilities
+        }
 
-		lspconfig.clangd.setup{
-			capabilities = capabilities
-		}
+        lspconfig.clangd.setup{
+            capabilities = capabilities
+        }
 
-		-- this came from the lsp-config github page
-		vim.api.nvim_create_autocmd('LspAttach', {
-			group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-			callback = function(ev)
-				-- Enable completion triggered by <c-x><c-o>
-				vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        -- this came from the lsp-config github page
+        vim.api.nvim_create_autocmd('LspAttach', {
+            group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+            callback = function(ev)
+                -- Enable completion triggered by <c-x><c-o>
+                vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-				-- Buffer local mappings.
-				-- See `:help vim.lsp.*` for documentation on any of the below functions
-				local opts = { buffer = ev.buf }
-				vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-				vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-				vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-				vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-				vim.keymap.set('n', '<M-S-k>', vim.lsp.buf.signature_help, opts)
-				vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-				vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-				vim.keymap.set('n', '<space>wl', function()
-					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-				end, opts)
-				vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-				vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-				vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
-				vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-				vim.keymap.set('n', '<space>F', function()
-					vim.lsp.buf.format { async = true }
-				end, opts)
-			end,
-		})
-	end
+                -- Buffer local mappings.
+                -- See `:help vim.lsp.*` for documentation on any of the below functions
+                local opts = { buffer = ev.buf }
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                vim.keymap.set('n', '<M-S-k>', vim.lsp.buf.signature_help, opts)
+                vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+                vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+                vim.keymap.set('n', '<space>wl', function()
+                    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                end, opts)
+                vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+                vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+                vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+                vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                vim.keymap.set('n', '<space>F', function()
+                    vim.lsp.buf.format { async = true }
+                end, opts)
+            end,
+        })
+    end
 }
