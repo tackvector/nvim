@@ -24,13 +24,13 @@ return {
             highlight_overrides = {
                 mocha = function(C)
                     return {
-                        MiniTabLineFill = { bg = C.base },
-                        MiniTabLineVisible = { bg = C.mantle, fg = C.base },
-                        MiniTabLineHidden = { bg = C.mantle, fg = C.base },
-                        MiniTabLineCurrent = { bg = C.surface0, fg = C.green },
-                        MiniTabLineModifiedCurrent = { bg = C.surface0, fg = C.yellow },
-                        MiniTabLineModifiedHidden = { fg = C.red },
-                        MiniTabLineModifiedVisible = { fg = C.yellow },
+                        -- MiniTabLineFill = { bg = C.base },
+                        -- MiniTabLineVisible = { bg = C.mantle, fg = C.base },
+                        -- MiniTabLineHidden = { bg = C.mantle, fg = C.base },
+                        -- MiniTabLineCurrent = { bg = C.surface0, fg = C.green },
+                        -- MiniTabLineModifiedCurrent = { bg = C.surface0, fg = C.yellow },
+                        -- MiniTabLineModifiedHidden = { fg = C.red },
+                        -- MiniTabLineModifiedVisible = { fg = C.yellow },
                         CmpBorder = { fg = C.surface2 },
                         Pmenu = { bg = C.none },
                         TelescopeBorder = { link = "FloatBorder" },
