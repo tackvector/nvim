@@ -39,7 +39,6 @@ return {
 
         lspconfig.lua_ls.setup {
             cmd = { luals_path, '-E', root_luals_path .. '/main.lua' },
-            before_init = require('neodev.lsp').before_init,
             settings = {
                 Lua = {
                     runtime = {
