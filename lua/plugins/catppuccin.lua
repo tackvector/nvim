@@ -4,6 +4,7 @@
 
 return {
     'catppuccin/nvim', name = 'catppuccin',
+    priority = 1000,
     config = function()
         require('catppuccin').setup {
             color_overrides = {
@@ -14,6 +15,7 @@ return {
                     base = "#080808",
                     mantle = "#313244",
                     -- crust = "#000000",
+
                     --------------------------
                     -- other overrides
                     --------------------------
@@ -34,7 +36,8 @@ return {
                         TelescopeBorder = { link = "FloatBorder" },
                         VertSplit = { fg = C.base },
                         LineNr = { fg = "#6c7086" },
-                        SpellBad = { sp = C.red, style = { "undercurl" } },
+                        StatusLine = { bg = "#181825" },
+                        LazyNormal = { bg = C.base }
                     }
                 end,
             },
