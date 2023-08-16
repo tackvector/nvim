@@ -12,7 +12,13 @@ return {
 	lazy = false,
 	config = function()
 		require('toggleterm').setup {
-			size = 20,
+			size = function (term)
+			    if term.direction == 'horizontal' then
+                    return 20
+                elseif term.direction == 'vertical' then
+                    return vim.o.columns * 0.4
+                end
+			end,
 			open_mapping = [[<c-\>]],
 			hide_numbers = true,
 			shade_filetypes = {},
@@ -30,6 +36,7 @@ return {
 		local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })
 		local ruby = Terminal:new({ cmd = 'irb', direction = 'horizontal', hidden = true })
 		local calc = Terminal:new({ cmd = 'bc', direction = 'float', hidden = true })
+        local make = Terminal:new({ cmd = 'make', close_on_exit = false,  direction = 'vertical', hidden = true })
 
 		-- open a python repl
 		function _PYTHON_TOGGLE()
@@ -50,6 +57,11 @@ return {
 		function _CALC_TOGGLE()
 			calc:toggle()
 		end
+
+        -- run make
+        function _MAKE_TOGGLE()
+            make:toggle()
+        end
 	end,
 }
 

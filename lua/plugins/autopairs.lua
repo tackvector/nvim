@@ -6,6 +6,8 @@ return {
 	'windwp/nvim-autopairs',
 	lazy = false,
 	config = function()
+        local nvim_pairs = require('nvim-autopairs')
+        local Rule = require('nvim-autopairs.rule')
 		require('nvim-autopairs').setup {
 			check_ts = true,
 			ts_config = {
@@ -26,5 +28,8 @@ return {
 				highlight_grey = "LineNr",
 			},
 		}
+        nvim_pairs.add_rules({
+            Rule("/*", "*/", { "c", "cpp"})
+        })
 	end
 }

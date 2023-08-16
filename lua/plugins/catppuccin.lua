@@ -34,7 +34,7 @@ return {
                         CmpBorder = { fg = C.surface2 },
                         Pmenu = { bg = C.none },
                         TelescopeBorder = { link = "FloatBorder" },
-                        VertSplit = { fg = C.base },
+                        VertSplit = { fg = C.mantle },
                         LineNr = { fg = "#6c7086" },
                         StatusLine = { bg = "#181825" },
                         LazyNormal = { bg = C.base }

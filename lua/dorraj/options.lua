@@ -30,12 +30,12 @@ local options = {
 	shiftwidth = 4, -- i actually don't know if i need this one either. Haven't done any testing without it yet.
 	shiftround = true, -- found out about this from VimTricks, you should check it out if you haven't already! https://vim.town/@vimtricks
 	guicursor = "n-v-c-i:block", -- i'll block you
-	guifont = "Iosevka Nerd Font Medium:h18", -- the font the bible is written in.
+	guifont = "Iosevka Nerd Font Medium:h14", -- the font the bible is written in.
 	shellxquote = "", -- i can use this to do cool things
 	expandtab = true, -- changing things so they make sense to me
 	autoindent = true, -- this should absolutely always be on
 	smartindent = true, -- so should this.
-	scrolloff = 10, -- like sidescrolloff but for the bottom side
+	scrolloff = 20, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
 }
 
