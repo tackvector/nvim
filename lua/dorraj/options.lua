@@ -26,8 +26,8 @@ local options = {
 	sidescrolloff = 30, -- numbers of columns to keep on sides of screen, may not be good for error messages on certain lines...don't know yet.
 	laststatus = 3, -- global statusline, thanks Neovim team :-)
 	tabstop = 4, -- 4 spaces. 4 is the way. Don't fuck with the 4-ce.
-	softtabstop = 4, -- trying something new. set back to 0 if it sucks
-	shiftwidth = 4, -- i actually don't know if i need this one either. Haven't done any testing without it yet.
+	softtabstop = 4,
+	shiftwidth = 4,
 	shiftround = true, -- found out about this from VimTricks, you should check it out if you haven't already! https://vim.town/@vimtricks
 	guicursor = "n-v-c-i:block", -- i'll block you
 	guifont = "Iosevka Nerd Font Medium:h14", -- the font the bible is written in.
@@ -35,7 +35,7 @@ local options = {
 	expandtab = true, -- changing things so they make sense to me
 	autoindent = true, -- this should absolutely always be on
 	smartindent = true, -- so should this.
-	scrolloff = 20, -- like sidescrolloff but for the bottom side
+	scrolloff = 5, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
 }
 

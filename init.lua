@@ -43,9 +43,9 @@ require("lazy").setup('plugins', opts)
 -- COLOR SCHEME
 ---------------------------
 
-vim.cmd [[ colorscheme catppuccin-mocha ]]
-
---------------------------
+-- vim.cmd [[ colorscheme catppuccin-mocha ]]
+vim.cmd [[ colorscheme poimandres ]]
+------------------------
 -- AUTOCOMMANDS
 --------------------------
 
@@ -66,3 +66,9 @@ vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L
 vim.cmd [[ autocmd FileType * set formatoptions-=cro ]] -- don't enter comments on new lines following comments on preceding lines
 
 -- I found this answer here: https://superuser.com/questions/271023/can-i-disable-continuation-of-comments-to-the-next-line-in-vim
+
+--------------------------
+-- COLOR COLUMN
+--------------------------
+
+vim.cmd [[ autocmd FileType *.wiki setlocal colorcolumn=100 ]]

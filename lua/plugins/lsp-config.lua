@@ -34,6 +34,7 @@ return {
             vim.lsp.diagnostic.on_publish_diagnostics, {
                 virtual_text = false,
                 underline = true,
+                float = { border = "single"},
             }
         )
 

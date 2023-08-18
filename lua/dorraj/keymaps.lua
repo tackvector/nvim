@@ -23,8 +23,8 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Press jk fast to exit insert mode 
--- keymap("i", "jk", "<ESC>", opts)
--- keymap("i", "kj", "<ESC>", opts)
+vim.keymap.set("i", "jk", "<ESC>", opts)
+vim.keymap.set("i", "kj", "<ESC>", opts)
 
 -- Terminal mode
 function _G.set_terminal_keymaps()
