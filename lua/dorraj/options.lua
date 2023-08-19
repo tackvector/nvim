@@ -23,7 +23,6 @@ local options = {
 	numberwidth = 4, -- the width of the number column, setting it to 4 keeps it from pushing the editor over as numbers get larger
 	signcolumn = 'yes', -- show signs in signcolumn
 	wrap = false, -- don't wrap lines, makes it easier for me to take notes
-	sidescrolloff = 30, -- numbers of columns to keep on sides of screen, may not be good for error messages on certain lines...don't know yet.
 	laststatus = 3, -- global statusline, thanks Neovim team :-)
 	tabstop = 4, -- 4 spaces. 4 is the way. Don't fuck with the 4-ce.
 	softtabstop = 4,
