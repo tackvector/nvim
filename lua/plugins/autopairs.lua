@@ -29,7 +29,8 @@ return {
 			},
 		}
         nvim_pairs.add_rules({
-            Rule("/*", "*/", { "c", "cpp"})
+            Rule("/*", "*/", { "c", "cpp", "css" }),
+            Rule("<!--", "-->", { "html" })
         })
 	end
 }

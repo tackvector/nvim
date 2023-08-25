@@ -24,7 +24,7 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Press jk fast to exit insert mode 
 vim.keymap.set("i", "jk", "<ESC>", opts)
-vim.keymap.set("i", "kj", "<ESC>", opts)
+-- vim.keymap.set("i", "kj", "<ESC>", opts)
 
 -- Terminal mode
 function _G.set_terminal_keymaps()
@@ -80,6 +80,7 @@ vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", opts)
 -- Terminal
 vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts) -- open a floating terminal
 vim.keymap.set("n", "<leader>th", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", opts) -- open a horizontal terminal
+vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=vim.o.columns * 0.4 direction=vertical<cr>", opts) -- open a horizontal terminal
 vim.keymap.set("n", "<leader>tc", "<cmd>lua _CALC_TOGGLE()<cr>", opts) -- open BC
 vim.keymap.set("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", opts) -- open a Lua repl
 vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts) -- open a Python repl

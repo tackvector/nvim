@@ -15,6 +15,7 @@
 --------------------------
 require 'dorraj.keymaps'
 require 'dorraj.options'
+require 'dorraj.neovide'
 
 --------------------------
 -- LAZY SETUP

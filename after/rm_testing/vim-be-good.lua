@@ -1,7 +1,8 @@
 --------------------------
--- NVIM LUAREF
+-- VIM BE GOOD
 --------------------------
 
 return {
-	'milisims/nvim-luaref'
+	'ThePrimeagen/vim-be-good',
+	lazy = true,
 }
