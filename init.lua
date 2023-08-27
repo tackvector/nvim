@@ -40,13 +40,26 @@ local opts = {
 }
 
 require("lazy").setup('plugins', opts)
+
 ---------------------------
 -- COLOR SCHEME
 ---------------------------
+---------------------------
+-- FORMAT OPTIONS
+---------------------------
+-- set color scheme
+    -- catppuccin
+    -- poimandres
 
--- vim.cmd [[ colorscheme catppuccin-mocha ]]
-vim.cmd [[ colorscheme poimandres ]]
-------------------------
+-- don't enter comments on new lines following comments on preceding lines
+    -- I found this answer here: https://superuser.com/questions/271023/can-i-disable-continuation-of-comments-to-the-next-line-in-vim
+
+vim.cmd ([[ 
+    colorscheme moonfly
+    autocmd FileType * set formatoptions-=cro 
+]])
+
+--------------------------
 -- AUTOCOMMANDS
 --------------------------
 
@@ -59,17 +72,3 @@ vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L
 
 -- it should be noted that the above only opens the help file in the vertical split once. albeit an unlikely occurrence, closing the file accidentally 
 -- will result in the user needing to close and reopen Neovim to get it to work again.
-
----------------------------
--- FORMAT OPTIONS
----------------------------
-
-vim.cmd [[ autocmd FileType * set formatoptions-=cro ]] -- don't enter comments on new lines following comments on preceding lines
-
--- I found this answer here: https://superuser.com/questions/271023/can-i-disable-continuation-of-comments-to-the-next-line-in-vim
-
---------------------------
--- COLOR COLUMN
---------------------------
-
-vim.cmd [[ autocmd FileType *.wiki setlocal colorcolumn=100 ]]

@@ -116,6 +116,10 @@ return {
             capabilities = capabilities
         }
 
+        lspconfig.texlab.setup {
+            capabilities = capabilities
+        }
+
         -- this came from the lsp-config github page
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('UserLspConfig', {}),

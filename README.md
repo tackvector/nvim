@@ -12,6 +12,7 @@ Any help with this process is greatly appreciated!
 ## TODO:
     - [ ] Start creating and testing snippets to use.
     - [ ] Learn more about Telescope builtins and do some more configuration
+    - [ ] Update screenshot
 
 If you want to see the plugins, head over to [plugins](./lua/plugins).<br>
 If you want to see the settings, check out [options](./lua/dorraj/options.lua).
