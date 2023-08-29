@@ -86,4 +86,5 @@ vim.keymap.set("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", opts) -- open a 
 vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts) -- open a Python repl
 vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", opts)
 -- vim.keymap.set("n", "<leader>tr", "<cmd>lua _RUBY_TOGGLE()<cr>", opts) -- open IRB
+
 return M

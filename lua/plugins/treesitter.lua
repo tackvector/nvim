@@ -16,6 +16,7 @@ return {
 				"c",
 				"cpp",
 				"lua",
+                "fennel",
 				"javascript",
 				"typescript",
 				"python",

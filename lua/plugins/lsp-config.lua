@@ -45,6 +45,9 @@ return {
         local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
         local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
+        -- found this on Reddit while searching through DDG results on my phone
+        vim.diagnostic.config { float = { border = 'single' }}
+
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
             vim.lsp.handlers.hover, {
                 border = "single",
@@ -56,7 +59,7 @@ return {
             vim.lsp.diagnostic.on_publish_diagnostics, {
                 virtual_text = false,
                 underline = true,
-                float = { border = 'single'},
+                float = { border = 'single' },
             }
         )
 
@@ -117,6 +120,10 @@ return {
         }
 
         lspconfig.texlab.setup {
+            capabilities = capabilities
+        }
+
+        lspconfig.fennel_language_server.setup {
             capabilities = capabilities
         }
 

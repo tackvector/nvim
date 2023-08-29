@@ -97,6 +97,7 @@ return {
                 { name = "buffer", keyword_length = 7 },
                 { name = "cmp_nvim_r" },
                 { name = "fish" },
+                { name = "conjure" },
             }),
             window = {
                 completion = { border = 'single' },
