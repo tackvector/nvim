@@ -8,8 +8,9 @@ return {
     priority = 1000,
     config = function ()
         require('moonfly')
-
-        vim.cmd [[ autocmd! ColorScheme * highlight LazyNormal guibg=none ]]
+        vim.cmd [[ 
+            autocmd! ColorScheme * highlight LazyNormal guibg=none 
+            autocmd! ColorScheme * highlight VertSplit guibg=none
+        ]]
     end
-
 }

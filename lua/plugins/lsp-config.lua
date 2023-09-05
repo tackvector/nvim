@@ -11,6 +11,9 @@ return {
         local cmp_lsp = require('cmp_nvim_lsp')
         local capabilities = cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
         local lspconfig = require('lspconfig')
+        local window = require('lspconfig.ui.windows')
+
+        window.default_options.border = 'single'
 
         vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -45,7 +48,7 @@ return {
         local luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin/lua-language-server'
         local root_luals_path = '/home/' .. USER .. '/.config/nvim/lua-language-server/bin'
 
-        -- found this on Reddit while searching through DDG results on my phone
+        -- found this on Reddit while searching through DDG results on my phone, don't have a link yet. sorry
         vim.diagnostic.config { float = { border = 'single' }}
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

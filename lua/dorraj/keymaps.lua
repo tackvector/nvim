@@ -77,6 +77,9 @@ vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", opts)
 vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>", opts)
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", opts)
 
+-- code_runner
+vim.keymap.set("n", "<leader>rc", "<cmd>RunCode<cr>", opts)
+
 -- Terminal
 vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts) -- open a floating terminal
 vim.keymap.set("n", "<leader>th", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", opts) -- open a horizontal terminal
