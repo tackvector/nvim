@@ -16,7 +16,8 @@ return {
                 cpp = 'cd $dir && make',
                 javascript = 'node $fileNameWithExt',
                 typescript = 'tsc $fileNameWithExt'
-            }
+            },
         })
-    end
+    end,
+    event = { "VeryLazy" },
 }
