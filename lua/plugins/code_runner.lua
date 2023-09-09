@@ -6,9 +6,12 @@ return {
     'dorrajmachai/code_runner.nvim',
     config = function ()
         require('code_runner').setup({
+            mode = 'term',
+            focus = true,
+            startinsert = true,
             term = {
-                position = 'horizontal',
-                size = '25',
+                position = 'vertical',
+                size =  vim.o.columns * 0.4,
             },
             filetype = {
                 python = 'python3 -u',

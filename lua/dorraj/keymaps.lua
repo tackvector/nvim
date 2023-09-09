@@ -78,7 +78,7 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>", opts)
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", opts)
 
 -- code_runner
-vim.keymap.set("n", "<leader>rc", "<cmd>RunCode<cr>", opts)
+vim.keymap.set("n", "<M-x>c", "<cmd>RunCode<cr>", opts) -- like <M-x>compile in Emacs
 
 -- Terminal
 vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts) -- open a floating terminal
