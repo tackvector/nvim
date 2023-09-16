@@ -87,7 +87,7 @@ vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=vim.o.columns * 0.4 dire
 vim.keymap.set("n", "<leader>tc", "<cmd>lua _CALC_TOGGLE()<cr>", opts) -- open BC
 vim.keymap.set("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", opts) -- open a Lua repl
 vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts) -- open a Python repl
-vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", opts)
+vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", opts) --  run make in a vertical toggleterm instance
 -- vim.keymap.set("n", "<leader>tr", "<cmd>lua _RUBY_TOGGLE()<cr>", opts) -- open IRB
 
 return M

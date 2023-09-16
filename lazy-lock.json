@@ -36,5 +36,6 @@
   "vim-fugitive": { "branch": "master", "commit": "b3b838d690f315a503ec4af8c634bdff3b200aaf" },
   "vim-moonfly-colors": { "branch": "master", "commit": "49a0f8aa5aa59af01b2305bb01d96ebd3a78f758" },
   "vimtex": { "branch": "master", "commit": "5e50cc0e96e8a8ffc6fd10d627d65b8d1354b5da" },
-  "vimwiki": { "branch": "dev", "commit": "f0fe154ede6b11e3db9b058b930005a056a3d1c6" }
+  "vimwiki": { "branch": "dev", "commit": "f0fe154ede6b11e3db9b058b930005a056a3d1c6" },
+  "vscode.nvim": { "branch": "main", "commit": "11b212096a0b2056fc8acaf31c0d62d656b6fd2d" }
 }
