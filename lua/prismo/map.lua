@@ -21,10 +21,6 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 -- a nifty way to navigate buffers, found here: https://www.reddit.com/r/vim/comments/g4l5p0/good_plugin_to_navigate_buffers/
 vim.keymap.set("n", "<S-b>"," <cmd> :ls<cr>:b", opts)
 
--- Press jk fast to exit insert mode 
-vim.keymap.set("i", "jk", "<ESC>", opts)
--- vim.keymap.set("i", "kj", "<ESC>", opts)
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
@@ -50,8 +46,6 @@ vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=vim.o.columns * 0.4 dire
 vim.keymap.set("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", opts) -- open a Lua repl
 vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts) -- open a Python repl
 vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", opts) --  run make in a vertical toggleterm instance
--- vim.keymap.set("n", "<leader>tc", "<cmd>lua _CALC_TOGGLE()<cr>", opts) -- open BC
--- vim.keymap.set("n", "<leader>tr", "<cmd>lua _RUBY_TOGGLE()<cr>", opts) -- open IRB
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>", opts)
