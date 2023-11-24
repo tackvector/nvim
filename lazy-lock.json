@@ -1,0 +1,10 @@
+{
+  "harpoon": { "branch": "master", "commit": "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a" },
+  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "nvim-autopairs": { "branch": "master", "commit": "0f04d78619cce9a5af4f355968040f7d675854a1" },
+  "nvim-linefly": { "branch": "master", "commit": "8fb4d6903b1f3d223ad692946aae46bf58353621" },
+  "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+  "toggleterm.nvim": { "branch": "main", "commit": "fb0c365534e7ee327b30205beff3f3a708dcba33" },
+  "vim-fugitive": { "branch": "master", "commit": "46eaf8918b347906789df296143117774e827616" },
+  "vscode.nvim": { "branch": "main", "commit": "563e3f671543ba14f23ccb57020a428add640d02" }
+}
