@@ -34,6 +34,7 @@ local options = {
 	smartindent = true, -- so should this.
 	scrolloff = 5, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
+	mouse = "", -- i believe in mirac-- *cue broom*
 }
 
 -- for options and values in the options table, set them using vim.opt.<option> = <value>
