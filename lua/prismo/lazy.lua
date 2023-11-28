@@ -11,19 +11,33 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--[[ 
+    found the solution below here: https://github.com/equalsraf/neovim-qt/issues/1046
+    after reading about neovim-qt here: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options
+]]
+local opts = {
+    performance = {
+        rtp = {
+            -- This option is what fixed the problem for me.
+            -- Apparently, Lazy.nvim removes NeovimQT's runtime path from rtp.
+            -- Then what happens is that NeovimQT can't find it's nvim_gui_shim.vim.
+            -- And then GUI... commands don't work.
+            paths = {'C:\\Program Files\\Neovim\\share\\nvim-qt\\runtime\\'} -- add any custom paths here that you want to includes in the rtp
+        }
+    }
+}
+
 require('lazy').setup({
-    -- colorscheme    
+    -- modus theme(s)
     {
-        'Mofiqul/vscode.nvim',
+        'miikanissi/modus-themes.nvim',
         priority = 1000,
         config = function()
-            vim.cmd ([[ colorscheme vscode ]])
+            vim.cmd [[ colorscheme modus_vivendi]]
         end
-    },
-    -- statusline
-    {
-        'bluz71/nvim-linefly',
-    },
+   },
+   -- linefly statusline
+   { 'bluz71/nvim-linefly' },
     -- autopairs
     {
         'windwp/nvim-autopairs',
@@ -104,13 +118,9 @@ require('lazy').setup({
         end,
     },
     -- fugitive
-    {
-        'tpope/vim-fugitive'
-    },
+    { 'tpope/vim-fugitive' },
     -- plenary
-    {
-        'nvim-lua/plenary.nvim'
-    },
+    { 'nvim-lua/plenary.nvim' },
     -- harpoon
     {
         'ThePrimeagen/harpoon',
@@ -135,11 +145,4 @@ require('lazy').setup({
             require('Comment').setup()
         end
     },
-    -- mini.starter
-    {
-        'echasnovski/mini.starter',
-        config = function ()
-            require('mini.starter').setup()
-        end
-    }
 }, opts)

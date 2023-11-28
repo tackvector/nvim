@@ -16,7 +16,7 @@ local options = {
 	splitbelow = true, -- open new horizontal splits below current buffer
 	splitright = true, -- open new vertical splits to the right of current buffer
 	swapfile = false, -- don't create a swapfile
-	-- timeoutlen = 1000, -- length of timeout for commands like 'jk' for exit
+	timeoutlen = 1000, -- length of timeout for commands like 'jk' for exit
 	cindent = true, -- for C files, which I do not write right now.
 	numberwidth = 4, -- the width of the number column, setting it to 4 keeps it from pushing the editor over as numbers get larger
 	signcolumn = 'yes', -- show signs in signcolumn
@@ -27,7 +27,7 @@ local options = {
 	shiftwidth = 4,
 	shiftround = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
 	guicursor = "n-v-c-i:block", -- i'll block you
-	guifont = "Iosevka Term:h9", -- the font the bible is written in.
+	guifont = "Iosevka Term:h8", -- the font the bible is written in.
 	shellxquote = "", -- i can use this to do cool things
 	expandtab = true, -- changing things so they make sense to me
 	autoindent = true, -- this should absolutely always be on
@@ -35,6 +35,8 @@ local options = {
 	scrolloff = 5, -- like sidescrolloff but for the bottom side
 	equalalways = false, -- all windows are made the same size after opening or closing
 	mouse = "", -- i believe in mirac-- *cue broom*
+    number = true,
+    relativenumber = true,
 }
 
 -- for options and values in the options table, set them using vim.opt.<option> = <value>
