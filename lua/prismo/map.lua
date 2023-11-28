@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", opts) --  run m
 vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>", opts)
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", opts)
 
--- NetRW customizations
+-- NetRW 
 vim.keymap.set("n", "<leader>rw", "<cmd>Ex<cr>", opts)
 --------------------------
 -- AUTOCOMMANDS

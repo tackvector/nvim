@@ -85,8 +85,6 @@ require('lazy').setup({
             local Terminal = require("toggleterm.terminal").Terminal
             local python = Terminal:new({ cmd = 'python', direction = 'vertical', hidden = true })
             local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })
-            local ruby = Terminal:new({ cmd = 'irb', direction = 'horizontal', hidden = true }) -- out of order
-            local calc = Terminal:new({ cmd = 'bc', direction = 'float', hidden = true }) -- out of order
             local make = Terminal:new({ cmd = 'make', close_on_exit = false,  direction = 'vertical', hidden = true })
 
             -- open a python repl
@@ -97,16 +95,6 @@ require('lazy').setup({
             -- open a lua interactive session
             function _LUA_TOGGLE()
                 lua:toggle()
-            end
-
-            -- open up irb
-            function _RUBY_TOGGLE()
-                ruby:toggle()
-            end
-
-            -- open bc so i can do difficult mathematical equationals
-            function _CALC_TOGGLE()
-                calc:toggle()
             end
 
             -- run make
@@ -140,4 +128,18 @@ require('lazy').setup({
             }
         end
     },
+    -- Comment
+    {
+        'numToStr/Comment.nvim',
+        config = function ()
+            require('Comment').setup()
+        end
+    },
+    -- mini.starter
+    {
+        'echasnovski/mini.starter',
+        config = function ()
+            require('mini.starter').setup()
+        end
+    }
 }, opts)

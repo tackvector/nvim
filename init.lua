@@ -1,1 +1,8 @@
-require('prismo') -- talk about a one-liner. hehehehehehehehe.
+--[[
+    The _prismo_ directory has an init.lua init. 
+    Get it? Init? 
+    In. it...? 
+    Okay, nevermind.
+]]
+
+require('prismo')
