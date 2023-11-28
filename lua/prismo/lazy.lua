@@ -193,5 +193,5 @@ require('lazy').setup({
         config = function ()
             require('mini.starter').setup()
         end
-    }
+    },
 }, opts)
