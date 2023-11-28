@@ -19,7 +19,7 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- a nifty way to navigate buffers, found here: https://www.reddit.com/r/vim/comments/g4l5p0/good_plugin_to_navigate_buffers/
-vim.keymap.set("n", "<S-b>"," <cmd> :ls<cr>:b", opts)
+vim.keymap.set("n", "<M-x>b"," <cmd> :ls<cr>:b", opts)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
