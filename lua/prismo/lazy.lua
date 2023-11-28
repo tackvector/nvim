@@ -12,8 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 --[[ 
-    found the solution below here: https://github.com/equalsraf/neovim-qt/issues/1046
-    after reading about neovim-qt here: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options
+found the solution below here: https://github.com/equalsraf/neovim-qt/issues/1046
+after reading about neovim-qt here: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options
 ]]
 local opts = {
     performance = {
@@ -35,9 +35,9 @@ require('lazy').setup({
         config = function()
             vim.cmd [[ colorscheme modus_vivendi]]
         end
-   },
-   -- linefly statusline
-   { 'bluz71/nvim-linefly' },
+    },
+    -- linefly statusline
+    { 'bluz71/nvim-linefly' },
     -- autopairs
     {
         'windwp/nvim-autopairs',
@@ -145,4 +145,53 @@ require('lazy').setup({
             require('Comment').setup()
         end
     },
+    -- Windows and parsers, sitter-ing in a tree, FOR C-O-D-I-N-G (treesitter)
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ":TSUpdate",
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        config = function()
+            pcall(require('nvim-treesitter.install').update { with_sync = true })
+            require('nvim-treesitter.install').compilers = { "cl" }
+            require('nvim-treesitter.install').prefer_git = false,
+            require('nvim-treesitter.configs').setup {
+                ensure_installed = {
+                    "c",
+                    "cpp",
+                    "java",
+                    "lua",
+                    "javascript",
+                    "typescript",
+                    "python",
+                    "vimdoc",
+                    "tsx",
+                    "css",
+                    "json",
+                },
+                sync_install = false,
+                auto_install = false,
+                highlight = {
+                    enable = true,
+                    disable = { "css" },
+                    additional_vim_regex_highlighting = false,
+                },
+                autopairs = {
+                    enable = true,
+                },
+                indent = {
+                    enable = true,
+                    disable = { "python", "css" },
+                },
+            }
+        end
+    },
+    -- mini.starter
+    {
+        'echasnovski/mini.starter',
+        config = function ()
+            require('mini.starter').setup()
+        end
+    }
 }, opts)
