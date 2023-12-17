@@ -32,7 +32,9 @@ return {
 		}
 
 		local Terminal = require("toggleterm.terminal").Terminal
-		local python = Terminal:new({ cmd = 'python', direction = 'float', hidden = true })
+        -- NOTE (for Windows 11 running WSL Ubuntu)
+        -- not working in WSL...probably has to do with python command, but won't fix on this machine
+		local python = Terminal:new({ cmd = 'python', direction = 'vertical', hidden = true })
 		local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })
 		local ruby = Terminal:new({ cmd = 'irb', direction = 'horizontal', hidden = true })
 		local calc = Terminal:new({ cmd = 'bc', direction = 'float', hidden = true })
