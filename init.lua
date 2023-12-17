@@ -57,7 +57,6 @@ require("lazy").setup('plugins', opts)
     -- I found this answer here: https://superuser.com/questions/271023/can-i-disable-continuation-of-comments-to-the-next-line-in-vim
 
 vim.cmd ([[ 
-    colorscheme vscode
     autocmd FileType * set formatoptions-=cro 
 ]])
 

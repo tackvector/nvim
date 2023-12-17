@@ -13,7 +13,7 @@ return {
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
-        'mtoohey31/cmp-fish',
+--        'mtoohey31/cmp-fish',
         'hrsh7th/cmp-nvim-lua',
         -- snippets with LuaSnip
         'rafamadriz/friendly-snippets',
