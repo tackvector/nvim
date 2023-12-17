@@ -90,4 +90,16 @@ vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts) -- open
 vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", opts) --  run make in a vertical toggleterm instance
 -- vim.keymap.set("n", "<leader>tr", "<cmd>lua _RUBY_TOGGLE()<cr>", opts) -- open IRB
 
+-- change background color
+function ToggleBackground()
+    if vim.o.background == 'light' then
+        vim.o.background = 'dark'
+        vim.cmd.colorscheme('everforest')
+    else
+        vim.o.background = 'light'
+        vim.cmd.colorscheme('everforest')
+    end
+end
+
+vim.keymap.set("n", "<M-x>b", "<cmd>lua ToggleBackground()<cr>", opts)
 return M

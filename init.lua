@@ -49,15 +49,16 @@ require("lazy").setup('plugins', opts)
 ---------------------------
 -- set color scheme
     -- catppuccin
-    -- moonfly
-    -- vscode
-    -- coal
+    -- everforest
 
 -- don't enter comments on new lines following comments on preceding lines
     -- I found this answer here: https://superuser.com/questions/271023/can-i-disable-continuation-of-comments-to-the-next-line-in-vim
 
+vim.g.everforest_background = 'hard'
+
 vim.cmd ([[ 
     autocmd FileType * set formatoptions-=cro 
+    colorscheme everforest
 ]])
 
 --------------------------

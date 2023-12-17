@@ -114,10 +114,6 @@ return {
             capabilities = capabilities
         }
 
-        lspconfig.phpactor.setup {
-            capabilities = capabilities
-        }
-
         lspconfig.clangd.setup{
             capabilities = capabilities
         }
