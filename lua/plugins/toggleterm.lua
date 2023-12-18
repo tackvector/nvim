@@ -32,7 +32,7 @@ return {
 		}
 
 		local Terminal = require("toggleterm.terminal").Terminal
-        -- NOTE (for Windows 11 running WSL Ubuntu)
+        -- NOTE (for Windows 11 running WSL Ubuntu 22.04)
         -- not working in WSL...probably has to do with python command, but won't fix on this machine
 		local python = Terminal:new({ cmd = 'python', direction = 'vertical', hidden = true })
 		local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })

@@ -4,12 +4,13 @@
 
 ## NOTICE
 
-This config is half-baked. There's always something in here that I want to improve upon. 
-If you use it or any of its parts, please be aware of that first. If you have any questions, 
-comments, concerns, or suggestions for me, I would love if you shared them with me (just create an issue and I'll check it out)! 
-Any help with this process is greatly appreciated!
+There are several things in here that could be improved upon or changed.
+As I resume work on this, I want to make it something other people want to use.
 
 ## TODO:
+    - [ ] Get the Java stuff working again
+    - [ ] Add tree explorer of some kind
+    - [ ] Add a .txt file detailing the ins and outs of the configuration
     - [ ] Start creating and testing snippets to use.
     - [ ] Learn more about Telescope builtins and do some more configuration
     - [ ] Update screenshot
