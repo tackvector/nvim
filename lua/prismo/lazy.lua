@@ -21,7 +21,7 @@ local opts = {
             -- This option is what fixed the problem for me.
             -- Apparently, Lazy.nvim removes NeovimQT's runtime path from rtp.
             -- Then what happens is that NeovimQT can't find it's nvim_gui_shim.vim.
-            -- And then GUI... commands don't work.
+            -- And then GUI...commands (?) don't work.
             paths = {'C:\\Program Files\\Neovim\\share\\nvim-qt\\runtime\\'} -- add any custom paths here that you want to includes in the rtp
         }
     }
@@ -34,7 +34,7 @@ require('lazy').setup({
         version = false,
         lazy = false,
         priority = 1000,
-        config = function() 
+        config = function()
             require('everforest').setup ({
                 -- need to put stuff in here
                 background = "dark",
@@ -46,7 +46,7 @@ require('lazy').setup({
             require('everforest').load()
         end
     },
-    -- linefly statusline
+    -- linefly 
     { 'bluz71/nvim-linefly' },
     -- autopairs
     {
@@ -131,6 +131,8 @@ require('lazy').setup({
     { 'tpope/vim-fugitive' },
     -- plenary
     { 'nvim-lua/plenary.nvim' },
+    -- Telescope
+    {},
     -- harpoon (TODO: need to update this code and the plugin itself)
     {
         'ThePrimeagen/harpoon',
@@ -227,6 +229,7 @@ require('lazy').setup({
         'williamboman/mason-lspconfig.nvim',
         config = function ()
             local lsp_zero = require('lsp-zero')
+            lsp_zero.extend_lspconfig()
 
             lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
@@ -242,6 +245,7 @@ require('lazy').setup({
                     'cssls',
                     'jsonls',
                     'lua_ls',
+                    'pyright',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -297,10 +301,40 @@ require('lazy').setup({
     },
     -- nvim-cmp
     {
-        'hrsh7th/nvim-cmp'
+        'hrsh7th/nvim-cmp',
+        config = function ()
+            local cmp = require('cmp')
+            local cmp_action = require('lsp-zero').cmp_action()
+            cmp.setup({
+                mapping = cmp.mapping.preset.insert({
+                    -- Ctrl+y key to confirm completion
+                    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+
+                    -- Ctrl+Space to trigger completion menu
+                    ['<C-Space>'] = cmp.mapping.complete(),
+
+                    -- Navigate between snippet placeholder
+                    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+                    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+
+                    -- Scroll up and down in the completion documentation
+                    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+
+                }),
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
+            })
+        end
     },
     -- LuaSnip
     {
         'L3MON4D3/LuaSnip'
     },
+    -- TODO Highlight
+    {},
+    -- Neodev
+    {},
 }, opts)

@@ -39,6 +39,9 @@ vim.keymap.set("n", "<leader>Y", "\"+Y", opts)
 -- Lazy
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", opts)
 
+-- Mason
+vim.keymap.set("n", "<leader>M", "<cmd>Mason<cr>", opts)
+
 -- Terminal
 vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts) -- open a floating terminal
 vim.keymap.set("n", "<leader>th", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", opts) -- open a horizontal terminal
