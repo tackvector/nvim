@@ -27,13 +27,13 @@ local options = {
 	shiftwidth = 4,
 	shiftround = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
 	guicursor = "n-v-c-i:block", -- i'll block you
-	guifont = "Iosevka Term:h8", -- the font the bible is written in.
+	guifont = "Iosevka Term:h7", -- the font the bible is written in.
 	shellxquote = "", -- i can use this to do cool things
 	expandtab = true, -- changing things so they make sense to me
 	autoindent = true, -- this should absolutely always be on
 	smartindent = true, -- so should this.
 	scrolloff = 5, -- like sidescrolloff but for the bottom side
-	equalalways = false, -- all windows are made the same size after opening or closing
+	equalalways = true, -- all windows are made the same size after opening or closing
 	mouse = "", -- i believe in mirac-- *cue broom*
     number = true,
     relativenumber = true,
@@ -71,3 +71,6 @@ vim.cmd ([[ autocmd FileType * set formatoptions-=cro ]])
 
 -- in netrw, open preview in vertical window
 vim.g.netrw_preview = 1
+
+-- set background
+vim.o.background = "dark"
