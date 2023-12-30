@@ -204,6 +204,8 @@ require('lazy').setup({
             require('mini.starter').setup()
         end
     },
+    -- lsp-zero
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x', },
     -- mason.nvim
     {
         'williamboman/mason.nvim',
@@ -224,14 +226,29 @@ require('lazy').setup({
     {
         'williamboman/mason-lspconfig.nvim',
         config = function ()
-            require('mason-lspconfig').setup()
+            local lsp_zero = require('lsp-zero')
+
+            lsp_zero.on_attach(function(client, bufnr)
+                -- see :help lsp-zero-keybindings
+                -- to learn the available actions
+                lsp_zero.default_keymaps({buffer = bufnr})
+            end)
+
+            require('mason-lspconfig').setup({
+                ensure_installed = {
+                    'clangd',
+                    'emmet_language_server',
+                    'tsserver',
+                    'cssls',
+                    'jsonls',
+                    'lua_ls',
+                },
+                handlers = {
+                    lsp_zero.default_setup,
+                }
+            })
         end
     },
-    -- lsp-zero
-    {
-        'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'
-    },
-    -- lspconfig
     {
         'neovim/nvim-lspconfig',
         config = function ()
