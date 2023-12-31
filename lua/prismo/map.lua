@@ -56,6 +56,7 @@ vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", opts)
 
 -- NetRW 
 vim.keymap.set("n", "<leader>rw", "<cmd>Ex<cr>", opts)
+
 --------------------------
 -- AUTOCOMMANDS
 --------------------------

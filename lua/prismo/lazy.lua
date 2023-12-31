@@ -31,13 +31,13 @@ require('lazy').setup({
     -- everforest theme(s)
     {
         'neanias/everforest-nvim',
-        version = false,
+        version = "false",
         lazy = false,
         priority = 1000,
         config = function()
             require('everforest').setup ({
                 -- need to put stuff in here
-                background = "dark",
+                -- background = "dark",
                 transparent_background_level = 2,
                 colours_override = function (palette)
                     palette.bg0 = "#272e33"
@@ -132,8 +132,96 @@ require('lazy').setup({
     -- plenary
     { 'nvim-lua/plenary.nvim' },
     -- Telescope
-    {},
-    -- harpoon (TODO: need to update this code and the plugin itself)
+    {
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            local actions = require('telescope.actions')
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+            vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+            vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+            vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+            require('telescope').setup {
+                prompt_prefix = ' ',
+                selection_caret = ' ',
+                path_display = { 'smart' },
+                extensions = {
+                    file_browser = {
+                        theme = 'ivy',
+                        hijack_netrw = true,
+                    },
+                },
+                mappings = {
+                    i = {
+                        ["<C-n>"] = actions.cycle_history_next,
+                        ["<C-p>"] = actions.cycle_history_prev,
+
+                        ["<C-j>"] = actions.move_selection_next,
+                        ["<C-k>"] = actions.move_selection_previous,
+
+                        ["<C-c>"] = actions.close,
+
+                        ["<Down>"] = actions.move_selection_next,
+                        ["<Up>"] = actions.move_selection_previous,
+
+                        ["<CR>"] = actions.select_default,
+                        ["<C-x>"] = actions.select_horizontal,
+                        ["<C-v>"] = actions.select_vertical,
+                        ["<C-t>"] = actions.select_tab,
+
+                        ["<C-u>"] = actions.preview_scrolling_up,
+                        ["<C-d>"] = actions.preview_scrolling_down,
+
+                        ["<PageUp>"] = actions.results_scrolling_up,
+                        ["<PageDown>"] = actions.results_scrolling_down,
+
+                        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+                        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+                        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+                        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                        ["<C-l>"] = actions.complete_tag,
+                        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+                    },
+                    n = {
+                        ["<esc>"] = actions.close,
+                        ["<CR>"] = actions.select_default,
+                        ["<C-x>"] = actions.select_horizontal,
+                        ["<C-v>"] = actions.select_vertical,
+                        ["<C-t>"] = actions.select_tab,
+
+                        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+                        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+                        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+                        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+
+                        ["j"] = actions.move_selection_next,
+                        ["k"] = actions.move_selection_previous,
+                        ["H"] = actions.move_to_top,
+                        ["M"] = actions.move_to_middle,
+                        ["L"] = actions.move_to_bottom,
+
+                        ["<Down>"] = actions.move_selection_next,
+                        ["<Up>"] = actions.move_selection_previous,
+                        ["gg"] = actions.move_to_top,
+                        ["G"] = actions.move_to_bottom,
+
+                        ["<C-u>"] = actions.preview_scrolling_up,
+                        ["<C-d>"] = actions.preview_scrolling_down,
+
+                        ["<PageUp>"] = actions.results_scrolling_up,
+                        ["<PageDown>"] = actions.results_scrolling_down,
+
+                        ["?"] = actions.which_key,
+                    },
+                    defaults = {
+                        file_ignore_patterns = { "node_modules" },
+                    }
+                }
+            }
+        end
+    },
+    -- harpoon ( TODO: need to update this code and the plugin itself )
     {
         'ThePrimeagen/harpoon',
         config = function()
@@ -167,7 +255,7 @@ require('lazy').setup({
         config = function()
             pcall(require('nvim-treesitter.install').update { with_sync = true })
             require('nvim-treesitter.install').compilers = { "cl" }
-            require('nvim-treesitter.install').prefer_git = false,
+            require('nvim-treesitter.install').prefer_git = false
             require('nvim-treesitter.configs').setup {
                 ensure_installed = {
                     "c",
@@ -232,8 +320,6 @@ require('lazy').setup({
             lsp_zero.extend_lspconfig()
 
             lsp_zero.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                -- to learn the available actions
                 lsp_zero.default_keymaps({buffer = bufnr})
             end)
 
@@ -249,14 +335,13 @@ require('lazy').setup({
                 },
                 handlers = {
                     lsp_zero.default_setup,
-                }
+                },
             })
         end
     },
     {
         'neovim/nvim-lspconfig',
         config = function ()
-            local lsp_conf = require('lspconfig')
 
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -295,10 +380,9 @@ require('lazy').setup({
             })
         end
     },
+    -- cmp sources --
     -- nvim-cmp-lsp
-    {
-        'hrsh7th/cmp-nvim-lsp'
-    },
+    { 'hrsh7th/cmp-nvim-lsp' },
     -- nvim-cmp
     {
         'hrsh7th/nvim-cmp',
@@ -326,15 +410,23 @@ require('lazy').setup({
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
+                sources = {
+                    { name = 'nvim_lsp' },
+                }
             })
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
         end
     },
     -- LuaSnip
     {
         'L3MON4D3/LuaSnip'
     },
-    -- TODO Highlight
-    {},
+    -- TODO Comments
+    {
+        'folke/todo-comments.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim'},
+        opts = {},
+    },
     -- Neodev
-    {},
+    { "folke/neodev.nvim", opts = {}, },
 }, opts)
