@@ -131,18 +131,24 @@ require('lazy').setup({
     { 'tpope/vim-fugitive' },
     -- plenary
     { 'nvim-lua/plenary.nvim' },
-    -- Telescope
+    -- Telescope ( TODO: find out how to ignore lazy-lock.json without adding it to .gitignore)
     {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             local actions = require('telescope.actions')
             local builtin = require('telescope.builtin')
+            local Layout = require('nui.layout')
+            local Popup = require('nui.popup')
+            local telescope = require('telescope')
+            local TSLayout = require('telescope.pickers.layout')
+
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
             vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-            require('telescope').setup {
+
+            telescope.setup {
                 prompt_prefix = ' ',
                 selection_caret = ' ',
                 path_display = { 'smart' },
@@ -215,12 +221,17 @@ require('lazy').setup({
                         ["?"] = actions.which_key,
                     },
                     defaults = {
-                        file_ignore_patterns = { "node_modules" },
-                    }
-                }
+                        file_ignore_patterns = {
+                            "node_modules",
+                        },
+                    },
+                },
             }
-        end
+        end,
     },
+
+    -- nui
+    { 'MunifTanjim/nui.nvim' },
     -- harpoon ( TODO: need to update this code and the plugin itself )
     {
         'ThePrimeagen/harpoon',
@@ -245,7 +256,7 @@ require('lazy').setup({
             require('Comment').setup()
         end
     },
-    -- Windows and parsers, sitter-ing in a tree, FOR C-O-D-I-N-G (treesitter)
+    -- treesitter
     {
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate",
@@ -254,7 +265,7 @@ require('lazy').setup({
         },
         config = function()
             pcall(require('nvim-treesitter.install').update { with_sync = true })
-            require('nvim-treesitter.install').compilers = { "cl" }
+            require('nvim-treesitter.install').compilers = { "clang" }
             require('nvim-treesitter.install').prefer_git = false
             require('nvim-treesitter.configs').setup {
                 ensure_installed = {
@@ -265,7 +276,6 @@ require('lazy').setup({
                     "javascript",
                     "typescript",
                     "python",
-                    "vimdoc",
                     "tsx",
                     "css",
                     "json",
@@ -339,6 +349,7 @@ require('lazy').setup({
             })
         end
     },
+    -- lspconfig
     {
         'neovim/nvim-lspconfig',
         config = function ()
