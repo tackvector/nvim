@@ -138,10 +138,7 @@ require('lazy').setup({
         config = function()
             local actions = require('telescope.actions')
             local builtin = require('telescope.builtin')
-            local Layout = require('nui.layout')
-            local Popup = require('nui.popup')
             local telescope = require('telescope')
-            local TSLayout = require('telescope.pickers.layout')
 
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -230,8 +227,6 @@ require('lazy').setup({
         end,
     },
 
-    -- nui
-    { 'MunifTanjim/nui.nvim' },
     -- harpoon ( TODO: need to update this code and the plugin itself )
     {
         'ThePrimeagen/harpoon',
@@ -265,9 +260,11 @@ require('lazy').setup({
         },
         config = function()
             pcall(require('nvim-treesitter.install').update { with_sync = true })
-            require('nvim-treesitter.install').compilers = { "clang" }
+            require('nvim-treesitter.install').compilers = { "gcc", "clang", "cl" }
             require('nvim-treesitter.install').prefer_git = false
             require('nvim-treesitter.configs').setup {
+                modules = {},
+                ignore_install = {},
                 ensure_installed = {
                     "c",
                     "cpp",
