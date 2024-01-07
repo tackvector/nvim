@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---[[ 
+--[[
 found the solution below here: https://github.com/equalsraf/neovim-qt/issues/1046
 after reading about neovim-qt here: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options
 ]]
@@ -22,7 +22,7 @@ local opts = {
             -- Apparently, Lazy.nvim removes NeovimQT's runtime path from rtp.
             -- Then what happens is that NeovimQT can't find it's nvim_gui_shim.vim.
             -- And then GUI...commands (?) don't work.
-            paths = {'C:\\Program Files\\Neovim\\share\\nvim-qt\\runtime\\'} -- add any custom paths here that you want to includes in the rtp
+            paths = { 'C:\\Program Files\\Neovim\\share\\nvim-qt\\runtime\\' } -- add any custom paths here that you want to includes in the rtp
         }
     }
 }
@@ -35,18 +35,18 @@ require('lazy').setup({
         lazy = false,
         priority = 1000,
         config = function()
-            require('everforest').setup ({
+            require('everforest').setup({
                 -- need to put stuff in here
                 -- background = "dark",
                 transparent_background_level = 2,
-                colours_override = function (palette)
+                colours_override = function(palette)
                     palette.bg0 = "#272e33"
                 end
             })
             require('everforest').load()
         end
     },
-    -- linefly 
+    -- linefly
     { 'bluz71/nvim-linefly' },
     -- autopairs
     {
@@ -87,7 +87,7 @@ require('lazy').setup({
         lazy = false,
         config = function()
             require('toggleterm').setup {
-                size = function (term)
+                size = function(term)
                     if term.direction == 'horizontal' then
                         return 5
                     elseif term.direction == 'vertical' then
@@ -109,7 +109,7 @@ require('lazy').setup({
             local Terminal = require("toggleterm.terminal").Terminal
             local python = Terminal:new({ cmd = 'python', direction = 'vertical', hidden = true })
             local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })
-            local make = Terminal:new({ cmd = 'make', close_on_exit = false,  direction = 'vertical', hidden = true })
+            local make = Terminal:new({ cmd = 'make', close_on_exit = false, direction = 'vertical', hidden = true })
 
             -- open a python repl
             function _PYTHON_TOGGLE()
@@ -133,7 +133,8 @@ require('lazy').setup({
     { 'nvim-lua/plenary.nvim' },
     -- Telescope ( TODO: find out how to ignore lazy-lock.json without adding it to .gitignore)
     {
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             local actions = require('telescope.actions')
@@ -247,7 +248,7 @@ require('lazy').setup({
     -- Comment
     {
         'numToStr/Comment.nvim',
-        config = function ()
+        config = function()
             require('Comment').setup()
         end
     },
@@ -268,12 +269,10 @@ require('lazy').setup({
                 ensure_installed = {
                     "c",
                     "cpp",
-                    "java",
                     "lua",
                     "javascript",
                     "typescript",
                     "python",
-                    "tsx",
                     "css",
                     "json",
                 },
@@ -297,7 +296,7 @@ require('lazy').setup({
     -- mini.starter
     {
         'echasnovski/mini.starter',
-        config = function ()
+        config = function()
             require('mini.starter').setup()
         end
     },
@@ -306,7 +305,7 @@ require('lazy').setup({
     -- mason.nvim
     {
         'williamboman/mason.nvim',
-        config = function ()
+        config = function()
             require("mason").setup({
                 ui = {
                     icons = {
@@ -322,12 +321,12 @@ require('lazy').setup({
     -- mason-lspconfig
     {
         'williamboman/mason-lspconfig.nvim',
-        config = function ()
+        config = function()
             local lsp_zero = require('lsp-zero')
             lsp_zero.extend_lspconfig()
 
             lsp_zero.on_attach(function(client, bufnr)
-                lsp_zero.default_keymaps({buffer = bufnr})
+                lsp_zero.default_keymaps({ buffer = bufnr })
             end)
 
             require('mason-lspconfig').setup({
@@ -349,8 +348,7 @@ require('lazy').setup({
     -- lspconfig
     {
         'neovim/nvim-lspconfig',
-        config = function ()
-
+        config = function()
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -394,13 +392,13 @@ require('lazy').setup({
     -- nvim-cmp
     {
         'hrsh7th/nvim-cmp',
-        config = function ()
+        config = function()
             local cmp = require('cmp')
             local cmp_action = require('lsp-zero').cmp_action()
             cmp.setup({
                 mapping = cmp.mapping.preset.insert({
                     -- Ctrl+y key to confirm completion
-                    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+                    ['<C-y>'] = cmp.mapping.confirm({ select = false }),
 
                     -- Ctrl+Space to trigger completion menu
                     ['<C-Space>'] = cmp.mapping.complete(),
@@ -432,7 +430,7 @@ require('lazy').setup({
     -- TODO Comments
     {
         'folke/todo-comments.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim'},
+        dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {},
     },
     -- Neodev
