@@ -114,7 +114,6 @@ require('lazy').setup({
             local python = Terminal:new({ cmd = 'python', direction = 'vertical', hidden = true })
             local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })
             local make = Terminal:new({ cmd = 'make', close_on_exit = false, direction = 'vertical', hidden = true })
-            local pd_shell = Terminal:new({ cmd = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\Launch-VsDevShell.ps1 -NoExit', close_on_exit = false, direction = 'horizontal', hidden = true })
 
             -- open a python repl
             function _PYTHON_TOGGLE()
@@ -129,11 +128,6 @@ require('lazy').setup({
             -- run make
             function _MAKE_TOGGLE()
                 make:toggle()
-            end
-
-            -- run the developer powershell
-            function _PD_SHELL_TOGGLE()
-                pd_shell:toggle()
             end
         end,
     },
