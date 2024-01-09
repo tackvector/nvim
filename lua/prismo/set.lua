@@ -10,7 +10,6 @@ local options = {
 	fileencoding = 'utf-8', -- file encoding for current buffer
 	hlsearch = false, -- don't highlight matches
 	incsearch = true, -- show the pattern matches as i type
-	mouse = 'a', -- enable mouse for 'all previous modes'
 	pumheight = 5, -- set the popup menu height to 10
 	termguicolors = true, -- enables 24-bit color in tui
 	splitbelow = true, -- open new horizontal splits below current buffer
@@ -35,8 +34,8 @@ local options = {
 	scrolloff = 5, -- like sidescrolloff but for the bottom side
 	equalalways = true, -- all windows are made the same size after opening or closing
 	mouse = "", -- i believe in mirac-- *cue broom*
-    number = true,
-    relativenumber = true,
+    number = true, -- yeah line numbers are nice...
+    relativenumber = true, -- ...especially when they're relative to the cursor position
 }
 
 -- for options and values in the options table, set them using vim.opt.<option> = <value>

@@ -47,7 +47,11 @@ require('lazy').setup({
         end
     },
     -- linefly
-    { 'bluz71/nvim-linefly' },
+    { 'bluz71/nvim-linefly',
+        config = function ()
+            vim.g.linefly_options = { progress_symbol = "", }
+        end
+    },
     -- autopairs
     {
         'windwp/nvim-autopairs',
@@ -110,6 +114,7 @@ require('lazy').setup({
             local python = Terminal:new({ cmd = 'python', direction = 'vertical', hidden = true })
             local lua = Terminal:new({ cmd = 'lua', direction = 'horizontal', hidden = true })
             local make = Terminal:new({ cmd = 'make', close_on_exit = false, direction = 'vertical', hidden = true })
+            local pd_shell = Terminal:new({ cmd = 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\Launch-VsDevShell.ps1 -NoExit', close_on_exit = false, direction = 'horizontal', hidden = true })
 
             -- open a python repl
             function _PYTHON_TOGGLE()
@@ -124,6 +129,11 @@ require('lazy').setup({
             -- run make
             function _MAKE_TOGGLE()
                 make:toggle()
+            end
+
+            -- run the developer powershell
+            function _PD_SHELL_TOGGLE()
+                pd_shell:toggle()
             end
         end,
     },
@@ -227,22 +237,43 @@ require('lazy').setup({
             }
         end,
     },
-
-    -- harpoon ( TODO: need to update this code and the plugin itself )
+    -- harpoon (harpoon2)
     {
         'ThePrimeagen/harpoon',
-        config = function()
-            local mark = require("harpoon.mark")
-            local ui = require("harpoon.ui")
-            require("harpoon").setup {
-                vim.keymap.set("n", "<leader>a", mark.add_file),
-                vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu),
+        branch = 'harpoon2',
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        },
+        config = function ()
+            local harpoon = require('harpoon')
+            harpoon:setup({})
 
-                vim.keymap.set("n", "<C-o>", function() ui.nav_file(1) end),
-                vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end),
-                vim.keymap.set("n", "<C-i>", function() ui.nav_file(3) end),
-                vim.keymap.set("n", "<C-f>", function() ui.nav_file(4) end),
-            }
+            -- accessing the harpoon:list()
+            vim.keymap.set("n", "<leader>a", function () harpoon:list():append() end)
+
+            -- using Telescope as UI (thanks, Prime!)
+            -- this was ripped straight from GitHub:
+            -- basic telescope configuration
+            local conf = require("telescope.config").values
+            local function toggle_telescope(harpoon_files)
+                local file_paths = {}
+                for _, item in ipairs(harpoon_files.items) do
+                    table.insert(file_paths, item.value)
+                end
+
+                require("telescope.pickers").new({}, {
+                    prompt_title = "Harpoon",
+                    finder = require("telescope.finders").new_table({
+                        results = file_paths,
+                    }),
+                    previewer = conf.file_previewer({}),
+                    sorter = conf.generic_sorter({}),
+                }):find()
+            end
+
+            vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
+                { desc = "Open harpoon window" })
         end
     },
     -- Comment
@@ -338,6 +369,7 @@ require('lazy').setup({
                     'jsonls',
                     'lua_ls',
                     'pyright',
+                    'powershell_es',
                 },
                 handlers = {
                     lsp_zero.default_setup,

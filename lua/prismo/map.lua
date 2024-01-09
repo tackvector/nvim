@@ -49,6 +49,7 @@ vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=vim.o.columns * 0.4 dire
 vim.keymap.set("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", term_opts) -- open a Lua repl
 vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", term_opts) -- open a Python repl
 vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", term_opts) --  run make in a vertical toggleterm instance
+vim.keymap.set("n", "<leader>td", "<cmd>lua _PD_SHELL_TOGGLE()<cr>", term_opts) -- run the Developer PowerShell
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>", opts)
