@@ -25,7 +25,6 @@ local options = {
 	shiftwidth = 4,
 	shiftround = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
 	guicursor = "n-v-c-i:block", -- i'll block you
-	-- guifont = "JetBrains Nerd Font:h5", -- the font the bible is written in.
 	shellxquote = "", -- i can use this to do cool things
 	expandtab = true, -- changing things so they make sense to me
 	autoindent = true, -- this should absolutely always be on
@@ -37,15 +36,20 @@ local options = {
     relativenumber = true, -- ...especially when they're relative to the cursor position
 }
 
--- for options and values in the options table, set them using vim.opt.<option> = <value>
-for k, v in pairs(options) do
-	vim.opt[k] = v
+--[[
+for options and values in the options table, 
+set them using vim.opt.<option> = <value>
+]]
+for option, value in pairs(options) do
+	vim.opt[option] = value
 end
 
--- instead of highlighting the line every time i want to see it
--- it makes sense to just have to current line hightlighted all the time
--- i've seen this in many TJ DeVries streams and wanted to know how he did it
--- i found this in a file in his config: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
+--[[
+instead of highlighting the line every time i want to see it
+it makes sense to just have to current line hightlighted all the time
+i've seen this in many TJ DeVries streams and wanted to know how he did it
+i found this in a file in his config: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
+]]
 
 -- Thanks, TJ!
 vim.opt.cursorline = true -- Highlight the current line
