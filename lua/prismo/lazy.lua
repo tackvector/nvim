@@ -36,7 +36,6 @@ require('lazy').setup({
         priority = 1000,
         config = function()
             require('everforest').setup({
-                -- need to put stuff in here
                 -- background = "dark",
                 transparent_background_level = 2,
                 colours_override = function(palette)
@@ -231,20 +230,23 @@ require('lazy').setup({
             }
         end,
     },
-    -- harpoon (harpoon2)
+    -- harpoon2
     {
         'ThePrimeagen/harpoon',
         branch = 'harpoon2',
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        },
+        dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
         config = function ()
             local harpoon = require('harpoon')
             harpoon:setup({})
 
             -- accessing the harpoon:list()
             vim.keymap.set("n", "<leader>a", function () harpoon:list():append() end)
+
+            -- navigating through marked files
+            vim.keymap.set("n", "<C-o>", function () harpoon:list():select(1) end)
+            vim.keymap.set("n", "<C-t>", function () harpoon:list():select(2) end)
+            vim.keymap.set("n", "<C-i>", function () harpoon:list():select(3) end)
+            vim.keymap.set("n", "<C-f>", function () harpoon:list():select(4) end)
 
             -- using Telescope as UI (thanks, Prime!)
             -- this was ripped straight from GitHub:
@@ -266,8 +268,7 @@ require('lazy').setup({
                 }):find()
             end
 
-            vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-                { desc = "Open harpoon window" })
+            vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
         end
     },
     -- Comment
@@ -281,9 +282,7 @@ require('lazy').setup({
     {
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate",
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-        },
+        dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', },
         config = function()
             pcall(require('nvim-treesitter.install').update { with_sync = true })
             require('nvim-treesitter.install').compilers = { "gcc", "clang", "cl" }
@@ -446,6 +445,7 @@ require('lazy').setup({
                     { name = 'nvim_lsp' },
                 }
             })
+            -- TODO: finish setting this up!
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
         end
     },
@@ -460,5 +460,49 @@ require('lazy').setup({
         opts = {},
     },
     -- Neodev
-    { "folke/neodev.nvim", opts = {}, },
+    { 'folke/neodev.nvim', opts = {}, },
+    -- neo-tree
+    {
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = "v3.x",
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
+            'MunifTanjim/nui.nvim',
+        },
+        config = function()
+            local neotree = require("neo-tree")
+            neotree.setup({
+                window = {
+                    position = "bottom",
+                },
+                mappings = {
+                    ["q"] = "close_window",
+                },
+                git_status = {
+                    window = {
+                        position = "bottom",
+                    },
+                    mappings = {
+                        ["A"] = "git_add_all",
+                        ["gu"] = "git_unstage_file",
+                        ["ga"] = "git_add_file",
+                        ["gr"] = "git_revert_file",
+                        ["gc"] = "git_commit",
+                        ["gp"] = "git_push",
+                        ["gg"] = "git_commit_and_push",
+                        ["o"] = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
+                        ["oc"] = { "order_by_created", nowait = false },
+                        ["od"] = { "order_by_diagnostics", nowait = false },
+                        ["om"] = { "order_by_modified", nowait = false },
+                        ["on"] = { "order_by_name", nowait = false },
+                        ["os"] = { "order_by_size", nowait = false },
+                        ["ot"] = { "order_by_type", nowait = false },
+                    }
+                }
+            })
+            vim.keymap.set("n", "<M-x>f", ":Neotree toggle<cr>")
+            vim.keymap.set("n", "<M-x>g", ":Neotree git_status<cr>")
+        end
+    },
 }, opts)

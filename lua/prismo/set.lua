@@ -1,7 +1,6 @@
---------------------------
+-------------------------
 -- GENERAL OPTIONS
 --------------------------
-
 local options = {
 	backup = false, -- no backups
 	clipboard = 'unnamedplus', -- always use clipboard for all operations
