@@ -21,11 +21,11 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 -- a nifty way to navigate buffers, found here: https://www.reddit.com/r/vim/comments/g4l5p0/good_plugin_to_navigate_buffers/
 vim.keymap.set("n", "<M-x>b"," <cmd> :ls<cr>:b", opts)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts) -- moves selection up, with proper indentation
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts) -- moves selection down, with proper indentation
 
 -- make sure you use a capital 'J' for this first one, or it won't work
-vim.keymap.set("n", "J", "mzJ`z", opts)
+vim.keymap.set("n", "J", "mzJ`z", opts) -- move line up without moving cursor
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts) -- keep cursor in middle of screen when i move down
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts) -- keep cursor in middle of screen when i move up
 vim.keymap.set("n", "n", "nzzzv", opts) -- I need to watch the video again to remember what this does
