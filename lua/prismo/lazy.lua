@@ -130,8 +130,6 @@ require('lazy').setup({
             end
         end,
     },
-    -- fugitive
-    { 'tpope/vim-fugitive' },
     -- plenary
     { 'nvim-lua/plenary.nvim' },
     -- Telescope ( TODO: find out how to ignore lazy-lock.json without adding it to .gitignore)
@@ -502,7 +500,7 @@ require('lazy').setup({
                 }
             })
             vim.keymap.set("n", "<M-x>f", ":Neotree toggle<cr>")
-            vim.keymap.set("n", "<M-x>g", ":Neotree git_status<cr>")
+            vim.keymap.set("n", "<M-x>g", ":Neotree git_status toggle<cr>")
         end
     },
 }, opts)
