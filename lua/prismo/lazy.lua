@@ -29,27 +29,59 @@ local opts = {
 
 require('lazy').setup({
     -- everforest theme(s)
+    --[[     {
+    'neanias/everforest-nvim',
+    version = "false",
+    lazy = false,
+    priority = 1000,
+    config = function()
+    require('everforest').setup({
+    -- background = "dark",
+    transparent_background_level = 2,
+    colours_override = function(palette)
+    palette.bg0 = "#272e33"
+    end
+    })
+    require('everforest').load()
+    end
+    }, ]]
+    -- aura theme
     {
-        'neanias/everforest-nvim',
-        version = "false",
+        "baliestri/aura-theme",
         lazy = false,
         priority = 1000,
-        config = function()
-            require('everforest').setup({
-                -- background = "dark",
-                transparent_background_level = 2,
-                colours_override = function(palette)
-                    palette.bg0 = "#272e33"
-                end
-            })
-            require('everforest').load()
+        config = function(plugin)
+            vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+            vim.cmd([[
+            colorscheme aura-dark
+            highlight Normal guibg=none
+            ]])
         end
     },
     -- linefly
-    { 'bluz71/nvim-linefly',
+    --[[     { 'bluz71/nvim-linefly',
+    config = function ()
+    vim.g.linefly_options = { progress_symbol = "", }
+    local highlight = vim.api.nvim_set_hl
+
+    highlight(0, "LineflyNormal", { link = "Normal"})
+    highlight(0, "LineflyInsert", { link = "Number" })
+    highlight(0, "LineflyVisual", { link = "Constant" })
+    highlight(0, "LineflyCommand", { link = "Function" })
+    highlight(0, "LineflyReplace", { link = "Error" })
+    end
+    }, ]]
+    -- lualine (for use with Aura theme)
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { 'nvim-tree/nvim-web-devicons'},
         config = function ()
-            vim.g.linefly_options = { progress_symbol = "", }
-        end
+            local lualine = require('lualine')
+            lualine.setup({
+                theme = "auto",
+                options = { section_separators = '', component_separators = '' }
+            })
+        end,
     },
     -- autopairs
     {

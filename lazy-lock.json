@@ -1,11 +1,12 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "82108e7e31cc6fc223cc5df5cae6d89f70bb199f" },
+  "aura-theme": { "branch": "feat/neovim-port", "commit": "6c0b2244c57b9b8588c1f9ea9f56ef1d41d82e87" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
-  "everforest-nvim": { "branch": "main", "commit": "06a600c4fa49e7a4c44848d14c353ecbaab8eb9f" },
   "harpoon": { "branch": "harpoon2", "commit": "2cd4e03372f7ee5692c8caa220f479ea07970f17" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lsp-zero.nvim": { "branch": "v3.x", "commit": "433db11e818d07a5151e2c750ca8f09cc2aa3146" },
+  "lualine.nvim": { "branch": "master", "commit": "566b7036f717f3d676362742630518a47f132fff" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "0989bdf4fdf7b5aa4c74131d7ffccc3f399ac788" },
   "mason.nvim": { "branch": "main", "commit": "e110bc3be1a7309617cecd77bfe4bf86ba1b8134" },
   "mini.starter": { "branch": "main", "commit": "3bdbf65a821a6cb10d2de5b44ac6a7c172ef5cb3" },
@@ -14,7 +15,6 @@
   "nui.nvim": { "branch": "main", "commit": "35da9ca1de0fc4dda96c2e214d93d363c145f418" },
   "nvim-autopairs": { "branch": "master", "commit": "9fd41181693dd4106b3e414a822bb6569924de81" },
   "nvim-cmp": { "branch": "main", "commit": "538e37ba87284942c1d76ed38dd497e54e65b891" },
-  "nvim-linefly": { "branch": "master", "commit": "6ccaac492858689216bf0a43c30d07d8d8d1b173" },
   "nvim-lspconfig": { "branch": "master", "commit": "796394fd19fb878e8dbc4fd1e9c9c186ed07a5f4" },
   "nvim-treesitter": { "branch": "master", "commit": "8cd2b230174efbf7b5d9f49fe2f90bda6b5eb16e" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "85b9d0cbd4ff901abcda862b50dbb34e0901848b" },
@@ -22,6 +22,5 @@
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "todo-comments.nvim": { "branch": "main", "commit": "4a6737a8d70fe1ac55c64dfa47fcb189ca431872" },
-  "toggleterm.nvim": { "branch": "main", "commit": "e3805fed94d487b81e9c21548535cc820f62f840" },
-  "vim-fugitive": { "branch": "master", "commit": "59659093581aad2afacedc81f009ed6a4bfad275" }
+  "toggleterm.nvim": { "branch": "main", "commit": "e3805fed94d487b81e9c21548535cc820f62f840" }
 }
