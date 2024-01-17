@@ -28,23 +28,6 @@ local opts = {
 }
 
 require('lazy').setup({
-    -- everforest theme(s)
-    --[[     {
-    'neanias/everforest-nvim',
-    version = "false",
-    lazy = false,
-    priority = 1000,
-    config = function()
-    require('everforest').setup({
-    -- background = "dark",
-    transparent_background_level = 2,
-    colours_override = function(palette)
-    palette.bg0 = "#272e33"
-    end
-    })
-    require('everforest').load()
-    end
-    }, ]]
     -- aura theme
     {
         "baliestri/aura-theme",
@@ -58,19 +41,6 @@ require('lazy').setup({
             ]])
         end
     },
-    -- linefly
-    --[[     { 'bluz71/nvim-linefly',
-    config = function ()
-    vim.g.linefly_options = { progress_symbol = "", }
-    local highlight = vim.api.nvim_set_hl
-
-    highlight(0, "LineflyNormal", { link = "Normal"})
-    highlight(0, "LineflyInsert", { link = "Number" })
-    highlight(0, "LineflyVisual", { link = "Constant" })
-    highlight(0, "LineflyCommand", { link = "Function" })
-    highlight(0, "LineflyReplace", { link = "Error" })
-    end
-    }, ]]
     -- lualine (for use with Aura theme)
     {
         "nvim-lualine/lualine.nvim",
@@ -315,7 +285,7 @@ require('lazy').setup({
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', },
         config = function()
             pcall(require('nvim-treesitter.install').update { with_sync = true })
-            require('nvim-treesitter.install').compilers = { "gcc", "clang", "cl" }
+            require('nvim-treesitter.install').compilers = { "clang", "cl", "gcc" }
             require('nvim-treesitter.install').prefer_git = false
             require('nvim-treesitter.configs').setup {
                 modules = {},
@@ -491,6 +461,8 @@ require('lazy').setup({
     },
     -- Neodev
     { 'folke/neodev.nvim', opts = {}, },
+    { 'folke/zen-mode.nvim', opts = {}, },
+    { 'folke/twilight.nvim', opts = {}, },
     -- neo-tree
     {
         'nvim-neo-tree/neo-tree.nvim',
