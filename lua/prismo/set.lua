@@ -34,6 +34,7 @@ local options = {
 	mouse = "", -- i believe in mirac-- *cue broom*
     number = true, -- yeah line numbers are nice...
     relativenumber = true, -- ...especially when they're relative to the cursor position
+    fillchars = { vert = ' ', },
 }
 
 --[[

@@ -28,17 +28,19 @@ local opts = {
 }
 
 require('lazy').setup({
-    -- aura theme
+    -- nvim-jdtls
     {
-        "baliestri/aura-theme",
+        "mfussenegger/nvim-jdtls",
+
+    },
+    -- solarized-osaka
+    {
+        "craftzdog/solarized-osaka.nvim",
         lazy = false,
         priority = 1000,
-        config = function(plugin)
-            vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-            vim.cmd([[
-            colorscheme aura-dark
-            highlight Normal guibg=none
-            ]])
+        opts = {},
+        config = function ()
+           vim.cmd("colorscheme solarized-osaka") 
         end
     },
     -- lualine (for use with Aura theme)
@@ -49,7 +51,7 @@ require('lazy').setup({
             local lualine = require('lualine')
             lualine.setup({
                 theme = "auto",
-                options = { section_separators = '', component_separators = '' }
+                options = { component_separators = '', section_separators = ''  }
             })
         end,
     },
@@ -394,7 +396,7 @@ require('lazy').setup({
                     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+                    vim.keymap.set('n', '<M-x>k', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
                     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
                     vim.keymap.set('n', '<space>wl', function()
@@ -450,9 +452,7 @@ require('lazy').setup({
         end
     },
     -- LuaSnip
-    {
-        'L3MON4D3/LuaSnip'
-    },
+    { 'L3MON4D3/LuaSnip' },
     -- TODO Comments
     {
         'folke/todo-comments.nvim',
