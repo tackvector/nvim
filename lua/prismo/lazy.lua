@@ -33,14 +33,18 @@ require('lazy').setup({
         "mfussenegger/nvim-jdtls",
 
     },
-    -- solarized-osaka
+    -- nordic
     {
-        "craftzdog/solarized-osaka.nvim",
+        'AlexvZyl/nordic.nvim',
         lazy = false,
         priority = 1000,
-        opts = {},
-        config = function ()
-           vim.cmd("colorscheme solarized-osaka") 
+        config = function()
+            local nordic = require('nordic')
+            nordic.setup({
+                -- bold_keywords = true,
+                transparent_bg = true,
+            })
+            nordic.load()
         end
     },
     -- lualine (for use with Aura theme)
@@ -301,6 +305,9 @@ require('lazy').setup({
                     "python",
                     "css",
                     "json",
+                    "java",
+                    "go",
+                    "groovy",
                 },
                 sync_install = false,
                 auto_install = false,
@@ -365,6 +372,8 @@ require('lazy').setup({
                     'lua_ls',
                     'pyright',
                     'powershell_es',
+                    'gradle_ls',
+                    'gopls',
                 },
                 handlers = {
                     lsp_zero.default_setup,
