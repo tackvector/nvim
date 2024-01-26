@@ -40,9 +40,26 @@ require('lazy').setup({
         priority = 1000,
         config = function()
             local nordic = require('nordic')
+            local palette = require('nordic.colors')
             nordic.setup({
                 -- bold_keywords = true,
-                transparent_bg = true,
+                -- transparent_bg = true,
+                override = {
+                    Pmenu = {
+                        fg = palette.black0,
+                        bg = palette.black0,
+                    },
+                    PmenuSel = {
+                        bg = palette.black2,
+                    },
+                    NormalFloat = {
+                        bg = palette.black0,
+                    },
+                    FloatBorder = {
+                        fg = palette.black0,
+                        bg = palette.black0,
+                    }
+                },
             })
             nordic.load()
         end
@@ -50,12 +67,12 @@ require('lazy').setup({
     -- lualine (for use with Aura theme)
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = { 'nvim-tree/nvim-web-devicons'},
-        config = function ()
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
             local lualine = require('lualine')
             lualine.setup({
                 theme = "auto",
-                options = { component_separators = '', section_separators = ''  }
+                options = { component_separators = '', section_separators = '' }
             })
         end,
     },
@@ -167,24 +184,21 @@ require('lazy').setup({
                 },
                 mappings = {
                     i = {
-                        ["<C-n>"] = actions.cycle_history_next,
-                        ["<C-p>"] = actions.cycle_history_prev,
+                        ["<C-u>"] = actions.move_selection_next,
+                        ["<C-d>"] = actions.move_selection_previous,
 
-                        ["<C-j>"] = actions.move_selection_next,
-                        ["<C-k>"] = actions.move_selection_previous,
+                        -- ["<C-j>"] = actions.cycle_history_next,
+                        -- ["<C-k>"] = actions.cycle_history_prev,
 
                         ["<C-c>"] = actions.close,
-
-                        ["<Down>"] = actions.move_selection_next,
-                        ["<Up>"] = actions.move_selection_previous,
 
                         ["<CR>"] = actions.select_default,
                         ["<C-x>"] = actions.select_horizontal,
                         ["<C-v>"] = actions.select_vertical,
                         ["<C-t>"] = actions.select_tab,
 
-                        ["<C-u>"] = actions.preview_scrolling_up,
-                        ["<C-d>"] = actions.preview_scrolling_down,
+                        ["<C-j>"] = actions.preview_scrolling_up,
+                        ["<C-k>"] = actions.preview_scrolling_down,
 
                         ["<PageUp>"] = actions.results_scrolling_up,
                         ["<PageDown>"] = actions.results_scrolling_down,
@@ -241,18 +255,18 @@ require('lazy').setup({
         'ThePrimeagen/harpoon',
         branch = 'harpoon2',
         dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-        config = function ()
+        config = function()
             local harpoon = require('harpoon')
             harpoon:setup({})
 
             -- accessing the harpoon:list()
-            vim.keymap.set("n", "<leader>a", function () harpoon:list():append() end)
+            vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
 
             -- navigating through marked files
-            vim.keymap.set("n", "<C-o>", function () harpoon:list():select(1) end)
-            vim.keymap.set("n", "<C-t>", function () harpoon:list():select(2) end)
-            vim.keymap.set("n", "<C-i>", function () harpoon:list():select(3) end)
-            vim.keymap.set("n", "<C-f>", function () harpoon:list():select(4) end)
+            vim.keymap.set("n", "<C-o>", function() harpoon:list():select(1) end)
+            vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
+            vim.keymap.set("n", "<C-i>", function() harpoon:list():select(3) end)
+            vim.keymap.set("n", "<C-f>", function() harpoon:list():select(4) end)
 
             -- using Telescope as UI (thanks, Prime!)
             -- this was ripped straight from GitHub:
@@ -274,7 +288,8 @@ require('lazy').setup({
                 }):find()
             end
 
-            vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
+            vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
+                { desc = "Open harpoon window" })
         end
     },
     -- Comment
@@ -428,10 +443,55 @@ require('lazy').setup({
     -- nvim-cmp
     {
         'hrsh7th/nvim-cmp',
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-nvim-lua',
+            -- snippets with LuaSnip
+            'rafamadriz/friendly-snippets',
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+        },
         config = function()
             local cmp = require('cmp')
             local cmp_action = require('lsp-zero').cmp_action()
+            local has_words_before = function()
+                unpack = unpack or table.unpack
+                local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+                return col ~= 0 and
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+            end
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            local luasnip = require('luasnip')
+            cmp.event:on(
+                'confirm_done',
+                cmp_autopairs.on_confirm_done()
+            )
             cmp.setup({
+                -- removing completion in comments, per this advanced configuration example: https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques
+                --[[
+                    also, there seems to be an issue with cmp overriding some telescope functionality. so, theres
+                    now a line in here to fix that. you can find the issue and its solutions pretty easily.
+                    does it happen, now? no. gotta make sure you do your comments correctly!
+                ]]
+                enabled = function()
+                    local context = require('cmp.config.context')
+                    if vim.api.nvim_get_mode().mode == 'c' then
+                        return true
+                    else
+                        return not context.in_treesitter_capture("comment")
+                            and not context.in_syntax_group("Comment")
+                            and vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+                    end
+
+                end,
+                snippet = {
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end
+                },
                 mapping = cmp.mapping.preset.insert({
                     -- Ctrl+y key to confirm completion
                     ['<C-y>'] = cmp.mapping.confirm({ select = false }),
@@ -446,14 +506,50 @@ require('lazy').setup({
                     -- Scroll up and down in the completion documentation
                     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-d>'] = cmp.mapping.scroll_docs(4),
+                    ["<C-x>"] = cmp.mapping {
+                        i = cmp.mapping.abort(),
+                        c = cmp.mapping.close(),
+                    },
 
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+                            -- that way you will only jump inside the snippet region
+                        elseif luasnip.expand_or_locally_jumpable() then
+                            luasnip.expand_or_jump()
+                        elseif has_words_before() then
+                            cmp.complete()
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
                 }),
                 window = {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
                 sources = {
-                    { name = 'nvim_lsp' },
+                    { name = "nvim_lsp" },
+                    { name = "luasnip",                 keyword_length = 7 },
+                    { name = "nvim_lua" },
+                    { name = 'nvim_lsp_document_symbol' },
+                    { name = 'nvim_lsp_signature_help' },
+                    { name = "path" },
+                    { name = "buffer",                  keyword_length = 7 },
+                },
+                completion = {
+                    completeopt = 'menu, menuone, noinsert',
                 }
             })
             -- TODO: finish setting this up!
@@ -469,7 +565,7 @@ require('lazy').setup({
         opts = {},
     },
     -- Neodev
-    { 'folke/neodev.nvim', opts = {}, },
+    { 'folke/neodev.nvim',   opts = {}, },
     { 'folke/zen-mode.nvim', opts = {}, },
     { 'folke/twilight.nvim', opts = {}, },
     -- neo-tree
@@ -502,7 +598,7 @@ require('lazy').setup({
                         ["gc"] = "git_commit",
                         ["gp"] = "git_push",
                         ["gg"] = "git_commit_and_push",
-                        ["o"] = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
+                        ["o"] = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
                         ["oc"] = { "order_by_created", nowait = false },
                         ["od"] = { "order_by_diagnostics", nowait = false },
                         ["om"] = { "order_by_modified", nowait = false },
