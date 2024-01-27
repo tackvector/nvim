@@ -58,7 +58,7 @@ require('lazy').setup({
                     FloatBorder = {
                         fg = palette.black0,
                         bg = palette.black0,
-                    }
+                    },
                 },
             })
             nordic.load()
@@ -580,6 +580,14 @@ require('lazy').setup({
         config = function()
             local neotree = require("neo-tree")
             neotree.setup({
+                event_handlers = {
+                    {
+                        event = "file_opened",
+                        handler = function(file_path)
+                           vim.cmd("Neotree close")
+                        end
+                    },
+                },
                 window = {
                     position = "bottom",
                 },
@@ -612,4 +620,9 @@ require('lazy').setup({
             vim.keymap.set("n", "<M-x>g", ":Neotree git_status toggle<cr>")
         end
     },
+    -- nvim-dap
+    -- nvim-dap-ui
+    -- nvim-dap-go
+    -- nvim-dap-python
+    -- nvim-dap-vscode-js
 }, opts)
