@@ -33,37 +33,96 @@ require('lazy').setup({
         "mfussenegger/nvim-jdtls",
 
     },
-    -- nordic
+    -- tokyo-night
     {
-        'AlexvZyl/nordic.nvim',
+        "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        config = function()
-            local nordic = require('nordic')
-            local palette = require('nordic.colors')
-            nordic.setup({
-                -- bold_keywords = true,
-                -- transparent_bg = true,
-                override = {
-                    Pmenu = {
-                        fg = palette.black0,
-                        bg = palette.black0,
-                    },
-                    PmenuSel = {
-                        bg = palette.black2,
-                    },
-                    NormalFloat = {
-                        bg = palette.black0,
-                    },
-                    FloatBorder = {
-                        fg = palette.black0,
-                        bg = palette.black0,
-                    },
-                },
+        opts = {},
+        config = function ()
+            local tokyonight = require("tokyonight")
+            tokyonight.setup({
+                transparent = true,
+                on_highlights = function(hl, c)
+                    local prompt = "#2d3149"
+                    hl.TelescopeNormal = {
+                        bg = c.bg_dark,
+                        fg = c.fg_dark,
+                    }
+                    hl.TelescopeBorder = {
+                        bg = c.bg_dark,
+                        fg = c.bg_dark,
+                    }
+                    hl.TelescopePromptNormal = {
+                        bg = prompt,
+                    }
+                    hl.TelescopePromptBorder = {
+                        bg = prompt,
+                        fg = prompt,
+                    }
+                    hl.TelescopePromptTitle = {
+                        bg = prompt,
+                        fg = prompt,
+                    }
+                    hl.TelescopePreviewTitle = {
+                        bg = c.bg_dark,
+                        fg = c.bg_dark,
+                    }
+                    hl.TelescopeResultsTitle = {
+                        bg = c.bg_dark,
+                        fg = c.bg_dark,
+                    }
+                    hl.FloatBorder = {
+                        bg = c.bg_dark,
+                        fg = c.bg_dark
+                    }
+                end
             })
-            nordic.load()
-        end
+            vim.cmd("colorscheme tokyonight-night")
+        end,
     },
+    -- nordic
+    -- {
+    --     'AlexvZyl/nordic.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         local nordic = require('nordic')
+    --         local palette = require('nordic.colors')
+    --         nordic.setup({
+    --             -- bold_keywords = true,
+    --             override = {
+    --                 Normal = {
+    --                     bg = palette.none,
+    --                 },
+    --                 Pmenu = {
+    --                     fg = palette.black0,
+    --                     bg = palette.black0,
+    --                 },
+    --                 PmenuSel = {
+    --                     bg = palette.black2,
+    --                 },
+    --                 NormalFloat = {
+    --                     bg = palette.black0,
+    --                 },
+    --                 FloatBorder = {
+    --                     fg = palette.black0,
+    --                     bg = palette.black0,
+    --                 },
+    --                 NeoTreeCursorLine = {
+    --                     link = 'CursorLine',
+    --                 },
+    --                 NeoTreeFileName = {
+    --                     link = 'NvimTreeRootFolder',
+    --                 },
+    --                 SignColumn = {
+    --                     bg = palette.none,
+    --                 },
+    --             },
+    --         })
+    --         nordic.load()
+    --     end
+    -- },
     -- lualine (for use with Aura theme)
     {
         "nvim-lualine/lualine.nvim",
@@ -173,6 +232,18 @@ require('lazy').setup({
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
             telescope.setup {
+                defaults = {
+                    file_ignore_patterns = {
+                        "node_modules"
+                    },
+                    layout_strategy = 'horizontal',
+                    layout_config = {
+                        prompt_position = "top",
+                        width = 0.99,
+                        height = 0.99,
+                        -- preview_width = 0.5
+                    }
+                },
                 prompt_prefix = ' ',
                 selection_caret = ' ',
                 path_display = { 'smart' },
@@ -240,11 +311,6 @@ require('lazy').setup({
                         ["<PageDown>"] = actions.results_scrolling_down,
 
                         ["?"] = actions.which_key,
-                    },
-                    defaults = {
-                        file_ignore_patterns = {
-                            "node_modules",
-                        },
                     },
                 },
             }
@@ -314,6 +380,7 @@ require('lazy').setup({
                 ensure_installed = {
                     "c",
                     "cpp",
+                    "c_sharp",
                     "lua",
                     "javascript",
                     "typescript",
@@ -475,7 +542,7 @@ require('lazy').setup({
                     also, there seems to be an issue with cmp overriding some telescope functionality. so, theres
                     now a line in here to fix that. you can find the issue and its solutions pretty easily.
                     does it happen, now? no. gotta make sure you do your comments correctly!
-                ]]
+                    ]]
                 enabled = function()
                     local context = require('cmp.config.context')
                     if vim.api.nvim_get_mode().mode == 'c' then
@@ -584,7 +651,7 @@ require('lazy').setup({
                     {
                         event = "file_opened",
                         handler = function(file_path)
-                           vim.cmd("Neotree close")
+                            vim.cmd("Neotree close")
                         end
                     },
                 },

@@ -5,3 +5,4 @@ TODO:
 3.) Add README
 4.) Configure Twilight
 5.) Configure ZenMode
+6.) Change Telescope a bit
