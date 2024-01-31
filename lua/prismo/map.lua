@@ -68,17 +68,17 @@ vim.keymap.set("n", "<M-x>t", "<cmd>:Twilight<cr>", opts)
 --------------------------
 
 --[[
-I want help files to open in a vertical split...
-To do it the Vim way, do this:
-vim.cmd 'autocmd Filetype help wincmd L'
+    I want help files to open in a vertical split...
+    To do it the Vim way, do this:
+    vim.cmd 'autocmd Filetype help wincmd L'
 ]]
 
 -- To do it the Neovim way (that is to say, "in Lua"), do this:
 vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L' })
 
 --[[
-it should be noted that the above only opens the help file in the vertical split once. albeit an unlikely occurrence, closing the file accidentally 
-will result in the user needing to close and reopen Neovim to get it to work again.
+    it should be noted that the above only opens the help file in the vertical split once. albeit an unlikely occurrence, closing the file accidentally 
+    will result in the user needing to close and reopen Neovim to get it to work again.
 ]]
 
 return M

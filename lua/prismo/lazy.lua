@@ -12,8 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 --[[
-found the solution below here: https://github.com/equalsraf/neovim-qt/issues/1046
-after reading about neovim-qt here: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options
+    found the solution below here: https://github.com/equalsraf/neovim-qt/issues/1046
+    after reading about neovim-qt here: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options
 ]]
 local opts = {
     performance = {
@@ -33,54 +33,94 @@ require('lazy').setup({
         "mfussenegger/nvim-jdtls",
 
     },
-    -- tokyo-night
+    -- kanagawa
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
+        "rebelot/kanagawa.nvim",
         config = function ()
-            local tokyonight = require("tokyonight")
-            tokyonight.setup({
-                transparent = true,
-                on_highlights = function(hl, c)
-                    local prompt = "#2d3149"
-                    hl.TelescopeNormal = {
-                        bg = c.bg_dark,
-                        fg = c.fg_dark,
+            local kanagawa = require("kanagawa")
+            kanagawa.setup({
+                vim.cmd("colorscheme kanagawa-wave"),
+                compile = true,
+                commentStyle = { italic = true },
+                keywordStyle = { bold = true },
+                -- FIXED: Adding compile = true and running :KanagawaCompile fixed it
+                overrides = function(colors)
+                    local theme = colors.theme
+                    return {
+                        TelescopeTitle = { fg = theme.ui.special, bold = true },
+                        TelescopePromptTitle = { bg = theme.ui.bg_p1 },
+                        TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+                        TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+                        TelescopeResultsTitle = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+                        TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+                        TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+                        TelescopePreviewTitle = { bg = theme.ui.bg_m1 },
+                        TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+                        TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+                        Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1, blend = vim.o.pumblend },  -- add `blend = vim.o.pumblend` to enable transparency
+                        PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+                        PmenuSbar = { bg = theme.ui.bg_m1 },
+                        PmenuThumb = { bg = theme.ui.bg_p2 },
                     }
-                    hl.TelescopeBorder = {
-                        bg = c.bg_dark,
-                        fg = c.bg_dark,
-                    }
-                    hl.TelescopePromptNormal = {
-                        bg = prompt,
-                    }
-                    hl.TelescopePromptBorder = {
-                        bg = prompt,
-                        fg = prompt,
-                    }
-                    hl.TelescopePromptTitle = {
-                        bg = prompt,
-                        fg = prompt,
-                    }
-                    hl.TelescopePreviewTitle = {
-                        bg = c.bg_dark,
-                        fg = c.bg_dark,
-                    }
-                    hl.TelescopeResultsTitle = {
-                        bg = c.bg_dark,
-                        fg = c.bg_dark,
-                    }
-                    hl.FloatBorder = {
-                        bg = c.bg_dark,
-                        fg = c.bg_dark
-                    }
-                end
+                end,
             })
-            vim.cmd("colorscheme tokyonight-night")
-        end,
+        end
     },
+    -- tokyo-night
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    --     config = function ()
+    --         local tokyonight = require("tokyonight")
+    --         tokyonight.setup({
+    --             on_colors = function () end,
+    --             transparent = true,
+    --             on_highlights = function(hl, c)
+    --                 local prompt = "#2d3149"
+    --                 hl.TelescopeNormal = {
+    --                     bg = c.none,
+    --                     fg = c.fg_dark,
+    --                 }
+    --                 hl.TelescopeBorder = {
+    --                     bg = c.none,
+    --                     fg = c.bg_dark,
+    --                 }
+    --                 hl.TelescopePromptNormal = {
+    --                     bg = c.none,
+    --                 }
+    --                 hl.TelescopePromptBorder = {
+    --                     bg = c.none,
+    --                     fg = prompt,
+    --                 }
+    --                 hl.TelescopePromptTitle = {
+    --                     bg = c.none,
+    --                     fg = c.none,
+    --                 }
+    --                 hl.TelescopePreviewTitle = {
+    --                     bg = c.none,
+    --                     fg = c.bg_dark,
+    --                 }
+    --                 hl.TelescopeResultsTitle = {
+    --                     bg = c.none,
+    --                     fg = c.bg_dark,
+    --                 }
+    --                 hl.Pmenu = {
+    --                     bg = c.dark3,
+    --                 }
+    --                 hl.NormalFloat = {
+    --                     bg = c.none,
+    --                 }
+    --                 hl.FloatBorder = {
+    --                     bg = c.none,
+    --                     fg = c.none
+    --                 }
+    --             end
+    --         })
+    --         vim.cmd("colorscheme tokyonight-night")
+    --     end,
+    -- },
     -- nordic
     -- {
     --     'AlexvZyl/nordic.nvim',
@@ -189,7 +229,7 @@ require('lazy').setup({
                 autochdir = true,
                 persist_size = true,
                 close_on_exit = true,
-                shell = vim.o.shell,
+                shell = 'pwsh.exe',
                 direction = 'horizontal',
             }
 
@@ -241,7 +281,6 @@ require('lazy').setup({
                         prompt_position = "top",
                         width = 0.99,
                         height = 0.99,
-                        -- preview_width = 0.5
                     }
                 },
                 prompt_prefix = ' ',
@@ -538,11 +577,6 @@ require('lazy').setup({
             )
             cmp.setup({
                 -- removing completion in comments, per this advanced configuration example: https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques
-                --[[
-                    also, there seems to be an issue with cmp overriding some telescope functionality. so, theres
-                    now a line in here to fix that. you can find the issue and its solutions pretty easily.
-                    does it happen, now? no. gotta make sure you do your comments correctly!
-                    ]]
                 enabled = function()
                     local context = require('cmp.config.context')
                     if vim.api.nvim_get_mode().mode == 'c' then
