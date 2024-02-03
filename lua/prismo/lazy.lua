@@ -39,7 +39,7 @@ require('lazy').setup({
         config = function ()
             local kanagawa = require("kanagawa")
             kanagawa.setup({
-                vim.cmd("colorscheme kanagawa-wave"),
+                vim.cmd("colorscheme kanagawa-dragon"),
                 compile = true,
                 commentStyle = { italic = true },
                 keywordStyle = { bold = true },
@@ -419,7 +419,6 @@ require('lazy').setup({
                 ensure_installed = {
                     "c",
                     "cpp",
-                    "c_sharp",
                     "lua",
                     "javascript",
                     "typescript",
