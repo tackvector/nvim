@@ -31,65 +31,15 @@ require('lazy').setup({
     -- nvim-jdtls
     {
         "mfussenegger/nvim-jdtls",
-
     },
-    -- tokyo-night
+    -- sonokai
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
+        'sainnhe/sonokai',
         config = function ()
-            local tokyonight = require("tokyonight")
-            tokyonight.setup({
-                on_colors = function () end,
-                transparent = true,
-                on_highlights = function(hl, c)
-                    local prompt = "#2d3149"
-                    hl.TelescopeNormal = {
-                        bg = c.none,
-                        fg = c.fg_dark,
-                    }
-                    hl.TelescopeBorder = {
-                        bg = c.none,
-                        fg = c.bg_dark,
-                    }
-                    hl.TelescopePromptNormal = {
-                        bg = c.none,
-                    }
-                    hl.TelescopePromptBorder = {
-                        bg = c.none,
-                        fg = prompt,
-                    }
-                    hl.TelescopePromptTitle = {
-                        bg = c.none,
-                        fg = c.none,
-                    }
-                    hl.TelescopePreviewTitle = {
-                        bg = c.none,
-                        fg = c.bg_dark,
-                    }
-                    hl.TelescopeResultsTitle = {
-                        bg = c.none,
-                        fg = c.bg_dark,
-                    }
-                    hl.Pmenu = {
-                        bg = c.dark3,
-                    }
-                    hl.Normal = {
-                        bg = "#000000",
-                    }
-                    hl.NormalFloat = {
-                        bg = c.none,
-                    }
-                    hl.FloatBorder = {
-                        bg = c.none,
-                        fg = c.none
-                    }
-                end
-            })
-            vim.cmd("colorscheme tokyonight-night")
-        end,
+            vim.g.sonokai_style = 'andromeda'
+            vim.g.sonokai_transparent_background = 1
+            vim.cmd [[colorscheme sonokai]]
+        end
     },
     -- lualine
     {
@@ -98,7 +48,7 @@ require('lazy').setup({
         config = function()
             local lualine = require('lualine')
             lualine.setup({
-                theme = "auto",
+                theme = "sonokai",
                 options = { component_separators = '', section_separators = '' }
             })
         end,
