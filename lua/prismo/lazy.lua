@@ -246,13 +246,13 @@ require('lazy').setup({
             harpoon:setup({})
 
             -- accessing the harpoon:list()
-            vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
+            vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end) 
 
-            -- navigating through marked files
-            vim.keymap.set("n", "<C-o>", function() harpoon:list():select(1) end)
-            vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
-            vim.keymap.set("n", "<C-i>", function() harpoon:list():select(3) end)
-            vim.keymap.set("n", "<C-f>", function() harpoon:list():select(4) end)
+            -- navigating through marked files (QWERTY)
+            vim.keymap.set("n", "<C-o>", function() harpoon:list():select(1) end) -- one
+            vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end) -- two
+            vim.keymap.set("n", "<C-i>", function() harpoon:list():select(3) end) -- three (next to 'o')
+            vim.keymap.set("n", "<C-f>", function() harpoon:list():select(4) end) -- four (close to 't')
 
             -- using Telescope as UI (thanks, Prime!)
             -- this was ripped straight from GitHub:
@@ -300,6 +300,7 @@ require('lazy').setup({
                 ensure_installed = {
                     "c",
                     "cpp",
+                    "c_sharp",
                     "lua",
                     "javascript",
                     "typescript",
@@ -320,6 +321,7 @@ require('lazy').setup({
                 autopairs = {
                     enable = true,
                 },
+                -- i can honestly say i forgot what this does, but I used it in my other config so it's here now.
                 indent = {
                     enable = true,
                     disable = { "python", "css" },
@@ -366,6 +368,7 @@ require('lazy').setup({
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'clangd',
+                    'csharp_ls',
                     'emmet_language_server',
                     'tsserver',
                     'cssls',
@@ -423,7 +426,7 @@ require('lazy').setup({
             })
         end
     },
-    -- cmp sources --
+    -- cmp sources (these are a mess, sorry)
     -- nvim-cmp-lsp
     { 'hrsh7th/cmp-nvim-lsp' },
     -- nvim-cmp
@@ -562,12 +565,14 @@ require('lazy').setup({
             neotree.setup({
                 event_handlers = {
                     {
+                        -- close Neotree after I've selected a file (the way Dired works in Emacs)
                         event = "file_opened",
                         handler = function(file_path)
                             vim.cmd("Neotree close")
                         end
                     },
                 },
+                -- another nod to Dired
                 window = {
                     position = "bottom",
                 },
@@ -600,6 +605,7 @@ require('lazy').setup({
             vim.keymap.set("n", "<M-x>g", ":Neotree git_status toggle<cr>")
         end
     },
+    -- TODO: Set up debugging for Java, Python, Go, JS, and PHP
     -- nvim-dap
     -- nvim-dap-ui
     -- nvim-dap-go
