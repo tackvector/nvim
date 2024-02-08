@@ -34,6 +34,7 @@ require('lazy').setup({
     },
     -- vscode
     {
+        -- TODO: Modify highlight groups to create transparent float backgrounds
         'Mofiqul/vscode.nvim',
         config = function ()
             local vscode = require('vscode')
@@ -56,7 +57,7 @@ require('lazy').setup({
         'tjdevries/express_line.nvim',
         dependencies = {
             'nvim-tree/nvim-web-devicons',
-           'nvim-lua/plenary.nvim', 
+           'nvim-lua/plenary.nvim',
         },
         config = function()
             local el = require('el')
@@ -256,7 +257,7 @@ require('lazy').setup({
             harpoon:setup({})
 
             -- accessing the harpoon:list()
-            vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end) 
+            vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
 
             -- navigating through marked files (QWERTY)
             vim.keymap.set("n", "<C-o>", function() harpoon:list():select(1) end) -- one
@@ -450,7 +451,7 @@ require('lazy').setup({
             'hrsh7th/cmp-nvim-lua',
             -- snippets with LuaSnip
             'rafamadriz/friendly-snippets', -- need to pick one of these three and start using it
-            'L3MON4D3/LuaSnip', 
+            'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
         },
         config = function()
