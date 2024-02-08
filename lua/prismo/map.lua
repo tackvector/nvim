@@ -50,6 +50,20 @@ vim.keymap.set("n", "<leader>tl", "<cmd>lua _LUA_TOGGLE()<cr>", term_opts) -- op
 vim.keymap.set("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", term_opts) -- open a Python repl
 vim.keymap.set("n", "<leader>tm", "<cmd>lua _MAKE_TOGGLE()<cr>", term_opts) --  run make in a vertical toggleterm instance
 
+-- Terminal mode
+function _G.set_terminal_keymaps()
+  opts = term_opts
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
+-- an autocommand for setting the above terminal-mode keymaps
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
 -- Fugitive
 vim.keymap.set("n", "<leader>gg", "<cmd>Git<cr>", opts)
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", opts)
