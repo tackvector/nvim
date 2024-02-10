@@ -72,8 +72,5 @@ set_cursorline("FileType", false, "TelescopePrompt")
 -- don't continue comments onto new lines
 vim.cmd ([[ autocmd FileType * set formatoptions-=cro ]])
 
--- in netrw, open preview in vertical window
-vim.g.netrw_preview = 1
-
 -- set background
 vim.o.background = "dark"
