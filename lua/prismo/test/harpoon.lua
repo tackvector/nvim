@@ -10,6 +10,9 @@
             -- accessing the harpoon:list()
             vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
 
+            -- clearing the harpoon:list()
+            vim.keymap.set("n", "<leader>ua", function() harpoon:list():clear() end)
+
             -- navigating through marked files (QWERTY)
             vim.keymap.set("n", "<C-o>", function() harpoon:list():select(1) end) -- one
             vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end) -- two
