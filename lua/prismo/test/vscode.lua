@@ -1,4 +1,4 @@
-    -- vscode
+-- vscode
 return {
         -- TODO: Modify highlight groups to create transparent float backgrounds
         'Mofiqul/vscode.nvim',
@@ -15,6 +15,6 @@ return {
                     NormalFloat = { bg = c.none },
                 },
             })
-            vscode.load()
+            -- vscode.load()
         end
     }
