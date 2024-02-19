@@ -38,18 +38,18 @@ local options = {
 }
 
 --[[
-for options and values in the options table, 
-set them using vim.opt.<option> = <value>
+    for options and values in the options table, 
+    set them using vim.opt.<option> = <value>
 ]]
 for option, value in pairs(options) do
 	vim.opt[option] = value
 end
 
 --[[
-instead of highlighting the line every time i want to see it
-it makes sense to just have to current line hightlighted all the time
-i've seen this in many TJ DeVries streams and wanted to know how he did it
-i found this in a file in his config: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
+    instead of highlighting the line every time i want to see it
+    it makes sense to just have to current line hightlighted all the time
+    i've seen this in many TJ DeVries streams and wanted to know how he did it
+    i found this in a file in his config: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
 ]]
 
 -- Thanks, TJ!
