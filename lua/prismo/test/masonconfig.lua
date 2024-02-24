@@ -18,7 +18,7 @@ return {
                 'cssls',
                 'jsonls',
                 'lua_ls',
-                'pylyzer',
+                'pyright',
                 'powershell_es',
                 'gradle_ls',
                 'gopls',

@@ -4,30 +4,26 @@ return {
     priority = 1000,
     config = function ()
         local catppuccin = require('catppuccin')
-        -- local mocha = require('catppuccin.palettes').get_palette "mocha"
+        -- local mocha = require('catppuccin.palettes').get_palette 'mocha'
 
         catppuccin.setup({
-            flavour = "mocha",
-            -- transparent_background = false,
+            flavour = 'mocha',
+            transparent_background = true,
             show_end_of_buffer = false,
             dim_inactive = {
-                enabled = true,
-                shade = "light",
+                enabled = false,
+                shade = 'light',
             },
-
             color_overrides = {
-                mocha = { base = "#000000", },
+                mocha = { base = '#02020C', },
             },
-
-            telescope = { enabled = true, },
-
-            custom_highlights = function (colors)
-                return {
-                    NormalFloat = { bg = colors.none },
-                }
-            end,
+            no_underline = true,
+            styles = {
+                comments = { 'italic', },
+                keywords = { 'italic', },
+            },
         })
 
-        vim.cmd.colorscheme "catppuccin"
+        vim.cmd.colorscheme 'catppuccin'
     end
 }

@@ -95,4 +95,9 @@ vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L
     will result in the user needing to close and reopen Neovim to get it to work again.
 ]]
 
+--------------------------
+-- USER COMMANDS
+--------------------------
+-- TODO: write command for running asm from inside Neovim. Maybe use code_runner again
+
 return M
