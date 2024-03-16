@@ -1,0 +1,12 @@
+{
+  "express_line.nvim": { "branch": "master", "commit": "30f04edb9647d9ea7c08d0bdbfad33faf5bcda57" },
+  "harpoon": { "branch": "harpoon2", "commit": "a38be6e0dd4c6db66997deab71fc4453ace97f9c" },
+  "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
+  "nvim-treesitter": { "branch": "master", "commit": "f87882858438834d2fbb6379aa2be37de901751b" },
+  "nvim-treesitter-textobjects": { "branch": "master", "commit": "d2a4ffc22d9d38d44edb73da007b3cf43451e9b4" },
+  "nvim-web-devicons": { "branch": "master", "commit": "cb0c967c9723a76ccb1be0cc3a9a10e577d2f6ec" },
+  "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
+  "sonokai": { "branch": "master", "commit": "a62656a798043f3c6b603efa98d4de2da89c72b2" },
+  "telescope.nvim": { "branch": "0.1.x", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
+  "tree-sitter-asm": { "branch": "main", "commit": "6ace266be7ad6bf486a95427ca3fc949aff66211" }
+}
