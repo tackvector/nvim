@@ -20,7 +20,7 @@ local options = {
     signcolumn = 'yes', -- show signs in signcolumn
     wrap = false, -- don't wrap lines, makes it easier for me to take notes
     laststatus = 3, -- global statusline, thanks Neovim team :-)
-    tabstop = 4, -- 4 spaces. 4 is the way. Don't fuck with the 4-ce. Okay, I'm done.
+    tabstop = 4, -- 4 spaces.
     softtabstop = 4,
     shiftwidth = 4,
     shiftround = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
@@ -35,6 +35,7 @@ local options = {
     number = true, -- yeah line numbers are nice...
     relativenumber = true, -- ...especially when they're relative to the cursor position
     fillchars = { vert = ' ', },
+    
 }
 
 --[[

@@ -29,6 +29,7 @@ return {
                 "json",
                 "java",
                 "go",
+                "vimdoc",
                 "groovy",
                 "haskell",
             },

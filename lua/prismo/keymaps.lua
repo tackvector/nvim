@@ -20,6 +20,10 @@ local mappings = {
 	{"v", "<leader>y", "\"+y", opts},
 	{"n", "<leader>Y", "\"+Y", opts},
 	{"n", "<leader>L", "<cmd>Lazy<cr>", opts},
+    {"n", "<M-Right>", "<cmd>vertical resize -1<cr>", opts},
+    {"n", "<M-Left>", "<cmd>vertical resize +1<cr>", opts},
+    {"n", "<M-Down>", "<cmd>resize -1<cr>", opts},
+    {"n", "<M-Up>", "<cmd>resize +1<cr>", opts},
 }
 
 for _, mapping in pairs(mappings) do
