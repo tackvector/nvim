@@ -1,41 +1,41 @@
-------------------------
+--------------------------
 -- GENERAL OPTIONS
 --------------------------
 local options = {
     backup = false, -- no backups
     clipboard = 'unnamedplus', -- always use clipboard for all operations
-    cmdheight = 1, -- set height of command-line to 1
-    conceallevel = 0, -- show text normally
-    fileencoding = 'utf-8', -- file encoding for current buffer
-    hlsearch = false, -- don't highlight matches
-    incsearch = true, -- show the pattern matches as i type
-    pumheight = 5, -- set the popup menu height to 10
-    termguicolors = true, -- enables 24-bit color in tui
-    splitbelow = true, -- open new horizontal splits below current buffer
-    splitright = true, -- open new vertical splits to the right of current buffer
-    swapfile = false, -- don't create a swapfile
-    timeoutlen = 1000, -- length of timeout for commands like 'jk' for exit
+    ch = 1, -- set height of command-line to 1
+    cole = 0, -- show text normally
+    fenc = 'utf-8', -- file encoding for current buffer
+    hls = false, -- don't highlight matches
+    is = true, -- show the pattern matches as i type
+    ph = 5, -- set the popup menu height to 10
+    tgc = true, -- enables 24-bit color in tui
+    sb = true, -- open new horizontal splits below current buffer
+    spr = true, -- open new vertical splits to the right of current buffer
+    swf = false, -- don't create a swapfile
+    tm = 1000, -- length of timeout for commands like 'jk' for exit
     cindent = true, -- for C files, which I do not write right now.
-    numberwidth = 4, -- the width of the number column, setting it to 4 keeps it from pushing the editor over as numbers get larger
-    signcolumn = 'yes', -- show signs in signcolumn
+    nuw = 4, -- the width of the number column, setting it to 4 keeps it from pushing the editor over as numbers get larger
+    scl = 'yes', -- show signs in signcolumn
     wrap = false, -- don't wrap lines, makes it easier for me to take notes
-    laststatus = 3, -- global statusline, thanks Neovim team :-)
-    tabstop = 4, -- 4 spaces.
-    softtabstop = 4,
-    shiftwidth = 4,
-    shiftround = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
-    guicursor = "n-v-c-i:block", -- i'll block you
-    shellxquote = "", -- i can use this to do cool things
-    expandtab = true, -- changing things so they make sense to me
-    autoindent = true, -- this should absolutely always be on
-    smartindent = true, -- so should this.
-    scrolloff = 5, -- like sidescrolloff but for the bottom side
-    equalalways = true, -- all windows are made the same size after opening or closing
+    ls = 3, -- global statusline, thanks Neovim team :-)
+    ts = 4, -- 4 spaces.
+    sts = 4,
+    sw = 4,
+    sr = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
+    gcr = "n-v-c-i:block", -- i'll block you
+    sxq = "", -- i can use this to do cool things
+    et = true, -- changing things so they make sense to me
+    ai = true, -- this should absolutely always be on
+    si = true, -- so should this.
+    so = 5, -- like sidescrolloff but for the bottom side
+    ea = true, -- all windows are made the same size after opening or closing
     mouse = "", -- i believe in mirac-- *cue broom*
-    number = true, -- yeah line numbers are nice...
-    relativenumber = true, -- ...especially when they're relative to the cursor position
-    fillchars = { vert = ' ', },
-    
+    nu = true, -- yeah line numbers are nice...
+    rnu = true, -- ...especially when they're relative to the cursor position
+    fcs = { vert = ' ', },
+    scl = "yes",
 }
 
 --[[
@@ -75,3 +75,4 @@ vim.cmd ([[ autocmd FileType * set formatoptions-=cro ]])
 
 -- set background
 vim.o.background = "dark"
+

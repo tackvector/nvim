@@ -7,6 +7,8 @@ local mappings = {
 	{"n", "<C-j>", "<C-w>j", opts},
 	{"n", "<C-k>", "<C-w>k", opts},
 	{"n", "<C-l>", "<C-w>l", opts},
+    {"n", "<S-l>", "<cmd>bnext<cr>", opts},
+    {"n", "<S-h>", "<cmd>bprevious<cr>", opts},
 	{"n", "<leader>rw", ":Ex<cr>", opts},
 	{"n", "<M-x>b"," <cmd> :ls<cr>:b", opts},
 	{"v", "J", ":m '>+1<CR>gv=gv", opts},

@@ -12,14 +12,13 @@ return {
         neotree.setup({
             event_handlers = {
                 {
-                    -- close Neotree after I've selected a file (the way Dired works in Emacs)
+                    -- close Neotree after I've selected a file
                     event = "file_opened",
                     handler = function(file_path)
                         vim.cmd("Neotree close")
                     end
                 },
             },
-            -- another nod to Dired
             window = {
                 position = "bottom",
             },
