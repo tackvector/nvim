@@ -7,8 +7,8 @@ return {
         local original = vim.lsp.util.open_floating_preview
         vim.lsp.util.open_floating_preview = function (contents, syntax, opts)
             opts = opts
-            opts.border = 'single'
-            opts.max_width = 60
+            opts.border = nil
+            opts.max_width = 59
             return original(contents, syntax, opts)
         end
 

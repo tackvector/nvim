@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- ignore this...
-local opts = { }
+local opts = {}
 
 require('lazy').setup({
     spec = 'prismo.test',

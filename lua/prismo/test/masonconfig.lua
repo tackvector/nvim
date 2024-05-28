@@ -12,7 +12,6 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 'clangd',
-                'csharp_ls',
                 'emmet_language_server',
                 'tsserver',
                 'cssls',
@@ -21,7 +20,11 @@ return {
                 'powershell_es',
                 'gradle_ls',
                 'gopls',
-		'pyright',
+                'pyright',
+                'svelte',
+                'svlangserver',
+                'astro',
+                'angularls',
             },
             handlers = {
                 lsp_zero.default_setup,

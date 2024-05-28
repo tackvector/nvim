@@ -20,13 +20,13 @@ local options = {
     scl = 'yes', -- show signs in signcolumn
     wrap = false, -- don't wrap lines, makes it easier for me to take notes
     ls = 3, -- global statusline, thanks Neovim team :-)
+    et = true, -- changing things so they make sense to me
     ts = 4, -- 4 spaces.
     sts = 4,
     sw = 4,
     sr = true, -- found out about this from VimTricks. You should check it out if you haven't already! https://vim.town/@vimtricks
     gcr = "n-v-c-i:block", -- i'll block you
     sxq = "", -- i can use this to do cool things
-    et = true, -- changing things so they make sense to me
     ai = true, -- this should absolutely always be on
     si = true, -- so should this.
     so = 5, -- like sidescrolloff but for the bottom side
@@ -35,7 +35,6 @@ local options = {
     nu = true, -- yeah line numbers are nice...
     rnu = true, -- ...especially when they're relative to the cursor position
     fcs = { vert = ' ', },
-    scl = "yes",
 }
 
 --[[
@@ -74,5 +73,5 @@ set_cursorline("FileType", false, "TelescopePrompt")
 vim.cmd ([[ autocmd FileType * set formatoptions-=cro ]])
 
 -- set background
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 

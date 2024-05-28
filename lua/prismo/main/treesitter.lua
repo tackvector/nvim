@@ -23,11 +23,16 @@ return {
                 "c_sharp",
                 "lua",
                 "javascript",
+                "angular",
+                "astro",
                 "typescript",
                 "python",
                 "css",
                 "json",
+                "java",
+                "go",
                 "vimdoc",
+                "groovy",
                 "haskell",
             },
             sync_install = false,
@@ -40,6 +45,7 @@ return {
             autopairs = {
                 enable = true,
             },
+            -- i can honestly say i forgot what this does, but I used it in my other config so it's here now.
             indent = {
                 enable = true,
                 disable = { "python", "css" },
