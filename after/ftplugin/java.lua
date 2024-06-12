@@ -5,8 +5,8 @@ local jdtls = require('jdtls')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- Change jdtls_path to wherever you have your Eclipse Java development tools (JDT) Language Server downloaded to.
-local jdtls_path = 'C:\\Users\\dwimb\\jdt-language-server-1.9.0-202203031534'
-local launcher_jar = vim.fn.glob(jdtls_path .. '\\plugins\\org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar')
+local jdtls_path = 'C:\\Users\\Struct\\jdt-language-server-latest'
+local launcher_jar = vim.fn.glob(jdtls_path .. '\\plugins\\org.eclipse.equinox.launcher_1.6.800.v20240513-1750.jar')
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
 vim.o.tabstop = 4
