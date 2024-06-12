@@ -1,7 +1,4 @@
------------------------------
---[[ Keybindings ]]
------------------------------
-
+-- {{{ keybindings
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -37,6 +34,7 @@ for _, mapping in pairs(mappings) do
     local mode, lhs, rhs, opts = unpack(mapping)
     vim.keymap.set(mode, lhs, rhs, opts)
 end
+-- }}}
 
 -- open help files in a vertical split
 vim.api.nvim_create_autocmd('FileType', { pattern = 'help', command = ':wincmd L' })
@@ -393,6 +391,7 @@ require('lazy').setup({
 
             require('mason-lspconfig').setup({
                 ensure_installed = {
+                    'clangd',
                     'emmet_language_server',
                     'tsserver',
                     'cssls',

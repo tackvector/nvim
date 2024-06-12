@@ -5,4 +5,4 @@ vim.lsp.start({
 
 vim.bo.commentstring = '#%s'
 
-require('plugins.config.lsp.on_attach')(nil, vim.fn.bufnr())
+-- require'lsp_zero.on_attach'(nil, vim.fn.bufnr())
