@@ -273,18 +273,6 @@ require('lazy').setup({
     },
     { 'hrsh7th/cmp-nvim-lsp', }, -- cmpnvim
     {
-        -- TODO: finish configuration
-        'tjdevries/express_line.nvim',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-            'nvim-lua/plenary.nvim',
-        },
-        config = function()
-            local el = require('el')
-            el.setup({})
-        end
-    },
-    {
         'ThePrimeagen/harpoon',
         branch = 'harpoon2',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -502,14 +490,6 @@ require('lazy').setup({
                     file_ignore_patterns = {
                         "node_modules"
                     },
-                    --                layout_strategy = 'vertical',
-                    --                layout_config = {
-                    --                    prompt_position = "top",
-                    --                    -- broke something. found a fix here: https://github.com/nvim-telescope/telescope.nvim/issues/1594#issuecomment-993447528
-                    --                    preview_cutoff = 0,
-                    --                    width = 0.50,
-                    --                    height = 0.80,
-                    --                }
                 },
                 prompt_prefix = ' ',
                 selection_caret = ' ',
