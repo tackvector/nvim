@@ -414,9 +414,13 @@ require('lazy').setup({
     {
         'echasnovski/mini.tabline',
         config = function ()
-            mtl = require('mini.tabline')
+           local mtl = require('mini.tabline')
             mtl.setup()
         end
+    },
+    {
+        'echasnovski/mini.align',
+        -- using default configuration until I learn what I like
     },
     {
         'nvim-neo-tree/neo-tree.nvim',
