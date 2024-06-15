@@ -391,6 +391,7 @@ require('lazy').setup({
 
             require('mason-lspconfig').setup({
                 ensure_installed = {
+                    'phpactor',
                     'clangd',
                     'emmet_language_server',
                     'tsserver',
@@ -592,6 +593,7 @@ require('lazy').setup({
                     "javascript",
                     "typescript",
                     "python",
+                    "php",
                     "css",
                     "json",
                     "vimdoc",
