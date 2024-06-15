@@ -83,7 +83,9 @@ for option, value in pairs(options) do
 end
 
 -- don't continue comments onto new lines
-vim.cmd ([[ autocmd FileType * set formatoptions-=cro ]])
+vim.cmd ([[ 
+    autocmd FileType * set formatoptions-=cro 
+]])
 
 -----------------------------
 --[[ Lazy (plugin manager) ]]
