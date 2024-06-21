@@ -604,6 +604,7 @@ require('lazy').setup({
                     "json",
                     "vimdoc",
                     "haskell",
+                    "racket",
                 },
                 sync_install = false,
                 auto_install = false,
