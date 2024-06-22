@@ -147,7 +147,7 @@ require('lazy').setup({
             })
         end
     },
-    -- catppuccin
+    -- {{{ color schemes
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -158,9 +158,18 @@ require('lazy').setup({
                 flavour = "latte",
                 transparent_background = false,
             })
-            vim.cmd [[colorscheme catppuccin]]
+            -- vim.cmd [[colorscheme catppuccin]]
         end
     },
+    {
+        "cideM/yui",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            vim.cmd.colorscheme("yui")
+        end
+    },
+    -- }}}
     -- cmp
     {
         'hrsh7th/nvim-cmp',
@@ -410,6 +419,9 @@ require('lazy').setup({
                 },
                 handlers = {
                     lsp_zero.default_setup,
+                    function (racket_langserver)
+                        require('nvim-lspconfig')[racket_langserver].setup({})
+                    end,
                 },
             })
         end

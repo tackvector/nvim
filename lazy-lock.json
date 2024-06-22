@@ -27,5 +27,6 @@
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tree-sitter-asm": { "branch": "main", "commit": "b0306e9bb2ebe01c6562f1aef265cc42ccc53070" },
-  "vim-astro": { "branch": "main", "commit": "9b4674ecfe1dd84b5fb9b4de1653975de6e8e2e1" }
+  "vim-astro": { "branch": "main", "commit": "9b4674ecfe1dd84b5fb9b4de1653975de6e8e2e1" },
+  "yui": { "branch": "master", "commit": "ef0d00a7dd688199ea86474fd3cfe72c5a2aaaa7" }
 }
