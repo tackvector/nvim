@@ -12,8 +12,8 @@ local mappings = {
     {"n", "<S-h>", "<cmd>bprevious<cr>", mappings_opts},
     {"n", "<leader>rw", ":Ex<cr>", mappings_opts},
     {"n", "<M-x>b"," <cmd> :ls<cr>:b", mappings_opts},
-    {"v", "J", ":m '>+1<CR>gv=gv", mappings_opts},
     {"v", "K", ":m '<-2<CR>gv=gv", mappings_opts},
+    {"v", "J", ":m '>+1<CR>gv=gv", mappings_opts},
     {"n", "J", "mzJ`z", mappings_opts},
     {"n", "<C-d>", "<C-d>zz", mappings_opts},
     {"n", "<C-u>", "<C-u>zz", mappings_opts},
@@ -71,6 +71,7 @@ local options = {
     number = true,
     relativenumber = true,
     fillchars = { vert = ' ', },
+    background = "light",
 }
 
 for option, value in pairs(options) do
@@ -157,7 +158,20 @@ require('lazy').setup({
         lazy = false,
         priority = 1000,
         config = function ()
-            vim.cmd.colorscheme("yui")
+            -- vim.cmd.colorscheme("yui")
+        end
+    },
+    {
+        "NTBBloodbath/sweetie.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            vim.g.sweetie = {
+                palette = {
+                    light = {}
+                }
+            }
+            vim.cmd.colorscheme("sweetie")
         end
     },
     -- }}}
