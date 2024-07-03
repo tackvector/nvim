@@ -18,7 +18,6 @@
   "mini.tabline": { "branch": "main", "commit": "d2331ba3a332227c3a2b5e8daf464d4b3135381e" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "29f7c215332ba95e470811c380ddbce2cebe2af4" },
   "nui.nvim": { "branch": "main", "commit": "322978c734866996274467de084a95e4f9b5e0b1" },
-  "nvim-autopairs": { "branch": "master", "commit": "c15de7e7981f1111642e7e53799e1211d4606cb9" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
   "nvim-jdtls": { "branch": "master", "commit": "40e8494e04c1bcd5dd6c0d0bc187d2d10965017d" },
   "nvim-lspconfig": { "branch": "master", "commit": "4d38bece98300e3e5cd24a9aa0d0ebfea4951c16" },
@@ -29,6 +28,7 @@
   "sweetie.nvim": { "branch": "master", "commit": "ac72eb1b6c2942704b455055047afee2add0ea3b" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tree-sitter-asm": { "branch": "main", "commit": "b0306e9bb2ebe01c6562f1aef265cc42ccc53070" },
+  "uiua.vim": { "branch": "main", "commit": "b6b5651d60b96825f60c9d598a39d1eae1069e45" },
   "vim-astro": { "branch": "main", "commit": "9b4674ecfe1dd84b5fb9b4de1653975de6e8e2e1" },
   "yui": { "branch": "master", "commit": "ef0d00a7dd688199ea86474fd3cfe72c5a2aaaa7" }
 }

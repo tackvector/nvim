@@ -27,6 +27,10 @@ local mappings = {
     {"n", "<M-Left>", "<cmd>vertical resize +1<cr>", mappings_opts},
     {"n", "<M-Down>", "<cmd>resize -1<cr>", mappings_opts},
     {"n", "<M-Up>", "<cmd>resize +1<cr>", mappings_opts},
+    -- goto-preview mappings
+    {"n", "<M-x>gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",  mappings_opts},
+    {"n", "<M-x>gt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",  mappings_opts},
+    {"n", "<M-x>gi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", mappings_opts},
 }
 
 for _, mapping in pairs(mappings) do
@@ -106,40 +110,6 @@ require('lazy').setup({
     { 'nvim-lua/plenary.nvim', }, -- plenary
     { "nvim-tree/nvim-web-devicons", }, -- wdi
     { "mfussenegger/nvim-jdtls", }, -- jdtls
-    -- autopairs
-    {
-        'windwp/nvim-autopairs',
-        lazy = false,
-        config = function()
-            local nvim_pairs = require('nvim-autopairs')
-            local Rule = require('nvim-autopairs.rule')
-            require('nvim-autopairs').setup {
-                check_ts = true,
-                ts_config = {
-                    lua = { "string", "source" },
-                    javascript = { "string", "template_string" },
-                    java = false,
-                },
-                disable_filetype = { "TelescopePrompt", "spectre_panel" },
-                fast_wrap = {
-                    map = "<M-e>",
-                    chars = { "{", "[", "(", '"', "'" },
-                    pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-                    offset = 0, -- Offset from pattern match
-                    end_key = "$",
-                    keys = "qwertyuiopzxcvbnmasdfghjkl",
-                    check_comma = true,
-                    highlight = "PmenuSel",
-                    highlight_grey = "LineNr",
-                },
-            }
-            nvim_pairs.add_rules({
-                Rule("/*", "*/", { "c", "cpp", "css" }),
-                Rule("<!--", "-->", { "html" })
-            })
-        end
-    },
-    -- {{{ color schemes
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -198,12 +168,7 @@ require('lazy').setup({
                 return col ~= 0 and
                     vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
             end
-            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
             local luasnip = require('luasnip')
-            cmp.event:on(
-                'confirm_done',
-                cmp_autopairs.on_confirm_done()
-            )
             cmp.setup({
                 -- removing completion in comments, per this advanced configuration example: https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques
                 enabled = function()
@@ -306,9 +271,6 @@ require('lazy').setup({
             vim.keymap.set("n", "<C-i>", function() harpoon:list():select(3) end) -- three (next to 'o')
             vim.keymap.set("n", "<C-f>", function() harpoon:list():select(4) end) -- four (close to 't')
 
-            -- using Telescope as UI (thanks, Prime!)
-            -- this was ripped straight from GitHub:
-            -- basic telescope configuration
             local conf = require("telescope.config").values
             local function toggle_telescope(harpoon_files)
                 local file_paths = {}
@@ -337,7 +299,7 @@ require('lazy').setup({
             local original = vim.lsp.util.open_floating_preview
             vim.lsp.util.open_floating_preview = function (contents, syntax, opts)
                 opts = opts
-                opts.max_width = 69
+                opts.max_width = 69 -- nice
                 return original(contents, syntax, opts)
             end
 
@@ -532,9 +494,6 @@ require('lazy').setup({
                         ["<C-u>"] = actions.move_selection_next,
                         ["<C-d>"] = actions.move_selection_previous,
 
-                        -- ["<C-j>"] = actions.cycle_history_next,
-                        -- ["<C-k>"] = actions.cycle_history_prev,
-
                         ["<C-c>"] = actions.close,
 
                         ["<CR>"] = actions.select_default,
@@ -611,9 +570,9 @@ require('lazy').setup({
                 ensure_installed = {
                     "c",
                     "cpp",
-                    "c_sharp",
                     "lua",
                     "javascript",
+                    "java",
                     "typescript",
                     "python",
                     "php",
@@ -648,5 +607,8 @@ require('lazy').setup({
                 args = { "-l" },
             })
         end
-    }
+    },
+    {
+        "sputnick1124/uiua.vim",
+    },
 }, opts)
