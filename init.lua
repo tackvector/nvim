@@ -27,10 +27,6 @@ local mappings = {
     {"n", "<M-Left>", "<cmd>vertical resize +1<cr>", mappings_opts},
     {"n", "<M-Down>", "<cmd>resize -1<cr>", mappings_opts},
     {"n", "<M-Up>", "<cmd>resize +1<cr>", mappings_opts},
-    -- goto-preview mappings
-    {"n", "<M-x>gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",  mappings_opts},
-    {"n", "<M-x>gt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",  mappings_opts},
-    {"n", "<M-x>gi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", mappings_opts},
 }
 
 for _, mapping in pairs(mappings) do
@@ -111,24 +107,11 @@ require('lazy').setup({
     { "nvim-tree/nvim-web-devicons", }, -- wdi
     { "mfussenegger/nvim-jdtls", }, -- jdtls
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        config = function ()
-            local catppuccin = require("catppuccin")
-            catppuccin.setup({
-                flavour = "latte",
-                transparent_background = false,
-            })
-            -- vim.cmd [[colorscheme catppuccin]]
-        end
-    },
-    {
         "cideM/yui",
         lazy = false,
         priority = 1000,
         config = function ()
-            -- vim.cmd.colorscheme("yui")
+            vim.cmd.colorscheme("yui")
         end
     },
     {
@@ -141,10 +124,9 @@ require('lazy').setup({
                     light = {}
                 }
             }
-            vim.cmd.colorscheme("sweetie")
+            -- vim.cmd.colorscheme("sweetie")
         end
     },
-    -- }}}
     -- cmp
     {
         'hrsh7th/nvim-cmp',
@@ -255,7 +237,7 @@ require('lazy').setup({
         'ThePrimeagen/harpoon',
         branch = 'harpoon2',
         dependencies = { 'nvim-lua/plenary.nvim' },
-        config = function () 
+        config = function ()
             local harpoon = require('harpoon')
             harpoon:setup({})
 
@@ -394,73 +376,6 @@ require('lazy').setup({
         end
     },
     {
-        'echasnovski/mini.tabline',
-        config = function ()
-            local mtl = require('mini.tabline')
-            mtl.setup()
-        end
-    },
-    {
-        'echasnovski/mini.align',
-        config = function ()
-            local ma = require('mini.align')
-            ma.setup()
-            -- using default configuration until I learn what I like
-        end
-    },
-    {
-        'nvim-neo-tree/neo-tree.nvim',
-        branch = "v3.x",
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'nvim-tree/nvim-web-devicons',
-            'MunifTanjim/nui.nvim',
-        },
-        config = function()
-            local neotree = require("neo-tree")
-            neotree.setup({
-                event_handlers = {
-                    {
-                        -- close Neotree after I've selected a file
-                        event = "file_opened",
-                        handler = function(file_path)
-                            vim.cmd("Neotree close")
-                        end
-                    },
-                },
-                window = {
-                    position = "bottom",
-                },
-                mappings = {
-                    ["q"] = "close_window",
-                },
-                git_status = {
-                    window = {
-                        position = "bottom",
-                    },
-                    mappings = {
-                        ["A"] = "git_add_all",
-                        ["gu"] = "git_unstage_file",
-                        ["ga"] = "git_add_file",
-                        ["gr"] = "git_revert_file",
-                        ["gc"] = "git_commit",
-                        ["gp"] = "git_push",
-                        ["gg"] = "git_commit_and_push",
-                        ["o"] = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
-                        ["oc"] = { "order_by_created", nowait = false },
-                        ["od"] = { "order_by_diagnostics", nowait = false },
-                        ["om"] = { "order_by_modified", nowait = false },
-                        ["on"] = { "order_by_name", nowait = false },
-                        ["os"] = { "order_by_size", nowait = false },
-                        ["ot"] = { "order_by_type", nowait = false },
-                    }
-                }
-            })
-            vim.keymap.set("n", "<M-x>f", ":Neotree toggle<cr>")
-            vim.keymap.set("n", "<M-x>g", ":Neotree git_status toggle<cr>")
-        end
-    },
-    {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -579,7 +494,6 @@ require('lazy').setup({
                     "css",
                     "json",
                     "vimdoc",
-                    "haskell",
                     "racket",
                 },
                 sync_install = false,
@@ -588,9 +502,6 @@ require('lazy').setup({
                     enable = true,
                     disable = { "css" },
                     additional_vim_regex_highlighting = false,
-                },
-                autopairs = {
-                    enable = true,
                 },
                 indent = {
                     enable = true,
@@ -610,5 +521,8 @@ require('lazy').setup({
     },
     {
         "sputnick1124/uiua.vim",
+    },
+    {
+        "Olical/conjure",
     },
 }, opts)
