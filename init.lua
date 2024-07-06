@@ -111,7 +111,7 @@ require('lazy').setup({
         lazy = false,
         priority = 1000,
         config = function ()
-            vim.cmd.colorscheme("yui")
+            -- vim.cmd.colorscheme("yui")
         end
     },
     {
@@ -124,7 +124,7 @@ require('lazy').setup({
                     light = {}
                 }
             }
-            -- vim.cmd.colorscheme("sweetie")
+            vim.cmd.colorscheme("sweetie")
         end
     },
     -- cmp
