@@ -71,7 +71,7 @@ local options = {
     number = true,
     relativenumber = true,
     fillchars = { vert = ' ', },
-    background = "light",
+    background = "dark",
 }
 
 for option, value in pairs(options) do
@@ -124,7 +124,7 @@ require('lazy').setup({
                     light = {}
                 }
             }
-            vim.cmd.colorscheme("sweetie")
+            -- vim.cmd.colorscheme("sweetie")
         end
     },
     -- cmp
