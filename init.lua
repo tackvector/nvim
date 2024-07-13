@@ -27,6 +27,7 @@ local mappings = {
     {"n", "<M-Left>", "<cmd>vertical resize +1<cr>", mappings_opts},
     {"n", "<M-Down>", "<cmd>resize -1<cr>", mappings_opts},
     {"n", "<M-Up>", "<cmd>resize +1<cr>", mappings_opts},
+    {"n", "<M-x>f", "<cmd>Hexplore<cr>", mappings_opts},
 }
 
 for _, mapping in pairs(mappings) do
@@ -77,6 +78,12 @@ local options = {
 for option, value in pairs(options) do
     vim.opt[option] = value
 end
+
+vim.g.netrw_winsize = 50
+vim.g.netrw_banner = 0
+vim.g.netrw_hide = 0
+vim.g.netrw_browse_split = 4
+vim.g.netrw_list_hide = vim.fn['netrw_gitignore#Hide']()
 
 -- don't continue comments onto new lines
 vim.cmd ([[ 
@@ -283,6 +290,9 @@ require('lazy').setup({
                 return original(contents, syntax, opts)
             end
 
+            vim.diagnostic.config {
+                virtual_text = false
+            }
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -362,6 +372,8 @@ require('lazy').setup({
                     'pyright',
                     'svelte',
                     'angularls',
+                    'tailwindcss',
+                    'astro',
                 },
                 handlers = {
                     lsp_zero.default_setup,
