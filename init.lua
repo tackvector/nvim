@@ -101,10 +101,8 @@ local opts = {}
 
 require('lazy').setup({
     { 'rush-rs/tree-sitter-asm', }, -- asm
-    { 'wuelnerdotexe/vim-astro', }, -- astrojs
     { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x', }, -- zero
     { 'nvim-lua/plenary.nvim', }, -- plenary
-    { "nvim-tree/nvim-web-devicons", }, -- wdi
     { "mfussenegger/nvim-jdtls", }, -- jdtls
     {
         "cideM/yui",
@@ -352,6 +350,7 @@ require('lazy').setup({
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'phpactor',
+                    'astro',
                     'clangd',
                     'emmet_language_server',
                     'tsserver',
@@ -362,8 +361,6 @@ require('lazy').setup({
                     'gradle_ls',
                     'pyright',
                     'svelte',
-                    'svlangserver',
-                    'astro',
                     'angularls',
                 },
                 handlers = {

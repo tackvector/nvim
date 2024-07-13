@@ -19,12 +19,10 @@
   "nvim-lspconfig": { "branch": "master", "commit": "4d38bece98300e3e5cd24a9aa0d0ebfea4951c16" },
   "nvim-treesitter": { "branch": "master", "commit": "9a7ad2ff7a7ea81016aca2fc89c9b2c1a5365421" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "34867c69838078df7d6919b130c0541c0b400c47" },
-  "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "sweetie.nvim": { "branch": "master", "commit": "ac72eb1b6c2942704b455055047afee2add0ea3b" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tree-sitter-asm": { "branch": "main", "commit": "b0306e9bb2ebe01c6562f1aef265cc42ccc53070" },
   "uiua.vim": { "branch": "main", "commit": "b6b5651d60b96825f60c9d598a39d1eae1069e45" },
-  "vim-astro": { "branch": "main", "commit": "9b4674ecfe1dd84b5fb9b4de1653975de6e8e2e1" },
   "yui": { "branch": "master", "commit": "ef0d00a7dd688199ea86474fd3cfe72c5a2aaaa7" }
 }
