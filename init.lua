@@ -375,6 +375,8 @@ require('lazy').setup({
                     'svlangserver',
                     'astro',
                     'angularls',
+                    'tailwindcss',
+                    'astro',
                 },
                 handlers = {
                     lsp_zero.default_setup,
