@@ -72,7 +72,7 @@ local options = {
     number = true,
     relativenumber = true,
     fillchars = { vert = ' ', },
-    background = "light",
+    background = "dark",
 }
 
 for option, value in pairs(options) do
@@ -129,7 +129,15 @@ require('lazy').setup({
                     light = {}
                 }
             }
-            vim.cmd.colorscheme("sweetie")
+            -- vim.cmd.colorscheme("sweetie")
+        end
+    },
+    {
+        "shaunsingh/nord.nvim",
+        lazy= false,
+        priority = 1000,
+        config = function ()
+            vim.cmd.colorscheme("nord")
         end
     },
     -- cmp
