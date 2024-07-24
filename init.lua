@@ -542,4 +542,7 @@ require('lazy').setup({
     {
         "Olical/conjure",
     },
+    {
+        "jalvesaq/Nvim-R",
+    },
 }, opts)
