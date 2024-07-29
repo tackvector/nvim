@@ -116,7 +116,7 @@ require('lazy').setup({
         lazy = false,
         priority = 1000,
         config = function ()
-            vim.cmd.colorscheme("yui")
+            -- vim.cmd.colorscheme("yui")
         end
     },
     {
@@ -133,13 +133,20 @@ require('lazy').setup({
         end
     },
     {
-        "shaunsingh/nord.nvim",
-        lazy= false,
+        "olimorris/onedarkpro.nvim",
         priority = 1000,
-        config = function ()
-            -- vim.cmd.colorscheme("nord")
-        end
-    },
+        config = function() 
+
+            local onedarkpro = require("onedarkpro") 
+            onedarkpro.setup({
+                options = {
+                    transparency = true,
+    }
+            })
+        vim.cmd.colorscheme("onedark")
+            
+    end
+},
     -- cmp
     {
         'hrsh7th/nvim-cmp',
@@ -231,6 +238,7 @@ require('lazy').setup({
                 sources = {
                     { name = "nvim_lsp" },
                     { name = "luasnip",                 keyword_length = 7 },
+                    { name = "cmp_r" },
                     { name = "nvim_lua" },
                     { name = 'nvim_lsp_document_symbol' },
                     { name = 'nvim_lsp_signature_help' },
@@ -541,8 +549,5 @@ require('lazy').setup({
     },
     {
         "Olical/conjure",
-    },
-    {
-        "jalvesaq/Nvim-R",
     },
 }, opts)
