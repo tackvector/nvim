@@ -116,7 +116,7 @@ require('lazy').setup({
         lazy = false,
         priority = 1000,
         config = function ()
-            -- vim.cmd.colorscheme("yui")
+            vim.cmd.colorscheme("yui")
         end
     },
     {
@@ -141,12 +141,12 @@ require('lazy').setup({
             onedarkpro.setup({
                 options = {
                     transparency = true,
-    }
+                }
             })
-        vim.cmd.colorscheme("onedark")
-            
-    end
-},
+            --vim.cmd.colorscheme("onedark")
+
+        end
+    },
     -- cmp
     {
         'hrsh7th/nvim-cmp',
